@@ -1,0 +1,12 @@
+-- Data set: Brightspace Email Log (staging table)
+-- Source: https://community.d2l.com/brightspace/kb/articles/34145-email-data-sets#brightspace-email-log
+CREATE TABLE "BRIGHTSPACE_EMAIL_LOG_LOAD" (
+    "MAILID" NUMBER(10) NOT NULL,
+    "SENDERUSERID" NUMBER(10),
+    "SENDERADDRESS" VARCHAR2(256 CHAR),
+    "RECIPIENTADDRESS" VARCHAR2(256 CHAR) NOT NULL,
+    "RECIPIENTTYPE" VARCHAR2(4 CHAR) NOT NULL,
+    "DATETIMESENT" TIMESTAMP(7),
+    "SUBJECT" VARCHAR2(1000 CHAR),
+    PRIMARY KEY ("MAILID", "RECIPIENTADDRESS", "RECIPIENTTYPE")
+);

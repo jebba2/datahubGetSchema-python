@@ -1,0 +1,97 @@
+{
+  "name": "Rubric Object Criteria",
+  "sourceUrl": "https://community.d2l.com/brightspace/kb/articles/4535-rubrics-data-sets#rubric-object-criteria",
+  "columns": [
+    {
+      "name": "RubricId",
+      "description": "Unique rubric identifier",
+      "dataType": "bigint",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": true,
+      "canBeNull": false,
+      "versionHistory": "1.7"
+    },
+    {
+      "name": "CriterionId",
+      "description": "Identifier for the criterion associated with the rubric levels",
+      "dataType": "bigint",
+      "size": "8",
+      "isPrimaryKey": true,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "1.7"
+    },
+    {
+      "name": "Name",
+      "description": "Name of the criterion.",
+      "dataType": "nvarchar",
+      "size": "500",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "9.12 - Size updated"
+    },
+    {
+      "name": "SortOrder",
+      "description": "Sort order by which the criteria is listed",
+      "dataType": "int",
+      "size": "4",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "1.7"
+    },
+    {
+      "name": "CriteriaGroupId",
+      "description": "Identifier for the criterion group to which the criterion belongs",
+      "dataType": "bigint",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "2.0 - field name updated"
+    },
+    {
+      "name": "GroupName",
+      "description": "Name of the criterion group.",
+      "dataType": "nvarchar",
+      "size": "256",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "2.0 - field name updated"
+    },
+    {
+      "name": "GroupSortOrder",
+      "description": "Sort order assigned to the criterion group",
+      "dataType": "int",
+      "size": "4",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "2.0 - field name updated"
+    },
+    {
+      "name": "LevelSetId",
+      "description": "Identifier of the Level Set to which the level belongs",
+      "dataType": "bigint",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": true,
+      "canBeNull": false,
+      "versionHistory": "1.7"
+    },
+    {
+      "name": "IsDeleted",
+      "description": "Set to true if the Level Set, Criterion Group or Criterion has been deleted",
+      "dataType": "bit",
+      "size": "1",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "1.7"
+    }
+  ],
+  "kind": "BDS"
+}

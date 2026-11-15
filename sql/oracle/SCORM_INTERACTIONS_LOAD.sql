@@ -1,0 +1,13 @@
+-- Data set: SCORM Interactions (staging table)
+-- Source: https://community.d2l.com/brightspace/kb/articles/4536-scorm-data-sets#scorm-interactions
+CREATE TABLE "SCORM_INTERACTIONS_LOAD" (
+    "INTERACTIONID" VARCHAR2(36 CHAR) NOT NULL,
+    "ACTIVITYID" VARCHAR2(36 CHAR),
+    "INTERNALID" VARCHAR2(255 CHAR),
+    "INTERACTIONTYPE" VARCHAR2(100 CHAR),
+    "DESCRIPTION" VARCHAR2(250 CHAR),
+    "WEIGHTING" BINARY_DOUBLE,
+    "CORRECTRESPONSES" CLOB,
+    "LASTMODIFIED" TIMESTAMP(7),
+    PRIMARY KEY ("INTERACTIONID")
+);

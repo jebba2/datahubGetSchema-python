@@ -1,0 +1,22 @@
+-- Data set: Question Relationships (staging table)
+-- Source: https://community.d2l.com/brightspace/kb/articles/4531-questions-data-sets#question-relationships
+CREATE TABLE "QUESTION_RELATIONSHIPS_LOAD" (
+    "COLLECTIONID" NUMBER(19),
+    "QUESTIONID" NUMBER(19),
+    "QUESTIONVERSIONID" NUMBER(19),
+    "ORDER" NUMBER(19),
+    "SECTIONID" NUMBER(19),
+    "ISQUESTIONPOOL" NUMBER(1),
+    "CREATIONDATE" TIMESTAMP(7),
+    "CREATEDBY" NUMBER(19),
+    "LASTMODIFIED" TIMESTAMP(7),
+    "LASTMODIFIEDBY" NUMBER(19),
+    "POINTS" NUMBER(19,9),
+    "DIFFICULTY" NUMBER(10),
+    "ISBONUS" NUMBER(1),
+    "ISMANDATORY" NUMBER(1),
+    "ISDELETED" NUMBER(1),
+    "VERSION" NUMBER(19),
+    "OBJECTID" NUMBER(19) NOT NULL,
+    PRIMARY KEY ("OBJECTID")
+);

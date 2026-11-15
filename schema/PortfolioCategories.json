@@ -1,0 +1,77 @@
+{
+  "name": "Portfolio Categories",
+  "sourceUrl": "https://community.d2l.com/brightspace/kb/articles/4530-portfolio-data-sets#portfolio-categories",
+  "columns": [
+    {
+      "name": "CategoryId",
+      "description": "Unique category identifier",
+      "dataType": "uniqueidentifier",
+      "size": "16",
+      "isPrimaryKey": true,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "5.7 / 6.0 - Updated column size"
+    },
+    {
+      "name": "OrgUnitId",
+      "description": "Unique org unit identifier. Field can be null",
+      "dataType": "int",
+      "size": "4",
+      "isPrimaryKey": false,
+      "isForeignKey": true,
+      "canBeNull": true,
+      "versionHistory": "5.0"
+    },
+    {
+      "name": "Name",
+      "description": "Portfolio category name.",
+      "dataType": "nvarchar",
+      "size": "256",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "5.0"
+    },
+    {
+      "name": "IsRetired",
+      "description": "Indicates the category is retired and therefore cannot be used.",
+      "dataType": "bit",
+      "size": "1",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "4.7 / 5.1 - Updated description"
+    },
+    {
+      "name": "IsDeleted",
+      "description": "Indicates if the portfolio category is deleted",
+      "dataType": "bit",
+      "size": "1",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "5.0"
+    },
+    {
+      "name": "LastModified",
+      "description": "Date when the portfolio category was last modified (UTC).",
+      "dataType": "datetime2",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "5.0"
+    },
+    {
+      "name": "LastModifiedBy",
+      "description": "User who last modified the portfolio category.",
+      "dataType": "int",
+      "size": "4",
+      "isPrimaryKey": false,
+      "isForeignKey": true,
+      "canBeNull": false,
+      "versionHistory": "5.0"
+    }
+  ],
+  "kind": "BDS"
+}

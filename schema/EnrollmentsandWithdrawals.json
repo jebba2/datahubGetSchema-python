@@ -1,0 +1,77 @@
+{
+  "name": "Enrollments and Withdrawals",
+  "sourceUrl": "https://community.d2l.com/brightspace/kb/articles/4740-users-data-sets#enrollments-and-withdrawals",
+  "columns": [
+    {
+      "name": "LogId",
+      "description": "Unique log entry identifier for any change to the user enrollment.",
+      "dataType": "bigint",
+      "size": "8",
+      "isPrimaryKey": true,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "7.7 - Updated description"
+    },
+    {
+      "name": "UserId",
+      "description": "Unique user identifier",
+      "dataType": "int",
+      "size": "4",
+      "isPrimaryKey": false,
+      "isForeignKey": true,
+      "canBeNull": false,
+      "versionHistory": "5.7 / 6.0 - Added FK"
+    },
+    {
+      "name": "OrgUnitId",
+      "description": "Unique org unit identifier",
+      "dataType": "int",
+      "size": "4",
+      "isPrimaryKey": false,
+      "isForeignKey": true,
+      "canBeNull": false,
+      "versionHistory": "5.7 / 6.0 - Added FK"
+    },
+    {
+      "name": "RoleId",
+      "description": "Unique role identifier. Field can be null.",
+      "dataType": "int",
+      "size": "4",
+      "isPrimaryKey": false,
+      "isForeignKey": true,
+      "canBeNull": true,
+      "versionHistory": "5.7 / 6.0 - Added FK"
+    },
+    {
+      "name": "Action",
+      "description": "Indicates whether the item is an enrollment or a withdrawal",
+      "dataType": "varchar",
+      "size": "50",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "3.2"
+    },
+    {
+      "name": "ModifiedByUserId",
+      "description": "Identifies the last user who modified the enrollment status for the user. Field can be null.",
+      "dataType": "int",
+      "size": "4",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "3.2"
+    },
+    {
+      "name": "EnrollmentDate",
+      "description": "Date enrolled (UTC)",
+      "dataType": "datetime2",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "3.2"
+    }
+  ],
+  "kind": "BDS"
+}

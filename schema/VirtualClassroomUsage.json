@@ -1,0 +1,157 @@
+{
+  "name": "Virtual Classroom Usage",
+  "sourceUrl": "https://community.d2l.com/brightspace/kb/articles/4541-virtual-classroom-data-sets#virtual-classroom-usage",
+  "columns": [
+    {
+      "name": "OrgUnitId",
+      "description": "Unique org unit identifier of the course where the meeting was scheduled. Will be null if the meeting was cancelled.",
+      "dataType": "int",
+      "size": "4",
+      "isPrimaryKey": false,
+      "isForeignKey": true,
+      "canBeNull": false,
+      "versionHistory": "4.9 / 5.3"
+    },
+    {
+      "name": "CourseName",
+      "description": "The name of the course where the meeting was scheduled. Will be null if the meeting was cancelled.",
+      "dataType": "nvarchar",
+      "size": "255",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "6.14 / 7.2 - Updated Column size"
+    },
+    {
+      "name": "MeetingId",
+      "description": "Unique meeting identifier. If a meeting is reoccurring, each occurrence is represented in a new row.",
+      "dataType": "nvarchar",
+      "size": "36",
+      "isPrimaryKey": true,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "4.9 / 5.3"
+    },
+    {
+      "name": "MeetingName",
+      "description": "The name of the Virtual Classroom meeting.",
+      "dataType": "nvarchar",
+      "size": "255",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "4.9 / 5.3"
+    },
+    {
+      "name": "CreationUserId",
+      "description": "Unique identifier of the user who scheduled the meeting.",
+      "dataType": "int",
+      "size": "4",
+      "isPrimaryKey": false,
+      "isForeignKey": true,
+      "canBeNull": false,
+      "versionHistory": "4.9 / 5.3"
+    },
+    {
+      "name": "CreationDate",
+      "description": "The date and time the meeting was created (UTC).",
+      "dataType": "datetime2",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "4.9 / 5.3"
+    },
+    {
+      "name": "ScheduledDate",
+      "description": "The date and time the meeting is scheduled to start (UTC).",
+      "dataType": "datetime2",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "4.9 / 5.3"
+    },
+    {
+      "name": "ScheduledDuration",
+      "description": "Planned length of the meeting in minutes.",
+      "dataType": "int",
+      "size": "4",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "4.9 / 5.3"
+    },
+    {
+      "name": "IsPublished",
+      "description": "Indicates if the option to automatically publish the recording to attendees is enabled.",
+      "dataType": "bit",
+      "size": "1",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "4.9 / 5.3"
+    },
+    {
+      "name": "ExternalLinksEnabled",
+      "description": "Indicates if the option to use external links to join the meeting was enabled when the Virtual Classroom session was scheduled.",
+      "dataType": "bit",
+      "size": "1",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "4.9 / 5.3"
+    },
+    {
+      "name": "WholeClassInvited",
+      "description": "Indicates if all users in an org unit were invited.",
+      "dataType": "bit",
+      "size": "1",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "4.9 / 5.3"
+    },
+    {
+      "name": "IsCancelled",
+      "description": "Indicates if the meeting is cancelled. Comparable to IsDeleted in other data sets.",
+      "dataType": "bit",
+      "size": "1",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "4.9 / 5.3"
+    },
+    {
+      "name": "StartDateTime",
+      "description": "The DateTime that the Virtual Classroom session was started (UTC). Will be null if the meeting was not started or canceled.",
+      "dataType": "datetime2",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "4.9 / 5.3"
+    },
+    {
+      "name": "EndDateTime",
+      "description": "The DateTime that the Virtual Classroom session was ended (UTC). Will be null if the meeting was not started or canceled.",
+      "dataType": "datetime2",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "4.9 / 5.3"
+    },
+    {
+      "name": "IsRecorded",
+      "description": "Indicates if the meeting was recorded.",
+      "dataType": "bit",
+      "size": "1",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "4.9 / 5.3"
+    }
+  ],
+  "kind": "BDS"
+}

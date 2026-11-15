@@ -1,0 +1,17 @@
+-- Data set: Rubrics Edit (staging table)
+-- Source: https://community.d2l.com/brightspace/kb/articles/4535-rubrics-data-sets#rubrics-edit
+CREATE TABLE "RUBRICS_EDIT_LOAD" (
+    "AUDITLOGID" VARCHAR2(36 CHAR) NOT NULL,
+    "RUBRICID" NUMBER(19),
+    "CRITERIONID" NUMBER(19),
+    "LEVELID" NUMBER(19),
+    "MODIFIEDBY" NUMBER(10),
+    "MODIFIEDOBJECTTYPE" NUMBER(10),
+    "CRITERIAGROUPID" NUMBER(19),
+    "MODIFIEDDATE" TIMESTAMP(7),
+    "PREVIOUSVALUE" CLOB,
+    "MODIFIEDVALUE" CLOB,
+    "ISLOCKED" NUMBER(1),
+    "VERSION" NUMBER(10),
+    PRIMARY KEY ("AUDITLOGID")
+);

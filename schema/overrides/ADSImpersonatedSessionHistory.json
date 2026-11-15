@@ -1,0 +1,8 @@
+{
+    "dataSet": "ADS Impersonated Session History",
+    "reason": "D2L's page spells the type of these two columns 'navchar'. The size of 540 shows it means nvarchar.",
+    "columns": [
+        {"name": "Username", "dataType": "nvarchar"},
+        {"name": "ImpersonatingUsername", "dataType": "nvarchar"}
+    ]
+}

@@ -1,0 +1,57 @@
+{
+  "name": "Course Offering Enrollments",
+  "sourceUrl": "https://community.d2l.com/brightspace/kb/articles/4539-list-of-advanced-data-sets#course-offering-enrollments",
+  "columns": [
+    {
+      "name": "User Id",
+      "description": "Internal numeric user identifier within Brightspace.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "20.21.1"
+    },
+    {
+      "name": "Org Unit Id",
+      "description": "Unique org unit identifier for the course offering.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "20.21.1"
+    },
+    {
+      "name": "Role Id",
+      "description": "The learner's numeric role Id within the course offering.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "20.21.1"
+    },
+    {
+      "name": "Enrollment Date",
+      "description": "The date of the learner's enrollment.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "20.21.1"
+    },
+    {
+      "name": "Enrollment Type",
+      "description": "The type of enrollment.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "20.21.1"
+    }
+  ],
+  "kind": "ADS"
+}

@@ -1,0 +1,36 @@
+-- Data set: Role Details
+-- Source: https://community.d2l.com/brightspace/kb/articles/4534-role-details-data-sets#role-details
+CREATE TABLE `RoleDetails` (
+    `RoleId` INT NOT NULL,
+    `RoleName` VARCHAR(120),
+    `Description` VARCHAR(400),
+    `IsCascading` TINYINT(1),
+    `InClassList` TINYINT(1),
+    `ClassListRoleName` VARCHAR(120),
+    `ClassListShowGroups` TINYINT(1),
+    `ClassListShowSections` TINYINT(1),
+    `ClassListDisplayRole` TINYINT(1),
+    `AccessInactiveCO` TINYINT(1),
+    `HasSpecialAccess` TINYINT(1),
+    `AddToCourseOfferingGroups` TINYINT(1),
+    `CanBeAutoEnrolledIntoGroups` TINYINT(1),
+    `AddToCourseOfferingSections` TINYINT(1),
+    `CanBeAutoEnrolledIntoSections` TINYINT(1),
+    `AccessPastCourses` TINYINT(1),
+    `AccessFutureCourses` TINYINT(1),
+    `SortOrder` INT,
+    `ShowInContent` TINYINT(1),
+    `ShowInDiscussionAssess` TINYINT(1),
+    `ShowInDiscussionStats` TINYINT(1),
+    `ShowInGrades` TINYINT(1),
+    `ShowInAttendance` TINYINT(1),
+    `AllowSelfEnrollInGroups` TINYINT(1),
+    `ShowInRegistration` TINYINT(1),
+    `ShowInUserProgress` TINYINT(1),
+    `RoleAlias` VARCHAR(120),
+    `RoleCode` VARCHAR(100),
+    `LastModifiedDate` DATETIME(6),
+    `DeletedBy` INT,
+    PRIMARY KEY (`RoleId`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+CREATE INDEX `IX_RoleDetails_DeletedBy` ON `RoleDetails` (`DeletedBy`);

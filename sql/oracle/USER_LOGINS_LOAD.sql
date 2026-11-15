@@ -1,0 +1,14 @@
+-- Data set: User Logins (staging table)
+-- Source: https://community.d2l.com/brightspace/kb/articles/4740-users-data-sets#user-logins
+CREATE TABLE "USER_LOGINS_LOAD" (
+    "USERID" NUMBER(10),
+    "USERNAME" VARCHAR2(256 CHAR),
+    "IP" VARCHAR2(64 CHAR),
+    "SESSIONID" NUMBER(10),
+    "STATUSTYPE" VARCHAR2(50 CHAR),
+    "ATTEMPTDATE" TIMESTAMP(7),
+    "IMPERSONATINGUSERID" NUMBER(10),
+    "LOGINATTEMPTID" VARCHAR2(36 CHAR) NOT NULL,
+    "LOGINSOURCE" VARCHAR2(50 CHAR),
+    PRIMARY KEY ("LOGINATTEMPTID")
+);

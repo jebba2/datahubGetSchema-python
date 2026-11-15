@@ -1,0 +1,39 @@
+-- Data set: LTI Links
+-- Source: https://community.d2l.com/brightspace/kb/articles/4727-lti-data-sets#lti-links
+CREATE TABLE `LTILinks` (
+    `LtiLinkId` BIGINT NOT NULL,
+    `OrgUnitId` INT,
+    `Title` VARCHAR(200),
+    `LinkType` INT,
+    `LTIVersion` VARCHAR(12),
+    `Url` TEXT,
+    `Description` VARCHAR(1000),
+    `IsVisible` TINYINT(1),
+    `SendTCInfo` TINYINT(1),
+    `SendContextInfo` TINYINT(1),
+    `SendCourseInfo` TINYINT(1),
+    `SendOrgUnitInfo` TINYINT(1),
+    `SendUserId` TINYINT(1),
+    `SendUserName` TINYINT(1),
+    `SendUserEmail` TINYINT(1),
+    `SendLinkTitle` TINYINT(1),
+    `SendLinkDescription` TINYINT(1),
+    `SendD2LUserName` TINYINT(1),
+    `SendD2LOrgDefinedId` TINYINT(1),
+    `SendD2LOrgRoleId` TINYINT(1),
+    `SendBrightspaceUserId` TINYINT(1),
+    `Anonymous` TINYINT(1),
+    `Shared` TINYINT(1),
+    `UseToolProviderSecuritySettings` TINYINT(1),
+    `LastModifiedDate` DATETIME(6),
+    `OuAvailabilitySetId` BIGINT,
+    `LastModifiedBy` INT,
+    `IsDeleted` TINYINT(1),
+    `CreatedDate` DATETIME(6),
+    `DeploymentId` CHAR(36),
+    `LinkSubType` INT,
+    PRIMARY KEY (`LtiLinkId`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+CREATE INDEX `IX_LTILinks_OrgUnitId` ON `LTILinks` (`OrgUnitId`);
+CREATE INDEX `IX_LTILinks_LastModifiedBy` ON `LTILinks` (`LastModifiedBy`);
+CREATE INDEX `IX_LTILinks_DeploymentId` ON `LTILinks` (`DeploymentId`);

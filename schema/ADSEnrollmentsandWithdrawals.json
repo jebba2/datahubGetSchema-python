@@ -1,0 +1,147 @@
+{
+  "name": "Enrollments and Withdrawals",
+  "sourceUrl": "https://community.d2l.com/brightspace/kb/articles/4539-list-of-advanced-data-sets#enrollments-and-withdrawals",
+  "columns": [
+    {
+      "name": "Log Id",
+      "description": "Log entry's unique identification number.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "10.7.0"
+    },
+    {
+      "name": "Org Unit Id",
+      "description": "Org unit's unique identification number.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "10.7.0"
+    },
+    {
+      "name": "Org Unit Name",
+      "description": "Name of the org unit.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "10.7.0"
+    },
+    {
+      "name": "Org Unit Code",
+      "description": "Code of the org unit.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "10.7.0"
+    },
+    {
+      "name": "Org Unit Type",
+      "description": "Type of org unit.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "10.7.0"
+    },
+    {
+      "name": "User Id",
+      "description": "User\u2019s unique numeric D2L ID.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "10.7.0"
+    },
+    {
+      "name": "First Name",
+      "description": "User's first name.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "10.7.0"
+    },
+    {
+      "name": "Last Name",
+      "description": "User's last name.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "10.7.0"
+    },
+    {
+      "name": "Username",
+      "description": "User's username.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "10.7.0"
+    },
+    {
+      "name": "Org Defined Id",
+      "description": "User's org defined ID.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "10.7.0"
+    },
+    {
+      "name": "Role Id",
+      "description": "D2L ID of the user's role in the specified org unit.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "10.7.0"
+    },
+    {
+      "name": "Role Name",
+      "description": "Role name of the user in the specified org unit.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "10.7.0"
+    },
+    {
+      "name": "Log Event Type",
+      "description": "Status of the user's enrollment or withdrawal.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "10.7.0"
+    },
+    {
+      "name": "Log Date",
+      "description": "Date of the user's enrollment or withdrawal.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "10.7.0"
+    }
+  ],
+  "kind": "ADS"
+}

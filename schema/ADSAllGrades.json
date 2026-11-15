@@ -1,0 +1,337 @@
+{
+  "name": "All Grades",
+  "sourceUrl": "https://community.d2l.com/brightspace/kb/articles/4539-list-of-advanced-data-sets#all-grades",
+  "columns": [
+    {
+      "name": "User Id",
+      "description": "D2L\u2019s unique identifier for the user.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "10.7.0"
+    },
+    {
+      "name": "Org Defined Id",
+      "description": "User\u2019s Org Defined Id (often the learner identifier from an SIS system).",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "10.7.0"
+    },
+    {
+      "name": "Username",
+      "description": "User\u2019s username.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "10.7.0"
+    },
+    {
+      "name": "First Name",
+      "description": "User\u2019s first name.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "10.7.0"
+    },
+    {
+      "name": "Last Name",
+      "description": "User\u2019s last name.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "10.7.0"
+    },
+    {
+      "name": "Is Active",
+      "description": "Learner's status.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "10.7.0"
+    },
+    {
+      "name": "Role Id",
+      "description": "User\u2019s role Id at the specific course offering.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "10.7.0"
+    },
+    {
+      "name": "Role Name",
+      "description": "User\u2019s role at the specific course offering.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "10.7.0"
+    },
+    {
+      "name": "Course Offering Id",
+      "description": "D2L\u2019s unique identifier for the course offering.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "10.7.0"
+    },
+    {
+      "name": "Course Offering Code",
+      "description": "Often the course identifier from an SIS system.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "10.7.0"
+    },
+    {
+      "name": "Course Offering Name",
+      "description": "Name of the course offering.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "10.7.0"
+    },
+    {
+      "name": "Course Section Id",
+      "description": "D2L\u2019s unique identifier for the section.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "10.7.0"
+    },
+    {
+      "name": "Course Section Code",
+      "description": "Client defined code for the section.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "10.7.0"
+    },
+    {
+      "name": "Course Section Name",
+      "description": "Name of the section.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "10.7.0"
+    },
+    {
+      "name": "Grade Item Category Id",
+      "description": "D2L\u2019s unique identifier for the category in which the grade item belongs.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "10.7.0"
+    },
+    {
+      "name": "Grade Item Category Name",
+      "description": "Name of the category in which the grade item belongs.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "10.7.0"
+    },
+    {
+      "name": "Grade Item Id",
+      "description": "D2L\u2019s unique identifier for a grade item. Note: The final calculated grade and final adjusted grades will be included.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "10.7.0"
+    },
+    {
+      "name": "Grade Item Name",
+      "description": "Name of the grade item.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "10.7.0"
+    },
+    {
+      "name": "Grade Item Weight",
+      "description": "Weight of the grade item.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "10.7.0"
+    },
+    {
+      "name": "Grade Item Start Date",
+      "description": "Date the grade item will become visible in the grade book.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "10.7.0"
+    },
+    {
+      "name": "Grade Item End Date",
+      "description": "Date the grade item will become invisible in the grade book.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "10.7.0"
+    },
+    {
+      "name": "Points Numerator",
+      "description": "Numerator of the grade value.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "10.7.0"
+    },
+    {
+      "name": "Points Denominator",
+      "description": "Denominator of the grade value.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "10.7.0"
+    },
+    {
+      "name": "Grade Value",
+      "description": "Value of the grade with the grade scheme applied.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "10.7.0"
+    },
+    {
+      "name": "Grade Last Modified",
+      "description": "Date that the grade was last modified. Note: This is a UTC formatted date/time stamp in accordance with the org\u2019s local time zone.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "10.7.0"
+    },
+    {
+      "name": "Grade Comments",
+      "description": "Comments/feedback left for the user.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "10.7.0"
+    },
+    {
+      "name": "Grader User Id",
+      "description": "User Id of the last user that modified the grade.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "10.7.0"
+    },
+    {
+      "name": "Grader Org Defined Id",
+      "description": "Org Defined Id of the last user that modified the grade.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "10.7.0"
+    },
+    {
+      "name": "Grader Username",
+      "description": "Grader's username.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "10.7.0"
+    },
+    {
+      "name": "Grader First Name",
+      "description": "First name of the last user that modified the grade.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "10.7.0"
+    },
+    {
+      "name": "Grader Last Name",
+      "description": "Last name of the last user that modified the grade.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "10.7.0"
+    },
+    {
+      "name": "Exclude From Final Grade",
+      "description": "Whether this grade value is not used in the final grade calculation.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "10.7.0"
+    },
+    {
+      "name": "Grade Object Type",
+      "description": "Grade object type name.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "20.20.12"
+    }
+  ],
+  "kind": "ADS"
+}

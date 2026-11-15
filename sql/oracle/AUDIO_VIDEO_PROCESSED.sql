@@ -1,0 +1,15 @@
+-- Data set: Audio Video Processed
+-- Source: https://community.d2l.com/brightspace/kb/articles/22812-content-service-data-sets#audio-video-processed
+CREATE TABLE "AUDIO_VIDEO_PROCESSED" (
+    "CONTENTID" VARCHAR2(36 CHAR) NOT NULL,
+    "REVISIONID" VARCHAR2(36 CHAR) NOT NULL,
+    "REVISIONNUMBER" NUMBER(10),
+    "TYPE" VARCHAR2(5 CHAR),
+    "SOURCE" VARCHAR2(32 CHAR),
+    "REVISIONSIZE" NUMBER(19),
+    "DURATION" NUMBER(10),
+    "REQUIREDTRANSCODING" NUMBER(1),
+    "REQUIREDTRANSCRIBING" NUMBER(1),
+    "LASTMODIFIED" TIMESTAMP(7),
+    PRIMARY KEY ("CONTENTID", "REVISIONID")
+);

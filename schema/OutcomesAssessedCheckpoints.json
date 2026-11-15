@@ -1,0 +1,147 @@
+{
+  "name": "Outcomes Assessed Checkpoints",
+  "sourceUrl": "https://community.d2l.com/brightspace/kb/articles/4796-outcomes-data-sets#outcomes-assessed-checkpoints",
+  "columns": [
+    {
+      "name": "CheckpointId",
+      "description": "ID of this checkpoint.",
+      "dataType": "uniqueidentifier",
+      "size": "16",
+      "isPrimaryKey": true,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "6.9"
+    },
+    {
+      "name": "DemonstrationId",
+      "description": "ID of demonstration which assesses this outcome against the checkpoint.",
+      "dataType": "uniqueidentifier",
+      "size": "16",
+      "isPrimaryKey": true,
+      "isForeignKey": true,
+      "canBeNull": false,
+      "versionHistory": "6.9"
+    },
+    {
+      "name": "Feedback",
+      "description": "Feedback left by assessor, truncated to 1000 characters.",
+      "dataType": "nvarchar",
+      "size": "1000",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "6.9"
+    },
+    {
+      "name": "ConfigDecayRate",
+      "description": "Value of the decay rate in Mastery View Settings for checkpoint calculation.",
+      "dataType": "int",
+      "size": "4",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "6.9"
+    },
+    {
+      "name": "ConfigAggregationMethod",
+      "description": "Calculation method selected in Mastery View Settings. Possible values: No Automatic Calculation = 0 Most Common = 1 Most Recent = 2 Highest = 3 Decaying Average = 4",
+      "dataType": "int",
+      "size": "4",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "6.9"
+    },
+    {
+      "name": "ConfigIncludedActivities",
+      "description": "Selected activities for use in calculation in Mastery View Settings. If Most Recently Assessed Activities is selected, the specific number of activities to include is stored in ConfigRecentlyAssessedActivityCount. Possible values: All Activities = 0 Most Recently Assessed Activities = 1",
+      "dataType": "int",
+      "size": "4",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "6.9"
+    },
+    {
+      "name": "ConfigMultipleAttemptStrategy",
+      "description": "Selected attempt for use in calculation in Mastery View Settings. Possible values: Highest Attempt = 0 Last Attempt = 1 Average of All Attempts = 2",
+      "dataType": "int",
+      "size": "4",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "6.9"
+    },
+    {
+      "name": "ConfigRecentlyAssessedActivityCount",
+      "description": "The number of recently assessed activities to include in calculation, when Most Recently Assessed Activities is selected.",
+      "dataType": "int",
+      "size": "4",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "6.9"
+    },
+    {
+      "name": "ConfigTieBreaker",
+      "description": "Selected method for how to handle multiple items of the same count in calculating the overall level of achievement in Mastery View Settings. Possible values: Highest Level = 0 Most Recent Level = 1",
+      "dataType": "int",
+      "size": "4",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "6.9"
+    },
+    {
+      "name": "LastModifiedDate",
+      "description": "Date when this item was last modified. Contains created date upon creation and deleted date for deleted items. Field can be null.",
+      "dataType": "datetime2",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "6.9"
+    },
+    {
+      "name": "LastModifiedBy",
+      "description": "ID of user who last modified, created, or deleted this item. Field can be null.",
+      "dataType": "int",
+      "size": "4",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "6.9"
+    },
+    {
+      "name": "IsDeleted",
+      "description": "Indicates if this item has been deleted.",
+      "dataType": "bit",
+      "size": "1",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "6.9"
+    },
+    {
+      "name": "HasMetAchievementThreshold",
+      "description": "Indicates whether a learner has met the achievement threshold. Field can be null.",
+      "dataType": "bit",
+      "size": "1",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "8.12 / 9.1"
+    },
+    {
+      "name": "AchievedLevelId",
+      "description": "Unique identifier for the pre-requisite tool. Field can be null.",
+      "dataType": "uniqueidentifier",
+      "size": "16",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "9.12"
+    }
+  ],
+  "kind": "BDS"
+}

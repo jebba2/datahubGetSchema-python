@@ -1,0 +1,15 @@
+-- Data set: ADS Terms & Conditions - Activity Report (staging table)
+-- Source: https://community.d2l.com/brightspace/kb/articles/4539-list-of-advanced-data-sets#terms-conditions-activity-report
+CREATE TABLE "ADS_TERMS_CONDITIONS_ACTIVITY_REPORT_LOAD" (
+    "USERID" VARCHAR2(4000 CHAR),
+    "ORGDEFINEDID" VARCHAR2(4000 CHAR),
+    "USERNAME" VARCHAR2(4000 CHAR),
+    "FIRSTNAME" VARCHAR2(4000 CHAR),
+    "LASTNAME" VARCHAR2(4000 CHAR),
+    "ISACTIVE" VARCHAR2(4000 CHAR),
+    "DATE" VARCHAR2(4000 CHAR),
+    "HASACCEPTED" VARCHAR2(4000 CHAR),
+    "VERSIONCOMMENTS" VARCHAR2(4000 CHAR),
+    "TITLE" VARCHAR2(4000 CHAR),
+    "VERSIONID" VARCHAR2(4000 CHAR)
+);

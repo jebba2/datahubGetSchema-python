@@ -1,0 +1,97 @@
+{
+  "name": "CPD Question Answers",
+  "sourceUrl": "https://community.d2l.com/brightspace/kb/articles/26020-continuous-professional-development-cpd-data-sets#cpd-question-answers",
+  "columns": [
+    {
+      "name": "AnswerId",
+      "description": "Unique identifier for each answer to a question.",
+      "dataType": "int",
+      "size": "4",
+      "isPrimaryKey": true,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "9.13"
+    },
+    {
+      "name": "AnswerText",
+      "description": "The text containing the answer to the question.",
+      "dataType": "nvarchar",
+      "size": "4000",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "9.13"
+    },
+    {
+      "name": "QuestionId",
+      "description": "Unique identifier for the question.",
+      "dataType": "int",
+      "size": "4",
+      "isPrimaryKey": false,
+      "isForeignKey": true,
+      "canBeNull": false,
+      "versionHistory": "9.13"
+    },
+    {
+      "name": "RecordId",
+      "description": "Unique identifier of the Record where the action occurred.",
+      "dataType": "int",
+      "size": "4",
+      "isPrimaryKey": false,
+      "isForeignKey": true,
+      "canBeNull": false,
+      "versionHistory": "9.13"
+    },
+    {
+      "name": "UserId",
+      "description": "Unique user identifier.",
+      "dataType": "int",
+      "size": "4",
+      "isPrimaryKey": false,
+      "isForeignKey": true,
+      "canBeNull": false,
+      "versionHistory": "9.13"
+    },
+    {
+      "name": "Action",
+      "description": "The action that occurred: Created, Updated or Deleted.",
+      "dataType": "nvarchar",
+      "size": "16",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "9.13"
+    },
+    {
+      "name": "LastModified",
+      "description": "The date and time (UTC) the answer was added or last updated. Field can be null.",
+      "dataType": "datetime2",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "9.13"
+    },
+    {
+      "name": "DateDeleted",
+      "description": "The date and time (UTC) the answer was deleted. Field can be null.",
+      "dataType": "datetime2",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "9.13"
+    },
+    {
+      "name": "Version",
+      "description": "Indicates the version of the row. This information is used to determine which table row occurred first.",
+      "dataType": "bigint",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "9.13"
+    }
+  ],
+  "kind": "BDS"
+}

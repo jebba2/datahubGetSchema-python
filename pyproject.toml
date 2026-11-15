@@ -1,0 +1,26 @@
+[project]
+name = "datahubtable"
+version = "0.1.0"
+description = "Generates and upgrades Oracle, MySQL and PostgreSQL tables for D2L Brightspace Data Hub data sets"
+readme = "README.md"
+authors = [
+    { name = "Jeb Barger", email = "jeb@rev-x.com" }
+]
+requires-python = ">=3.13"
+dependencies = [
+    "oracledb>=26.1.0",
+    "psycopg[binary]>=3.3.9",
+    "pymysql>=1.2.4",
+]
+
+[project.scripts]
+datahubtable = "datahubtable.cli:main"
+
+[build-system]
+requires = ["uv_build>=0.9.18,<0.10.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.2.0",
+]

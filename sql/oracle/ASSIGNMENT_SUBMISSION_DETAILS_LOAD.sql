@@ -1,0 +1,18 @@
+-- Data set: Assignment Submission Details (staging table)
+-- Source: https://community.d2l.com/brightspace/kb/articles/4767-assignments-data-sets#assignment-submission-details
+CREATE TABLE "ASSIGNMENT_SUBMISSION_DETAILS_LOAD" (
+    "SUBMISSIONID" NUMBER(19) NOT NULL,
+    "DROPBOXID" NUMBER(19),
+    "USERID" NUMBER(19),
+    "GROUPID" NUMBER(19),
+    "NUMBEROFFILESSUBMITTED" NUMBER(10),
+    "TOTALFILESIZE" NUMBER(19),
+    "SUBMITTEDBYUSERID" NUMBER(10),
+    "DATESUBMITTED" TIMESTAMP(7),
+    "COMMENTS" VARCHAR2(1000 CHAR),
+    "ISTURNITINEXEMPT" NUMBER(1),
+    "ISDELETED" NUMBER(1),
+    "ISPREVIEW" NUMBER(1),
+    "VERSION" NUMBER(19),
+    PRIMARY KEY ("SUBMISSIONID")
+);

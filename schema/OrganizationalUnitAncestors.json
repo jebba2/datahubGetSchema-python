@@ -1,0 +1,47 @@
+{
+  "name": "Organizational Unit Ancestors",
+  "sourceUrl": "https://community.d2l.com/brightspace/kb/articles/4529-organizational-units-data-sets#organizational-unit-ancestors",
+  "columns": [
+    {
+      "name": "OrgUnitId",
+      "description": "Unique org unit identifier",
+      "dataType": "int",
+      "size": "4",
+      "isPrimaryKey": true,
+      "isForeignKey": true,
+      "canBeNull": false,
+      "versionHistory": "1.0"
+    },
+    {
+      "name": "AncestorOrgUnitId",
+      "description": "Parent org unit identifier",
+      "dataType": "int",
+      "size": "4",
+      "isPrimaryKey": true,
+      "isForeignKey": true,
+      "canBeNull": false,
+      "versionHistory": "1.0"
+    },
+    {
+      "name": "LastModified",
+      "description": "Date when this item was last modified (UTC). Contains created date upon creation and deleted date for deleted items. Field can be null.",
+      "dataType": "datetime2",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "11.8"
+    },
+    {
+      "name": "DateDeleted",
+      "description": "Date the ancestor relationship was deleted (UTC). Field can be null.",
+      "dataType": "datetime2",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "11.8"
+    }
+  ],
+  "kind": "BDS"
+}

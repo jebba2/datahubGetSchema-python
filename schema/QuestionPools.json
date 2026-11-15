@@ -1,0 +1,57 @@
+{
+  "name": "Question Pools",
+  "sourceUrl": "https://community.d2l.com/brightspace/kb/articles/4531-questions-data-sets#question-pools",
+  "columns": [
+    {
+      "name": "SectionId",
+      "description": "Identifies the question pool where this question is available.",
+      "dataType": "bigint",
+      "size": "8",
+      "isPrimaryKey": true,
+      "isForeignKey": true,
+      "canBeNull": false,
+      "versionHistory": "10.10 / 11.0"
+    },
+    {
+      "name": "QuestionId",
+      "description": "Unique question identifier.",
+      "dataType": "bigint",
+      "size": "8",
+      "isPrimaryKey": true,
+      "isForeignKey": true,
+      "canBeNull": false,
+      "versionHistory": "10.10 / 11.0"
+    },
+    {
+      "name": "QuestionVersionId",
+      "description": "Unique question version identifier. Each time you edit a quiz, survey, or self-assessment question, a new version of that question is created, indicated by the QuestionVersionId field.",
+      "dataType": "bigint",
+      "size": "8",
+      "isPrimaryKey": true,
+      "isForeignKey": true,
+      "canBeNull": false,
+      "versionHistory": "10.10 / 11.0"
+    },
+    {
+      "name": "IsDeleted",
+      "description": "Indicates if the question is deleted from the question pool.",
+      "dataType": "bit",
+      "size": "1",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "10.10 / 11.0"
+    },
+    {
+      "name": "Version",
+      "description": "Indicates the version of the question available in the question pool. Field can be null.",
+      "dataType": "bigint",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "10.10 / 11.0"
+    }
+  ],
+  "kind": "BDS"
+}

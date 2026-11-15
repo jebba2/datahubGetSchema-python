@@ -1,0 +1,167 @@
+{
+  "name": "Announcements",
+  "sourceUrl": "https://community.d2l.com/brightspace/kb/articles/4723-announcements-data-sets#announcements",
+  "columns": [
+    {
+      "name": "AnnouncementId",
+      "description": "Unique announcement identifier",
+      "dataType": "bigint",
+      "size": "8",
+      "isPrimaryKey": true,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "1.0"
+    },
+    {
+      "name": "OrgUnitId",
+      "description": "Unique org unit identifier",
+      "dataType": "bigint",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": true,
+      "canBeNull": false,
+      "versionHistory": "1.0"
+    },
+    {
+      "name": "Title",
+      "description": "Announcement title",
+      "dataType": "nvarchar",
+      "size": "400",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "5.7 / 6.0 - Changed Column Size"
+    },
+    {
+      "name": "StartDate",
+      "description": "First time the announcement is visible (UTC).",
+      "dataType": "datetime2",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "1.0"
+    },
+    {
+      "name": "EndDate",
+      "description": "Last date the announcement is visible (UTC). Field can be null.",
+      "dataType": "datetime2",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "1.0"
+    },
+    {
+      "name": "IsGlobal",
+      "description": "If new items are visible across orgs",
+      "dataType": "bit",
+      "size": "1",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "1.0"
+    },
+    {
+      "name": "IsDraft",
+      "description": "If in draft, then the announcement has not been published yet",
+      "dataType": "bit",
+      "size": "1",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "1.0"
+    },
+    {
+      "name": "NumAttachments",
+      "description": "Number of attachments",
+      "dataType": "int",
+      "size": "4",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "1.0"
+    },
+    {
+      "name": "DeletedDate",
+      "description": "Date the announcement was deleted (UTC). Field can be null.",
+      "dataType": "datetime2",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "1.0"
+    },
+    {
+      "name": "DeletedByUserId",
+      "description": "Deleted by user ID. Field can be null.",
+      "dataType": "int",
+      "size": "4",
+      "isPrimaryKey": false,
+      "isForeignKey": true,
+      "canBeNull": true,
+      "versionHistory": "1.0"
+    },
+    {
+      "name": "LastModified",
+      "description": "Last modified date/time (UTC).",
+      "dataType": "datetime2",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "1.0"
+    },
+    {
+      "name": "LastModifiedBy",
+      "description": "User who last modified the announcement. Field can be null.",
+      "dataType": "int",
+      "size": "4",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "4.7 / 5.1"
+    },
+    {
+      "name": "CreatedBy",
+      "description": "User who created the announcement. Field can be null.",
+      "dataType": "int",
+      "size": "4",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "4.7 / 5.1"
+    },
+    {
+      "name": "IsAuthorInfoShown",
+      "description": "If author information is displayed.",
+      "dataType": "bit",
+      "size": "1",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "4.7 / 5.1"
+    },
+    {
+      "name": "CreatedDate",
+      "description": "Date the announcement was created (UTC). Field can be null.",
+      "dataType": "datetime2",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "4.7 / 5.1"
+    },
+    {
+      "name": "ResultId",
+      "description": "Unique release condition result identifier. Field can be null.",
+      "dataType": "bigint",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": true,
+      "canBeNull": true,
+      "versionHistory": "5.7 / 6.0"
+    }
+  ],
+  "kind": "BDS"
+}

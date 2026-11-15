@@ -1,0 +1,397 @@
+{
+  "name": "Quiz Objects",
+  "sourceUrl": "https://community.d2l.com/brightspace/kb/articles/4532-quizzes-data-sets#quiz-objects",
+  "columns": [
+    {
+      "name": "QuizId",
+      "description": "Unique quiz identifier",
+      "dataType": "bigint",
+      "size": "8",
+      "isPrimaryKey": true,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "1.7"
+    },
+    {
+      "name": "QuizName",
+      "description": "Quiz name",
+      "dataType": "nvarchar",
+      "size": "256",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "5.7 / 6.0 - Changed Column Size"
+    },
+    {
+      "name": "QuizDescription",
+      "description": "Description of the Quiz. Field can be null.",
+      "dataType": "nvarchar",
+      "size": "1000",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "1.7"
+    },
+    {
+      "name": "QuizCategory",
+      "description": "Name of category quiz is assigned to. Field can be null.",
+      "dataType": "nvarchar",
+      "size": "256",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "1.7"
+    },
+    {
+      "name": "IsActive",
+      "description": "Indicates if the quiz is active",
+      "dataType": "bit",
+      "size": "1",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "1.7"
+    },
+    {
+      "name": "OrgUnitId",
+      "description": "Org unit identifier associated with the quiz object",
+      "dataType": "int",
+      "size": "4",
+      "isPrimaryKey": false,
+      "isForeignKey": true,
+      "canBeNull": false,
+      "versionHistory": "6.7 - Updated key"
+    },
+    {
+      "name": "StartDate",
+      "description": "First time the quiz is visible. Field can be null.",
+      "dataType": "datetime2",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "1.7"
+    },
+    {
+      "name": "EndDate",
+      "description": "Last date the quiz is visible. Field can be null.",
+      "dataType": "datetime2",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "1.7"
+    },
+    {
+      "name": "DueDate",
+      "description": "Date the quiz is due (UTC). Field can be null.",
+      "dataType": "datetime2",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "1.7"
+    },
+    {
+      "name": "CreationDate",
+      "description": "Date the quiz was created (UTC).",
+      "dataType": "datetime2",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "1.7"
+    },
+    {
+      "name": "CreatedBy",
+      "description": "Id of the user who created the quiz. Field can be null.",
+      "dataType": "bigint",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": true,
+      "canBeNull": true,
+      "versionHistory": "1.7"
+    },
+    {
+      "name": "LastModified",
+      "description": "Date when the quiz was last modified (UTC).",
+      "dataType": "datetime2",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "1.7"
+    },
+    {
+      "name": "LastModifiedBy",
+      "description": "Id of the user who last modified the quiz. Field can be null.",
+      "dataType": "bigint",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": true,
+      "canBeNull": true,
+      "versionHistory": "1.7"
+    },
+    {
+      "name": "GradeObjectId",
+      "description": "Grade object identifier associated with the quiz. Field can be null.",
+      "dataType": "bigint",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": true,
+      "canBeNull": true,
+      "versionHistory": "1.7"
+    },
+    {
+      "name": "OverallScoreCalculation",
+      "description": "Quiz score calculation method. Types include: Highest Attempt, Lowest Attempt, Average of all attempts, First Attempt, and Last Attempt. Field can be null.",
+      "dataType": "varchar",
+      "size": "23",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "5.7 / 6.0 - Changed Column Size"
+    },
+    {
+      "name": "QuizScoreDenominator",
+      "description": "Denominator for the quiz score",
+      "dataType": "decimal",
+      "size": "19, 9",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "4.8 / 5.2 - Updated column size"
+    },
+    {
+      "name": "HasPassword",
+      "description": "Indicates if a password is required to access this quiz. Field can be null.",
+      "dataType": "bit",
+      "size": "1",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "1.7"
+    },
+    {
+      "name": "IPRestricted",
+      "description": "Indicates if this quiz is available only to certain IP Addresses. Field can be null.",
+      "dataType": "bit",
+      "size": "1",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "1.7"
+    },
+    {
+      "name": "TimeLimit",
+      "description": "Time limit for the quiz in minutes.",
+      "dataType": "int",
+      "size": "4",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "1.7"
+    },
+    {
+      "name": "TimeLimitEnforced",
+      "description": "Indicates if the time limit assigned to the quiz is enforced.",
+      "dataType": "bit",
+      "size": "1",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "1.7"
+    },
+    {
+      "name": "AttemptsAllowed",
+      "description": "Number of times learners are permitted to attempt the quiz. Null indicates unlimited attempts.",
+      "dataType": "int",
+      "size": "4",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "1.7"
+    },
+    {
+      "name": "PreventMovingBackwards",
+      "description": "Indicates if learners are permitted to move to previous pages in the quiz.",
+      "dataType": "bit",
+      "size": "1",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "1.7"
+    },
+    {
+      "name": "AllowHints",
+      "description": "Indicates that there are hints allowed for the quiz.",
+      "dataType": "bit",
+      "size": "1",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "1.7"
+    },
+    {
+      "name": "NotificationEmail",
+      "description": "Indicates that there is a notification email for this quiz if present. Field can be null.",
+      "dataType": "nvarchar",
+      "size": "1000",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "5.7 / 6.0 - Changed Column Size"
+    },
+    {
+      "name": "DisablePagerAccess",
+      "description": "Indicates that learners cannot access the pager functionality",
+      "dataType": "bit",
+      "size": "1",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "1.7"
+    },
+    {
+      "name": "DisplayInCalendar",
+      "description": "Indicates if the quiz is displayed in the Calendar. Field can be null.",
+      "dataType": "bit",
+      "size": "1",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "1.7"
+    },
+    {
+      "name": "IsAttemptRldb",
+      "description": "Indicates if Respondus LockDown Browser is required to attempt this quiz.",
+      "dataType": "bit",
+      "size": "1",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "2.2"
+    },
+    {
+      "name": "IsSubviewRldb",
+      "description": "Indicates if Respondus LockDown Browser is required to see quiz results (submission view).",
+      "dataType": "bit",
+      "size": "1",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "2.2"
+    },
+    {
+      "name": "SortOrder",
+      "description": "Display sort order for quizzes (when not alphabetical).",
+      "dataType": "int",
+      "size": "4",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "2.2"
+    },
+    {
+      "name": "CategoryId",
+      "description": "Unique category identifier for the quiz. Field can be null.",
+      "dataType": "bigint",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "5.9 / 6.2"
+    },
+    {
+      "name": "ResultId",
+      "description": "Unique release condition result identifier. Field can be null.",
+      "dataType": "bigint",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": true,
+      "canBeNull": true,
+      "versionHistory": "5.9 / 6.2"
+    },
+    {
+      "name": "IsRetakeIncorrectOnly",
+      "description": "Indicates if the quiz allows Retake Incorrect Only.",
+      "dataType": "bit",
+      "size": "1",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "8.10 - Updated description"
+    },
+    {
+      "name": "PagingTypeId",
+      "description": "Exposes page break information. Possible values: NULL = Uses Classic Quiz Creation paging 0 = All questions on one page 1 = One question per page 2 = Page breaks after each section 3 = 5 questions per page 4 = 10 questions per page Field can be null.",
+      "dataType": "int",
+      "size": "4",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "7.14 / 8.0 - Updated field description"
+    },
+    {
+      "name": "IsSynchronous",
+      "description": "Indicates that a quiz is synchronous. A synchronous quiz's timer starts on the start date.",
+      "dataType": "bit",
+      "size": "1",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "9.0"
+    },
+    {
+      "name": "DeductionPercentage",
+      "description": "The percentage of a question's point value that will be deducted from the quiz attempt score if the question is answered incorrectly. Field can be null.",
+      "dataType": "int",
+      "size": "4",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "9.0"
+    },
+    {
+      "name": "AIStudySupport",
+      "description": "Indicates if D2L Lumi Study Support is enabled for the quiz.",
+      "dataType": "bit",
+      "size": "1",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "9.16 / 10.0"
+    },
+    {
+      "name": "HideQuestionPoints",
+      "description": "Indicates that the quiz has Hide Question Points enabled.",
+      "dataType": "bit",
+      "size": "1",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "10.6"
+    },
+    {
+      "name": "IsSingleSession",
+      "description": "Indicates that the quiz is using the Single Brightspace Login Session restriction option. Field can be null.",
+      "dataType": "bit",
+      "size": "1",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "10.10 / 11.0"
+    },
+    {
+      "name": "HideAnnotationTools",
+      "description": "Indicates that the quiz has Hide Question Annotation Tools enabled.",
+      "dataType": "bit",
+      "size": "1",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "11.7"
+    }
+  ],
+  "kind": "BDS"
+}

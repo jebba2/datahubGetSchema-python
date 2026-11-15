@@ -1,0 +1,14 @@
+{
+    "mysql": {
+        "Grade Schemes": "GradeScheme",
+        "Users": "User"
+    },
+    "oracle": {
+        "Grade Schemes": "D2L_GRADE_SCHEME",
+        "Users": "D2L_USER",
+        "ADS All Grades": "D2L_RPT_ALL_GRADES"
+    },
+    "postgres": {
+        "Users": "d2l_user"
+    }
+}

@@ -1,0 +1,117 @@
+{
+  "name": "SCORM Objects",
+  "sourceUrl": "https://community.d2l.com/brightspace/kb/articles/4536-scorm-data-sets#scorm-objects",
+  "columns": [
+    {
+      "name": "ScormObjectId",
+      "description": "Unique identifier of the SCORM object.",
+      "dataType": "uniqueidentifier",
+      "size": "16",
+      "isPrimaryKey": true,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "5.5"
+    },
+    {
+      "name": "OrgUnitId",
+      "description": "Unique org unit identifier.",
+      "dataType": "int",
+      "size": "4",
+      "isPrimaryKey": false,
+      "isForeignKey": true,
+      "canBeNull": false,
+      "versionHistory": "5.5"
+    },
+    {
+      "name": "ContentObjectId",
+      "description": "Unique identifier of the content topic.",
+      "dataType": "int",
+      "size": "4",
+      "isPrimaryKey": false,
+      "isForeignKey": true,
+      "canBeNull": false,
+      "versionHistory": "5.5"
+    },
+    {
+      "name": "ContentServiceContentId",
+      "description": "Unique identifier for the associated content in content service.",
+      "dataType": "uniqueidentifier",
+      "size": "16",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "5.5"
+    },
+    {
+      "name": "ContentServiceRevisionId",
+      "description": "Unique identifier of the associated revision in content service.",
+      "dataType": "uniqueidentifier",
+      "size": "16",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "5.5"
+    },
+    {
+      "name": "ContentServiceTopicId",
+      "description": "Unique identifier of the associated topic in content service.",
+      "dataType": "uniqueidentifier",
+      "size": "16",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "5.5"
+    },
+    {
+      "name": "Title",
+      "description": "The title of the SCORM object. Field can be null.",
+      "dataType": "nvarchar",
+      "size": "1000",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "5.5"
+    },
+    {
+      "name": "Description",
+      "description": "The description of the SCORM package. Field can be null.",
+      "dataType": "nvarchar",
+      "size": "1000",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "5.5"
+    },
+    {
+      "name": "LearningStandard",
+      "description": "The learning standard used by the SCORM content, one of SCORM_11, SCORM_12, SCORM_2004_2ND_EDITION, SCORM_2004_3RD_EDITION, SCORM_2004_4TH_EDITION, AICC, XAPI, CMI5. Field can be null.",
+      "dataType": "nvarchar",
+      "size": "100",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "5.5"
+    },
+    {
+      "name": "LastModified",
+      "description": "Date when the SCORM content was last modified (UTC).",
+      "dataType": "datetime2",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "5.5"
+    },
+    {
+      "name": "LastModifiedBy",
+      "description": "User that last modified this SCORM object.",
+      "dataType": "int",
+      "size": "4",
+      "isPrimaryKey": false,
+      "isForeignKey": true,
+      "canBeNull": false,
+      "versionHistory": "5.5"
+    }
+  ],
+  "kind": "BDS"
+}

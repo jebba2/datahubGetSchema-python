@@ -1,0 +1,47 @@
+{
+  "name": "Local Authentication Security Log",
+  "sourceUrl": "https://community.d2l.com/brightspace/kb/articles/4714-local-authentication-data-sets#local-authentication-security-log",
+  "columns": [
+    {
+      "name": "UserId",
+      "description": "Unique identifier of the user.",
+      "dataType": "int",
+      "size": "4",
+      "isPrimaryKey": true,
+      "isForeignKey": true,
+      "canBeNull": false,
+      "versionHistory": "7.6"
+    },
+    {
+      "name": "Action",
+      "description": "The action performed for the user. Possible values: Authorized AuthorizationRemoved TwoFactorAuthEnabled TwoFactorAuthDisabled",
+      "dataType": "nvarchar",
+      "size": "70",
+      "isPrimaryKey": true,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "7.6"
+    },
+    {
+      "name": "ModifiedBy",
+      "description": "UserId of the user who performed the action.",
+      "dataType": "int",
+      "size": "4",
+      "isPrimaryKey": true,
+      "isForeignKey": true,
+      "canBeNull": false,
+      "versionHistory": "7.6"
+    },
+    {
+      "name": "ModifiedDate",
+      "description": "Date and time when the action was performed (UTC).",
+      "dataType": "datetime2",
+      "size": "8",
+      "isPrimaryKey": true,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "7.6"
+    }
+  ],
+  "kind": "BDS"
+}

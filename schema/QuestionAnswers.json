@@ -1,0 +1,87 @@
+{
+  "name": "Question Answers",
+  "sourceUrl": "https://community.d2l.com/brightspace/kb/articles/4531-questions-data-sets#question-answers",
+  "columns": [
+    {
+      "name": "AnswerId",
+      "description": "Unique answer identifier.",
+      "dataType": "bigint",
+      "size": "8",
+      "isPrimaryKey": true,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "9.16 / 10.0"
+    },
+    {
+      "name": "QuestionId",
+      "description": "Identifier for the question with this answer.",
+      "dataType": "bigint",
+      "size": "8",
+      "isPrimaryKey": true,
+      "isForeignKey": true,
+      "canBeNull": false,
+      "versionHistory": "9.16 / 10.0"
+    },
+    {
+      "name": "QuestionVersionId",
+      "description": "Version of the question with this answer.",
+      "dataType": "bigint",
+      "size": "8",
+      "isPrimaryKey": true,
+      "isForeignKey": true,
+      "canBeNull": false,
+      "versionHistory": "9.16 / 10.0"
+    },
+    {
+      "name": "SortOrder",
+      "description": "Position of this answer relative to other answers for the same question. Field can be null.",
+      "dataType": "int",
+      "size": "4",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "9.16 / 10.0"
+    },
+    {
+      "name": "Weight",
+      "description": "Weight associated with this answer.",
+      "dataType": "decimal",
+      "size": "19, 9",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "9.16 / 10.0"
+    },
+    {
+      "name": "Answer",
+      "description": "Text of the answer. The downloaded data set can contain more than 1000 characters, so administrators must decide whether to truncate this field. Field can be null.",
+      "dataType": "nvarchar",
+      "size": "1000",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "10.7 - Updated description"
+    },
+    {
+      "name": "Comment",
+      "description": "Instructor comment on the answer. Field can be null.",
+      "dataType": "nvarchar",
+      "size": "1000",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "9.16 / 10.0"
+    },
+    {
+      "name": "Description",
+      "description": "System description for the type of answer expected.",
+      "dataType": "nvarchar",
+      "size": "256",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "9.16 / 10.0"
+    }
+  ],
+  "kind": "BDS"
+}

@@ -1,0 +1,107 @@
+{
+  "name": "Course Awards",
+  "sourceUrl": "https://community.d2l.com/brightspace/kb/articles/4520-awards-data-sets#course-awards",
+  "columns": [
+    {
+      "name": "AssociationId",
+      "description": "Unique association identifier",
+      "dataType": "bigint",
+      "size": "8",
+      "isPrimaryKey": true,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "1.4"
+    },
+    {
+      "name": "AwardId",
+      "description": "Unique award identifier",
+      "dataType": "bigint",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": true,
+      "canBeNull": false,
+      "versionHistory": "1.0"
+    },
+    {
+      "name": "OrgUnitId",
+      "description": "Unique org unit identifier",
+      "dataType": "bigint",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": true,
+      "canBeNull": false,
+      "versionHistory": "1.0"
+    },
+    {
+      "name": "DateCreated",
+      "description": "Date when the award was created (UTC).",
+      "dataType": "datetime2",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "1.0"
+    },
+    {
+      "name": "HiddenAward",
+      "description": "Award is hidden from learner view",
+      "dataType": "bit",
+      "size": "1",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "4.0"
+    },
+    {
+      "name": "ConditionSetId",
+      "description": "Identifier for the conditions that need to be met in order to issue this award. Field can be null.",
+      "dataType": "bigint",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "4.0"
+    },
+    {
+      "name": "LastModified",
+      "description": "Date when the award was last changed (UTC). Field can be null.",
+      "dataType": "datetime2",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "8.12 / 9.1"
+    },
+    {
+      "name": "Credits",
+      "description": "Indicates if the award has credits, and how many. Field can be null.",
+      "dataType": "decimal",
+      "size": "9, 2",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "8.12 / 9.1"
+    },
+    {
+      "name": "IsAssociated",
+      "description": "Indicates whether the award is associated to the course.",
+      "dataType": "bit",
+      "size": "1",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "8.12 / 9.1"
+    },
+    {
+      "name": "Version",
+      "description": "Version number for the course award.",
+      "dataType": "bigint",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "8.12 / 9.1"
+    }
+  ],
+  "kind": "BDS"
+}

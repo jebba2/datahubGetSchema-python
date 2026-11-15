@@ -1,0 +1,167 @@
+{
+  "name": "Awards Issued",
+  "sourceUrl": "https://community.d2l.com/brightspace/kb/articles/4520-awards-data-sets#awards-issued",
+  "columns": [
+    {
+      "name": "AwardId",
+      "description": "Unique award identifier",
+      "dataType": "bigint",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": true,
+      "canBeNull": false,
+      "versionHistory": "2.5 / 3.0 - Added FK"
+    },
+    {
+      "name": "OrgUnitId",
+      "description": "Unique org unit identifier",
+      "dataType": "bigint",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": true,
+      "canBeNull": false,
+      "versionHistory": "5.7 / 6.0 - Changed Column Size"
+    },
+    {
+      "name": "UserId",
+      "description": "Unique user identifier",
+      "dataType": "bigint",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": true,
+      "canBeNull": false,
+      "versionHistory": "1.4 - Removed PK"
+    },
+    {
+      "name": "IssuedBy",
+      "description": "Issued by user ID",
+      "dataType": "int",
+      "size": "4",
+      "isPrimaryKey": false,
+      "isForeignKey": true,
+      "canBeNull": false,
+      "versionHistory": "1.0"
+    },
+    {
+      "name": "IssueDate",
+      "description": "Award issue date (UTC).",
+      "dataType": "datetime2",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "1.0"
+    },
+    {
+      "name": "ExpiryDate",
+      "description": "Award expiry date (UTC). Field can be null.",
+      "dataType": "datetime2",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "1.0"
+    },
+    {
+      "name": "IssuedId",
+      "description": "Unique issued identifier",
+      "dataType": "bigint",
+      "size": "8",
+      "isPrimaryKey": true,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "1.4"
+    },
+    {
+      "name": "Criteria",
+      "description": "Indicates the criteria necessary to issue the award.",
+      "dataType": "nvarchar",
+      "size": "1000",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "9.0 - Changed Description"
+    },
+    {
+      "name": "Evidence",
+      "description": "Provides proof that the user has met the criteria for the award.",
+      "dataType": "nvarchar",
+      "size": "1000",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "9.0 - Changed Description"
+    },
+    {
+      "name": "RevokedDate",
+      "description": "Award revocation date (UTC). Field can be null.",
+      "dataType": "datetime2",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "9.0"
+    },
+    {
+      "name": "RevokedReason",
+      "description": "Reason for revoking issued award. Field can be null.",
+      "dataType": "nvarchar",
+      "size": "1000",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "9.0"
+    },
+    {
+      "name": "RevokedBy",
+      "description": "User who revoked the award. Field can be null.",
+      "dataType": "bigint",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": true,
+      "canBeNull": true,
+      "versionHistory": "9.0"
+    },
+    {
+      "name": "LastModifiedBy",
+      "description": "User who last modified the issued award object.",
+      "dataType": "bigint",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": true,
+      "canBeNull": false,
+      "versionHistory": "9.0"
+    },
+    {
+      "name": "LastModifiedDate",
+      "description": "Date the issued award object was last modified (UTC). Only captures data from August 2023 onwards. Field can be null.",
+      "dataType": "datetime2",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "9.5 - Updated Description"
+    },
+    {
+      "name": "Version",
+      "description": "Version number of this issued award.",
+      "dataType": "bigint",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "9.0"
+    },
+    {
+      "name": "CertificateId",
+      "description": "Unique certificate identifier. Field can be null.",
+      "dataType": "nvarchar",
+      "size": "12",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "9.15"
+    }
+  ],
+  "kind": "BDS"
+}

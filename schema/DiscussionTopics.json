@@ -1,0 +1,287 @@
+{
+  "name": "Discussion Topics",
+  "sourceUrl": "https://community.d2l.com/brightspace/kb/articles/4525-discussions-data-sets#discussion-topics",
+  "columns": [
+    {
+      "name": "OrgUnitId",
+      "description": "Unique org unit identifier. Field can be null.",
+      "dataType": "int",
+      "size": "4",
+      "isPrimaryKey": false,
+      "isForeignKey": true,
+      "canBeNull": true,
+      "versionHistory": "11.6 - Updated description"
+    },
+    {
+      "name": "TopicId",
+      "description": "Unique topic identifier.",
+      "dataType": "bigint",
+      "size": "8",
+      "isPrimaryKey": true,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "2.3"
+    },
+    {
+      "name": "ForumId",
+      "description": "Unique discussion forum identifier.",
+      "dataType": "bigint",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": true,
+      "canBeNull": false,
+      "versionHistory": "2.3"
+    },
+    {
+      "name": "Name",
+      "description": "Name of the discussion topic. Field can be null.",
+      "dataType": "nvarchar",
+      "size": "1000",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "11.6 - Updated description"
+    },
+    {
+      "name": "Description",
+      "description": "Description of the discussion topic. Field can be null.",
+      "dataType": "nvarchar",
+      "size": "1000",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "2.4"
+    },
+    {
+      "name": "MustPostToParticipate",
+      "description": "Indicates that a user must post in the discussion topic in order to participate in any discussion threads.",
+      "dataType": "bit",
+      "size": "1",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "2.3"
+    },
+    {
+      "name": "AllowAnon",
+      "description": "Indicates whether there is anonymous posting permitted for the discussion topic.",
+      "dataType": "bit",
+      "size": "1",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "2.3"
+    },
+    {
+      "name": "IsHidden",
+      "description": "Indicates whether the discussion topic is hidden.",
+      "dataType": "bit",
+      "size": "1",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "2.3"
+    },
+    {
+      "name": "RequiresApproval",
+      "description": "Indicates that the discussion topic requires approval from a moderator before contributions to the forum are posted.",
+      "dataType": "bit",
+      "size": "1",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "2.3"
+    },
+    {
+      "name": "LastPostDate",
+      "description": "Indicates the last time a post was made to the discussion topic (UTC). Field can be null.",
+      "dataType": "datetime2",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "2.3"
+    },
+    {
+      "name": "LastPostUserId",
+      "description": "Indicates the last user who made a post to the discussion topic. Field can be null.",
+      "dataType": "bigint",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "2.3"
+    },
+    {
+      "name": "NumViews",
+      "description": "Indicates the number of views on the discussion topic.",
+      "dataType": "bigint",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "2.3"
+    },
+    {
+      "name": "SortOrder",
+      "description": "Display sort order used for the content objects.",
+      "dataType": "int",
+      "size": "4",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "2.3"
+    },
+    {
+      "name": "IsDeleted",
+      "description": "Indicates if the discussion topic is deleted.",
+      "dataType": "bit",
+      "size": "1",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "11.6 - Updated description"
+    },
+    {
+      "name": "DeletedDate",
+      "description": "Date when the discussion topic was deleted (UTC). Field can be null.",
+      "dataType": "datetime2",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "2.3"
+    },
+    {
+      "name": "DeletedByUserId",
+      "description": "User who deleted the discussion topic. Field can be null.",
+      "dataType": "int",
+      "size": "4",
+      "isPrimaryKey": false,
+      "isForeignKey": true,
+      "canBeNull": true,
+      "versionHistory": "2.3"
+    },
+    {
+      "name": "GradeItemId",
+      "description": "Unique grade identifier. Field can be null.",
+      "dataType": "int",
+      "size": "4",
+      "isPrimaryKey": false,
+      "isForeignKey": true,
+      "canBeNull": true,
+      "versionHistory": "3.8 / 4.3"
+    },
+    {
+      "name": "ScoreOutOf",
+      "description": "Topic score used to evaluate the discussion thread. Field can be null. Note: Score can exceed ScoreOutOf.",
+      "dataType": "float",
+      "size": "53",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "5.7 / 6.0 - Changed Column Size"
+    },
+    {
+      "name": "ScoreCalculationMethod",
+      "description": "Method used to calculate score. Strings are predefined, with the following values:Average - Calculates the score from the average score of each post in the topic made by a user. Max - Calculates the score based on the maximum score of any one post in the topic for a user.Min - Calculates the score based on the minimum score of any one post in the topic for a user.Mode Max - Given the number of posts, selects the score that is repeated the most. If there is a tie, it takes the highest score.Mode Min - Given the number of posts, selects the score that is repeated the most. If there is a tie, it takes the lowest score.Sum - Calculates the score from the sum of scores on each post in a topic for a user.Blank value (null) - The score is not calculated based on the scores of each post (Manual updates).",
+      "dataType": "varchar",
+      "size": "19",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "3.8 / 4.3"
+    },
+    {
+      "name": "IncludeNonScoredValues",
+      "description": "Indicates whether to include non-scored values. True posts that have not been scored are 0. Otherwise, posts without a score are not included in the score aggregate (defined in the ScoreCalculationType).",
+      "dataType": "bit",
+      "size": "1",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "3.8 / 4.3"
+    },
+    {
+      "name": "Version",
+      "description": "Indicates the version of the row. This information is used to determine which table row occurred first, similar to the way time stamps function in other data sets.",
+      "dataType": "bigint",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "3.8 / 4.3"
+    },
+    {
+      "name": "ResultId",
+      "description": "Unique release condition result identifier. Field can be null.",
+      "dataType": "int",
+      "size": "4",
+      "isPrimaryKey": false,
+      "isForeignKey": true,
+      "canBeNull": true,
+      "versionHistory": "4.9 / 5.3"
+    },
+    {
+      "name": "StartDate",
+      "description": "First date when learners can post to the topic (UTC). Field can be null.",
+      "dataType": "datetime2",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "6.12 / 7.0 - Added"
+    },
+    {
+      "name": "StartDateAvailabilityType",
+      "description": "Before the StartDate, this type determines whether learners can view or access the discussion topic. Refer to About Availability type for details. Field can be null.",
+      "dataType": "smallint",
+      "size": "2",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "7.7 - Updated Description"
+    },
+    {
+      "name": "EndDate",
+      "description": "Last date when learners can post to the topic (UTC). Field can be null.",
+      "dataType": "datetime2",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "6.12 / 7.0 - Added"
+    },
+    {
+      "name": "EndDateAvailabilityType",
+      "description": "After the EndDate, this type determines whether learners can view or access the discussion topic. Refer to About Availability type for details. Field can be null.",
+      "dataType": "smallint",
+      "size": "2",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "7.7 - Updated Description"
+    },
+    {
+      "name": "AIUtilization",
+      "description": "Indicates whether D2L Lumi (Brightspace AI) capabilities were used and the level of AI involvement. Possible values: 0 - No AI capabilities were involved. 1 - Generated by AI and reviewed by a human. 2 - Generated by AI and edited by a human. 3 - Assisted or uplifted by AI. 4 - Generated by AI but not yet reviewed by a human. Field can be null.",
+      "dataType": "int",
+      "size": "4",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "11.6 - Updated description"
+    },
+    {
+      "name": "DueDate",
+      "description": "Due date of the discussion topic (UTC). Field can be null.",
+      "dataType": "datetime2",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "10.8"
+    }
+  ],
+  "kind": "BDS"
+}

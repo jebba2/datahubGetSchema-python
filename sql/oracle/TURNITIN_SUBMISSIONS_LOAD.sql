@@ -1,0 +1,15 @@
+-- Data set: TurnItIn Submissions (staging table)
+-- Source: https://community.d2l.com/brightspace/kb/articles/4767-assignments-data-sets#turnitin-submissions
+CREATE TABLE "TURNITIN_SUBMISSIONS_LOAD" (
+    "DROPBOXID" NUMBER(19),
+    "SUBMISSIONID" NUMBER(19) NOT NULL,
+    "FILEID" NUMBER(19) NOT NULL,
+    "LASTSUBMISSIONDATE" TIMESTAMP(7),
+    "SUBMISSIONSTATUS" NUMBER(5),
+    "SUBMISSIONERRORTYPE" NUMBER(5),
+    "ERRORMESSAGE" VARCHAR2(255 CHAR),
+    "SUBMITTEDBY" NUMBER(10),
+    "LASTREFRESHDATE" TIMESTAMP(7),
+    "LASTMODIFIED" TIMESTAMP(7),
+    PRIMARY KEY ("SUBMISSIONID", "FILEID")
+);

@@ -1,0 +1,16 @@
+-- Data set: Grade Objects Log (staging table)
+-- Source: https://community.d2l.com/brightspace/kb/articles/4527-grades-data-sets#grade-objects-log
+CREATE TABLE "GRADE_OBJECTS_LOG_LOAD" (
+    "LOGID" NUMBER(19) NOT NULL,
+    "NAME" VARCHAR2(50 CHAR),
+    "GRADEOBJECTID" NUMBER(10),
+    "USERID" NUMBER(10),
+    "GRADESYMBOLSTRING" VARCHAR2(50 CHAR),
+    "POINTSDENOMINATOR" NUMBER(19,9),
+    "POINTSNUMERATOR" NUMBER(19,9),
+    "WEIGHTEDDENOMINATOR" NUMBER(19,9),
+    "WEIGHTEDNUMERATOR" NUMBER(19,9),
+    "MODIFIED" TIMESTAMP(7),
+    "MODIFIEDBY" NUMBER(10),
+    PRIMARY KEY ("LOGID")
+);

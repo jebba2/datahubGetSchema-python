@@ -1,0 +1,37 @@
+{
+  "name": "Course Access",
+  "sourceUrl": "https://community.d2l.com/brightspace/kb/articles/4740-users-data-sets#course-access",
+  "columns": [
+    {
+      "name": "OrgUnitId",
+      "description": "Unique org unit identifier.",
+      "dataType": "int",
+      "size": "4",
+      "isPrimaryKey": true,
+      "isForeignKey": true,
+      "canBeNull": false,
+      "versionHistory": "2.4"
+    },
+    {
+      "name": "UserId",
+      "description": "Unique user identifier.",
+      "dataType": "int",
+      "size": "4",
+      "isPrimaryKey": true,
+      "isForeignKey": true,
+      "canBeNull": false,
+      "versionHistory": "2.4"
+    },
+    {
+      "name": "DayAccessed",
+      "description": "Indicates the most recent day in local time when a user accessed the course.",
+      "dataType": "datetime2",
+      "size": "8",
+      "isPrimaryKey": true,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "7.5 - Updated description"
+    }
+  ],
+  "kind": "BDS"
+}

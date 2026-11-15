@@ -1,0 +1,147 @@
+{
+  "name": "Organizational Units",
+  "sourceUrl": "https://community.d2l.com/brightspace/kb/articles/4529-organizational-units-data-sets#organizational-units",
+  "columns": [
+    {
+      "name": "OrgUnitId",
+      "description": "Unique org unit identifier",
+      "dataType": "int",
+      "size": "4",
+      "isPrimaryKey": true,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "1.0"
+    },
+    {
+      "name": "Organization",
+      "description": "Organization name",
+      "dataType": "nvarchar",
+      "size": "50",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "5.7 / 6.0 - Changed Column Size"
+    },
+    {
+      "name": "Type",
+      "description": "Org unit type. For example: Group, Section, Semester, Department, etc.",
+      "dataType": "nvarchar",
+      "size": "50",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "6.16 / 7.4 - Updated description"
+    },
+    {
+      "name": "Name",
+      "description": "Org unit name. Field can be null.",
+      "dataType": "nvarchar",
+      "size": "128",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "5.7 / 6.0 - Changed Column Size"
+    },
+    {
+      "name": "Code",
+      "description": "Org unit code. Field can be null.",
+      "dataType": "nvarchar",
+      "size": "50",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "4.8 / 5.2 - Updated description & column size"
+    },
+    {
+      "name": "StartDate",
+      "description": "Availability start date (UTC). Field can be null.",
+      "dataType": "datetime2",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "1.0"
+    },
+    {
+      "name": "EndDate",
+      "description": "Availability end date (UTC). Field can be null.",
+      "dataType": "datetime2",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "1.0"
+    },
+    {
+      "name": "IsActive",
+      "description": "Is the org unit active",
+      "dataType": "bit",
+      "size": "1",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "1.0"
+    },
+    {
+      "name": "CreatedDate",
+      "description": "Org unit create date",
+      "dataType": "datetime2",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "1.0"
+    },
+    {
+      "name": "IsDeleted",
+      "description": "Indicates whether the org unit is deleted. TRUE: The org unit is soft deleted, meaning it has been deleted from the application but remains in the database. FALSE: The org unit is recycled, meaning it remains in the recycle bin until it is permanently removed. Field can be null.",
+      "dataType": "bit",
+      "size": "1",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "11.9 - Updated description"
+    },
+    {
+      "name": "DeletedDate",
+      "description": "Date the org unit was soft deleted. Field can be null.",
+      "dataType": "datetime2",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "1.9"
+    },
+    {
+      "name": "RecycledDate",
+      "description": "Date the org unit was recycled. Field can be null.",
+      "dataType": "datetime2",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "1.9"
+    },
+    {
+      "name": "Version",
+      "description": "Indicates the version of the content in the row.",
+      "dataType": "bigint",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "3.1"
+    },
+    {
+      "name": "OrgUnitTypeId",
+      "description": "Identifier for the org unit type.",
+      "dataType": "int",
+      "size": "4",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "4.8 / 5.2"
+    }
+  ],
+  "kind": "BDS"
+}

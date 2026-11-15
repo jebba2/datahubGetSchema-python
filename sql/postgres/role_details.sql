@@ -1,0 +1,36 @@
+-- Data set: Role Details
+-- Source: https://community.d2l.com/brightspace/kb/articles/4534-role-details-data-sets#role-details
+CREATE TABLE "role_details" (
+    "roleid" INTEGER NOT NULL,
+    "rolename" VARCHAR(120),
+    "description" VARCHAR(400),
+    "iscascading" BOOLEAN,
+    "inclasslist" BOOLEAN,
+    "classlistrolename" VARCHAR(120),
+    "classlistshowgroups" BOOLEAN,
+    "classlistshowsections" BOOLEAN,
+    "classlistdisplayrole" BOOLEAN,
+    "accessinactiveco" BOOLEAN,
+    "hasspecialaccess" BOOLEAN,
+    "addtocourseofferinggroups" BOOLEAN,
+    "canbeautoenrolledintogroups" BOOLEAN,
+    "addtocourseofferingsections" BOOLEAN,
+    "canbeautoenrolledintosections" BOOLEAN,
+    "accesspastcourses" BOOLEAN,
+    "accessfuturecourses" BOOLEAN,
+    "sortorder" INTEGER,
+    "showincontent" BOOLEAN,
+    "showindiscussionassess" BOOLEAN,
+    "showindiscussionstats" BOOLEAN,
+    "showingrades" BOOLEAN,
+    "showinattendance" BOOLEAN,
+    "allowselfenrollingroups" BOOLEAN,
+    "showinregistration" BOOLEAN,
+    "showinuserprogress" BOOLEAN,
+    "rolealias" VARCHAR(120),
+    "rolecode" VARCHAR(100),
+    "lastmodifieddate" TIMESTAMP(6),
+    "deletedby" INTEGER,
+    PRIMARY KEY ("roleid")
+);
+CREATE INDEX "ix_role_details_deletedby" ON "role_details" ("deletedby");

@@ -1,0 +1,77 @@
+{
+  "name": "Grade Scheme Ranges",
+  "sourceUrl": "https://community.d2l.com/brightspace/kb/articles/4527-grades-data-sets#grade-scheme-ranges",
+  "columns": [
+    {
+      "name": "GradeSchemeRangeId",
+      "description": "Unique grade scheme range identifier.",
+      "dataType": "bigint",
+      "size": "8",
+      "isPrimaryKey": true,
+      "isForeignKey": true,
+      "canBeNull": false,
+      "versionHistory": "5.7 / 6.0"
+    },
+    {
+      "name": "GradeSchemeId",
+      "description": "Unique grade scheme identifier.",
+      "dataType": "bigint",
+      "size": "8",
+      "isPrimaryKey": true,
+      "isForeignKey": true,
+      "canBeNull": false,
+      "versionHistory": "5.7 / 6.0"
+    },
+    {
+      "name": "SymbolString",
+      "description": "The name of the range.",
+      "dataType": "nvarchar",
+      "size": "100",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "5.7 / 6.0"
+    },
+    {
+      "name": "AssignedValue",
+      "description": "The value assigned to the grade scheme range. Field can be null.",
+      "dataType": "decimal",
+      "size": "19, 9",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "5.7 / 6.0"
+    },
+    {
+      "name": "RangeStart",
+      "description": "The starting value (in percent) of the grade scheme.",
+      "dataType": "decimal",
+      "size": "19, 9",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "5.7 / 6.0"
+    },
+    {
+      "name": "IsDeleted",
+      "description": "Indicates that the grade scheme is deleted",
+      "dataType": "bit",
+      "size": "1",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "5.7 / 6.0"
+    },
+    {
+      "name": "Version",
+      "description": "Indicates the version of the row. This information is used to determine which table row occurred first, similar to the way time stamps function in other data sets.",
+      "dataType": "bigint",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "5.7 / 6.0"
+    }
+  ],
+  "kind": "BDS"
+}

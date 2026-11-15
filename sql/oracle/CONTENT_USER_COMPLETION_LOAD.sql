@@ -1,0 +1,15 @@
+-- Data set: Content User Completion (staging table)
+-- Source: https://community.d2l.com/brightspace/kb/articles/4713-content-data-sets#content-user-completion
+CREATE TABLE "CONTENT_USER_COMPLETION_LOAD" (
+    "CONTENTOBJECTID" NUMBER(10) NOT NULL,
+    "ORGUNITID" NUMBER(10),
+    "USERID" NUMBER(10) NOT NULL,
+    "DATECOMPLETED" TIMESTAMP(7),
+    "LASTMODIFIED" TIMESTAMP(7),
+    "VERSION" NUMBER(19),
+    "LASTMODIFIEDBY" NUMBER(10),
+    "ISDELETED" NUMBER(1),
+    "AUTOMATICDATECOMPLETED" TIMESTAMP(7),
+    "MANUALDATECOMPLETED" TIMESTAMP(7),
+    PRIMARY KEY ("CONTENTOBJECTID", "USERID")
+);

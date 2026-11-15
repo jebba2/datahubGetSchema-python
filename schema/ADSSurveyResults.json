@@ -1,0 +1,187 @@
+{
+  "name": "Survey Results",
+  "sourceUrl": "https://community.d2l.com/brightspace/kb/articles/4539-list-of-advanced-data-sets#survey-results",
+  "columns": [
+    {
+      "name": "Survey Id",
+      "description": "Unique survey identifier.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "20.20.12"
+    },
+    {
+      "name": "Survey Name",
+      "description": "Name of the survey.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "20.20.12"
+    },
+    {
+      "name": "Attempt Id",
+      "description": "Unique attempt identifier.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "20.20.12"
+    },
+    {
+      "name": "Active Status",
+      "description": "Indicates if the survey is active or not.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "20.20.12"
+    },
+    {
+      "name": "Course Offering Id",
+      "description": "D2L's unique identifier for the course offering.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "20.20.12"
+    },
+    {
+      "name": "Course Offering Code",
+      "description": "Often the course identifier from an SIS system.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "20.20.12"
+    },
+    {
+      "name": "Course Offering Name",
+      "description": "Name of the course offering.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "20.20.12"
+    },
+    {
+      "name": "Parent Department Name",
+      "description": "Name of department.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "20.20.12"
+    },
+    {
+      "name": "Parent Department Code",
+      "description": "Department code.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "20.20.12"
+    },
+    {
+      "name": "Respondent User Id",
+      "description": "Unique user identifier. Null if survey is anonymous.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "20.20.12"
+    },
+    {
+      "name": "Respondent Username",
+      "description": "User's username. If survey is anonymous, username is \"anonymous\".",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "20.20.12"
+    },
+    {
+      "name": "Respondent First Name",
+      "description": "User's first name. Null if survey is anonymous.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "20.20.12"
+    },
+    {
+      "name": "Respondent Last Name",
+      "description": "User's last name. Null if survey is anonymous.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "20.20.12"
+    },
+    {
+      "name": "Category Name",
+      "description": "Category Name for the survey.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "20.20.12"
+    },
+    {
+      "name": "Submission Date",
+      "description": "Date survey was submitted.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "20.20.12"
+    },
+    {
+      "name": "Question Number",
+      "description": "Unique survey question identifier.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "20.20.12"
+    },
+    {
+      "name": "Question",
+      "description": "Survey question.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "20.20.12"
+    },
+    {
+      "name": "Answer",
+      "description": "Survey answer.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "20.20.12"
+    }
+  ],
+  "kind": "ADS"
+}

@@ -1,0 +1,247 @@
+{
+  "name": "Attendance",
+  "sourceUrl": "https://community.d2l.com/brightspace/kb/articles/4539-list-of-advanced-data-sets#attendance",
+  "columns": [
+    {
+      "name": "User Id",
+      "description": "D2L\u2019s unique identifier for the user.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "20.21.2"
+    },
+    {
+      "name": "Org Defined Id",
+      "description": "User\u2019s Org Defined Id (often the learner identifier from an SIS system).",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "20.21.2"
+    },
+    {
+      "name": "Username",
+      "description": "User\u2019s username.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "20.21.2"
+    },
+    {
+      "name": "First Name",
+      "description": "User\u2019s first name.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "20.21.2"
+    },
+    {
+      "name": "Last Name",
+      "description": "User\u2019s last name.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "20.21.2"
+    },
+    {
+      "name": "Role Name",
+      "description": "User\u2019s role in the specific course offering.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "20.21.2"
+    },
+    {
+      "name": "Role Id",
+      "description": "User\u2019s role Id in the specific course offering.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "20.21.2"
+    },
+    {
+      "name": "Attendance Register Id",
+      "description": "Unique attendance register identifier.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "20.21.2"
+    },
+    {
+      "name": "Attendance Register Name",
+      "description": "The name given to the register.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "20.21.2"
+    },
+    {
+      "name": "Attendance Session Id",
+      "description": "Unique identifier for the session.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "20.21.2"
+    },
+    {
+      "name": "Attendance Session Name",
+      "description": "The given name of the session.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "20.21.2"
+    },
+    {
+      "name": "Scheme Symbol Id",
+      "description": "Unique scheme symbol identifier.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "20.21.2"
+    },
+    {
+      "name": "Symbol Name",
+      "description": "The name given to the symbol.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "20.21.2"
+    },
+    {
+      "name": "Symbol Value",
+      "description": "The value used for the symbol.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "20.21.2"
+    },
+    {
+      "name": "Percentage",
+      "description": "The score as a percentage that contributes towards the attendance score when a symbol is given. Field can be null.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "20.21.2"
+    },
+    {
+      "name": "Last Modified",
+      "description": "Date the symbol for the user in the session was last modified (UTC). Field can be null.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "20.21.2"
+    },
+    {
+      "name": "Course Offering Id",
+      "description": "D2L\u2019s unique identifier for the course offering.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "20.21.2"
+    },
+    {
+      "name": "Course Offering Code",
+      "description": "Often the course identifier from an SIS system.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "20.21.2"
+    },
+    {
+      "name": "Course Offering Name",
+      "description": "Name of the course offering.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "20.21.2"
+    },
+    {
+      "name": "Course Section Id",
+      "description": "D2L\u2019s unique identifier for the section.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "20.21.2"
+    },
+    {
+      "name": "Course Section Code",
+      "description": "Client defined code for the section.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "20.21.2"
+    },
+    {
+      "name": "Course Section Name",
+      "description": "Name of the section.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "20.21.2"
+    },
+    {
+      "name": "Parent Department Name",
+      "description": "Name of the department the course offering is under.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "20.21.2"
+    },
+    {
+      "name": "Semester Name",
+      "description": "Name of the semester the course offering is under.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "20.21.2"
+    }
+  ],
+  "kind": "ADS"
+}

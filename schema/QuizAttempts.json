@@ -1,0 +1,207 @@
+{
+  "name": "Quiz Attempts",
+  "sourceUrl": "https://community.d2l.com/brightspace/kb/articles/4532-quizzes-data-sets#quiz-attempts",
+  "columns": [
+    {
+      "name": "AttemptId",
+      "description": "Unique attempt identifier",
+      "dataType": "bigint",
+      "size": "8",
+      "isPrimaryKey": true,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "1.0"
+    },
+    {
+      "name": "QuizId",
+      "description": "Unique quiz identifier",
+      "dataType": "bigint",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": true,
+      "canBeNull": false,
+      "versionHistory": "6.7 - Updated key"
+    },
+    {
+      "name": "UserId",
+      "description": "Unique user identifier",
+      "dataType": "int",
+      "size": "4",
+      "isPrimaryKey": false,
+      "isForeignKey": true,
+      "canBeNull": false,
+      "versionHistory": "5.7 / 6.0 - Changed Column Size"
+    },
+    {
+      "name": "OrgUnitId",
+      "description": "Unique org unit identifier",
+      "dataType": "int",
+      "size": "4",
+      "isPrimaryKey": false,
+      "isForeignKey": true,
+      "canBeNull": false,
+      "versionHistory": "5.7 / 6.0 - Changed Column Size"
+    },
+    {
+      "name": "AttemptNumber",
+      "description": "Attempt number for the quiz",
+      "dataType": "int",
+      "size": "4",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "1.0"
+    },
+    {
+      "name": "TimeStarted",
+      "description": "Quiz attempt start time (UTC).",
+      "dataType": "datetime2",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "1.0"
+    },
+    {
+      "name": "TimeCompleted",
+      "description": "Quiz attempt completion time (UTC). Field can be null.",
+      "dataType": "datetime2",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "1.0"
+    },
+    {
+      "name": "Score",
+      "description": "Score for the attempt. Field can be null.",
+      "dataType": "decimal",
+      "size": "19, 9",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "4.8 / 5.2 - Updated column size"
+    },
+    {
+      "name": "IsGraded",
+      "description": "If a quiz has been graded",
+      "dataType": "bit",
+      "size": "1",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "1.0"
+    },
+    {
+      "name": "OldAttemptNumber",
+      "description": "For deleted attempts, captures the original attempt number before deletion. Field can be null.",
+      "dataType": "int",
+      "size": "4",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "1.10"
+    },
+    {
+      "name": "IsDeleted",
+      "description": "Indicates that the quiz attempt is deleted. Field can be null.",
+      "dataType": "bit",
+      "size": "1",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "1.10"
+    },
+    {
+      "name": "PossibleScore",
+      "description": "Indicates the total possible value of the quiz attempt. This should indicate what the quiz \"out of\" score is, even if the quiz total possible value changes after the attempt is made. Field can be null.",
+      "dataType": "decimal",
+      "size": "19, 9",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "5.8 / 6.1"
+    },
+    {
+      "name": "IsRetakeIncorrectOnly",
+      "description": "Indicates if this attempt only includes questions that were incorrect on a previous attempt.",
+      "dataType": "bit",
+      "size": "1",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "8.10 - Updated description"
+    },
+    {
+      "name": "DueDate",
+      "description": "Quiz attempt due date (UTC). Based on when the learner begins the attempt, even if the instructor changes the quiz due date later. This does not take any special access time limit into account. Field can be null.",
+      "dataType": "datetime2",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "6.11"
+    },
+    {
+      "name": "TimeLimit",
+      "description": "Amount of time, in minutes, that a learner has to complete the quiz attempt. Based on when the learner begins the attempt, even if the instructor changes the quiz time limit later. This does not take any special access time limit into account. Field can be null.",
+      "dataType": "int",
+      "size": "4",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "6.11"
+    },
+    {
+      "name": "TimeLimitEnforced",
+      "description": "Indicates whether the time limit on this quiz attempt is enforced. Based on when the learner begins the attempt, even if the instructor changes the time limit enforced setting later. Field can be null.",
+      "dataType": "bit",
+      "size": "1",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "6.11"
+    },
+    {
+      "name": "TimeLimitExceededBehaviour",
+      "description": "If the time limit is enforced for this attempt, indicates the desired behavior when the time limit is exceeded. Field can be null.",
+      "dataType": "nvarchar",
+      "size": "128",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "9.0 - Changed Field name and Description"
+    },
+    {
+      "name": "IsSynchronous",
+      "description": "Indicates that a quiz attempt is synchronous. A synchronous quiz's timer starts on the start date.",
+      "dataType": "bit",
+      "size": "1",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "9.0"
+    },
+    {
+      "name": "DeductionPercentage",
+      "description": "The percentage of a question's point value that is deducted from the quiz attempt score if the question is answered incorrectly. This value remains constant once the learner begins the attempt, even if the instructor changes the deduction percentage later. Field can be null.",
+      "dataType": "int",
+      "size": "4",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "9.0"
+    },
+    {
+      "name": "Version",
+      "description": "Indicates the version of the row. This information is used to determine which table row occurred first, similar to the way timestamps function in other data sets.",
+      "dataType": "bigint",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "10.6"
+    }
+  ],
+  "kind": "BDS"
+}

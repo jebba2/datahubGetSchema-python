@@ -1,0 +1,57 @@
+{
+  "name": "Grade Schemes",
+  "sourceUrl": "https://community.d2l.com/brightspace/kb/articles/4527-grades-data-sets#grade-schemes",
+  "columns": [
+    {
+      "name": "GradeSchemeId",
+      "description": "Unique grade scheme identifier.",
+      "dataType": "bigint",
+      "size": "8",
+      "isPrimaryKey": true,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "1.4 - Added Primary Key designation"
+    },
+    {
+      "name": "OrgUnitId",
+      "description": "Unique org unit identifier.",
+      "dataType": "int",
+      "size": "4",
+      "isPrimaryKey": false,
+      "isForeignKey": true,
+      "canBeNull": false,
+      "versionHistory": "9.11 - Fixed nullability"
+    },
+    {
+      "name": "SchemeName",
+      "description": "Grade scheme name",
+      "dataType": "nvarchar",
+      "size": "128",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "5.7 / 6.0 - Changed Column Size"
+    },
+    {
+      "name": "DeletedDate",
+      "description": "Date when the scheme was deleted (UTC). Field can be null.",
+      "dataType": "datetime2",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "1.10"
+    },
+    {
+      "name": "Version",
+      "description": "Indicates the version of the row. This information is used to determine which table row occurred first, similar to the way time stamps function in other data sets.",
+      "dataType": "bigint",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "5.7 / 6.0"
+    }
+  ],
+  "kind": "BDS"
+}

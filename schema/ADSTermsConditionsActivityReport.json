@@ -1,0 +1,117 @@
+{
+  "name": "Terms & Conditions - Activity Report",
+  "sourceUrl": "https://community.d2l.com/brightspace/kb/articles/4539-list-of-advanced-data-sets#terms-conditions-activity-report",
+  "columns": [
+    {
+      "name": "User Id",
+      "description": "D2L's unique identifier for the user.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "20.21.3"
+    },
+    {
+      "name": "Org Defined Id",
+      "description": "Learner's org defined ID.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "20.21.3"
+    },
+    {
+      "name": "Username",
+      "description": "Learner's username.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "20.21.3"
+    },
+    {
+      "name": "First Name",
+      "description": "First name of the learner.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "20.21.3"
+    },
+    {
+      "name": "Last Name",
+      "description": "Last name of the learner.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "20.21.3"
+    },
+    {
+      "name": "Is Active",
+      "description": "Learner's status.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "20.21.3"
+    },
+    {
+      "name": "Date",
+      "description": "Date the Terms and Conditions were accepted or declined.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "20.21.3"
+    },
+    {
+      "name": "Has Accepted",
+      "description": "True or false response for the Learner.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "20.21.3"
+    },
+    {
+      "name": "Version Comments",
+      "description": "Any comments associated with the version.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "20.21.3"
+    },
+    {
+      "name": "Title",
+      "description": "Title of the terms and conditions.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "20.21.3"
+    },
+    {
+      "name": "Version Id",
+      "description": "Version identifier for the Terms and Conditions.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "20.21.3"
+    }
+  ],
+  "kind": "ADS"
+}

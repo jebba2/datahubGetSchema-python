@@ -1,0 +1,117 @@
+{
+  "name": "CPD Job Targets",
+  "sourceUrl": "https://community.d2l.com/brightspace/kb/articles/26020-continuous-professional-development-cpd-data-sets#cpd-job-targets",
+  "columns": [
+    {
+      "name": "PrincipalId",
+      "description": "Unique identifier for the principal which sets the job target.",
+      "dataType": "int",
+      "size": "4",
+      "isPrimaryKey": true,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "9.13"
+    },
+    {
+      "name": "CategoryId",
+      "description": "Unique identifier for the category associated with the job target.",
+      "dataType": "int",
+      "size": "4",
+      "isPrimaryKey": true,
+      "isForeignKey": true,
+      "canBeNull": false,
+      "versionHistory": "9.13"
+    },
+    {
+      "name": "JobTitle",
+      "description": "The title of the job.",
+      "dataType": "nvarchar",
+      "size": "256",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "9.13"
+    },
+    {
+      "name": "StructuredMinutes",
+      "description": "The structured record duration of the job target. Field can be null.",
+      "dataType": "int",
+      "size": "4",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "9.13"
+    },
+    {
+      "name": "UnstructuredMinutes",
+      "description": "The unstructured record duration of the job target. Field can be null.",
+      "dataType": "int",
+      "size": "4",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "9.13"
+    },
+    {
+      "name": "StructuredRecordCount",
+      "description": "The structured record count of the job target. Field can be null.",
+      "dataType": "int",
+      "size": "4",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "9.13"
+    },
+    {
+      "name": "UnstructuredRecordCount",
+      "description": "The unstructured record count of the job target. Field can be null.",
+      "dataType": "int",
+      "size": "4",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "9.13"
+    },
+    {
+      "name": "StartDate",
+      "description": "Start date (UTC) of the rolling or specific period for annual job target and progress tracking. Field can be null.",
+      "dataType": "datetime2",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "9.13"
+    },
+    {
+      "name": "DateDeleted",
+      "description": "The date and time (UTC) the category was deleted. Field can be null.",
+      "dataType": "datetime2",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "9.13"
+    },
+    {
+      "name": "LastModified",
+      "description": "The date and time (UTC) the job target was added or last updated based on the Tracking Method.",
+      "dataType": "datetime2",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "9.13"
+    },
+    {
+      "name": "Version",
+      "description": "Indicates the version of the row. The Version of the job target is updated based on the Tracking Method.",
+      "dataType": "bigint",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "9.13"
+    }
+  ],
+  "kind": "BDS"
+}

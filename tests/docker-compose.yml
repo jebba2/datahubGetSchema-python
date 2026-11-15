@@ -1,0 +1,47 @@
+# Throwaway databases for tests/test_liveDatabases.py.
+# Start:  docker compose -f tests/docker-compose.yml up -d --wait
+# Stop:   docker compose -f tests/docker-compose.yml down -v
+# The credentials below are for these local test containers only.
+services:
+  mysql:
+    image: mysql:8.4
+    environment:
+      MYSQL_ROOT_PASSWORD: datahubTestRoot
+      MYSQL_DATABASE: datahub
+      MYSQL_USER: datahub
+      MYSQL_PASSWORD: datahubTest
+    ports:
+      - "33306:3306"
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "127.0.0.1", "-udatahub", "-pdatahubTest"]
+      interval: 5s
+      timeout: 5s
+      retries: 30
+
+  postgres:
+    image: postgres:17
+    environment:
+      POSTGRES_USER: datahub
+      POSTGRES_PASSWORD: datahubTest
+      POSTGRES_DB: datahub
+    ports:
+      - "35432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U datahub -d datahub"]
+      interval: 5s
+      timeout: 5s
+      retries: 30
+
+  oracle:
+    image: gvenzl/oracle-free:23-slim-faststart
+    environment:
+      ORACLE_PASSWORD: datahubTestRoot
+      APP_USER: datahub
+      APP_USER_PASSWORD: datahubTest
+    ports:
+      - "31521:1521"
+    healthcheck:
+      test: ["CMD", "healthcheck.sh"]
+      interval: 10s
+      timeout: 5s
+      retries: 30

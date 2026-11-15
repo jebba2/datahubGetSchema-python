@@ -1,0 +1,40 @@
+-- Data set: Grade Objects
+-- Source: https://community.d2l.com/brightspace/kb/articles/4527-grades-data-sets#grade-objects
+CREATE TABLE "grade_objects" (
+    "gradeobjectid" INTEGER NOT NULL,
+    "orgunitid" INTEGER,
+    "parentgradeobjectid" INTEGER,
+    "name" VARCHAR(128),
+    "typename" VARCHAR(50),
+    "startdate" TIMESTAMP(6),
+    "enddate" TIMESTAMP(6),
+    "isautopointed" BOOLEAN,
+    "isformula" BOOLEAN,
+    "isbonus" BOOLEAN,
+    "maxpoints" NUMERIC(19,9),
+    "canexceedmaxgrade" BOOLEAN,
+    "excludefromfinalgradecalc" BOOLEAN,
+    "gradeschemeid" BIGINT,
+    "weight" NUMERIC(19,9),
+    "numlowestgradestodrop" INTEGER,
+    "numhighestgradestodrop" INTEGER,
+    "weightdistributiontype" VARCHAR(8),
+    "createddate" TIMESTAMP(6),
+    "toolname" VARCHAR(50),
+    "associatedtoolitemid" BIGINT,
+    "lastmodified" TIMESTAMP(6),
+    "shortname" VARCHAR(128),
+    "gradeobjecttypeid" INTEGER,
+    "sortorder" INTEGER,
+    "isdeleted" BOOLEAN,
+    "deleteddate" TIMESTAMP(6),
+    "deletedbyuserid" INTEGER,
+    "resultid" INTEGER,
+    "toolid" INTEGER,
+    "version" INTEGER,
+    PRIMARY KEY ("gradeobjectid")
+);
+CREATE INDEX "ix_grade_objects_orgunitid" ON "grade_objects" ("orgunitid");
+CREATE INDEX "ix_grade_objects_parentgradeobjectid" ON "grade_objects" ("parentgradeobjectid");
+CREATE INDEX "ix_grade_objects_deletedbyuserid" ON "grade_objects" ("deletedbyuserid");
+CREATE INDEX "ix_grade_objects_resultid" ON "grade_objects" ("resultid");

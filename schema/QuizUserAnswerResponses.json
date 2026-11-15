@@ -1,0 +1,127 @@
+{
+  "name": "Quiz User Answer Responses",
+  "sourceUrl": "https://community.d2l.com/brightspace/kb/articles/4532-quizzes-data-sets#quiz-user-answer-responses",
+  "columns": [
+    {
+      "name": "AttemptId",
+      "description": "Unique attempt identifier",
+      "dataType": "bigint",
+      "size": "8",
+      "isPrimaryKey": true,
+      "isForeignKey": true,
+      "canBeNull": false,
+      "versionHistory": "1.0"
+    },
+    {
+      "name": "AttemptNumber",
+      "description": "Attempt number associated with the AttemptId",
+      "dataType": "int",
+      "size": "4",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "1.0"
+    },
+    {
+      "name": "QuestionId",
+      "description": "Unique question identifier",
+      "dataType": "bigint",
+      "size": "8",
+      "isPrimaryKey": true,
+      "isForeignKey": true,
+      "canBeNull": false,
+      "versionHistory": "1.0"
+    },
+    {
+      "name": "QuestionVersionId",
+      "description": "Unique question version identifier",
+      "dataType": "bigint",
+      "size": "8",
+      "isPrimaryKey": true,
+      "isForeignKey": true,
+      "canBeNull": false,
+      "versionHistory": "1.0"
+    },
+    {
+      "name": "AnswerId",
+      "description": "Unique answer identifier",
+      "dataType": "bigint",
+      "size": "8",
+      "isPrimaryKey": true,
+      "isForeignKey": true,
+      "canBeNull": false,
+      "versionHistory": "1.0"
+    },
+    {
+      "name": "SortOrder",
+      "description": "Order in which quiz question options appear to the user. For example, the order in which multi-select or true /false options appear. Some question types can be randomized, for example, multi-select.",
+      "dataType": "int",
+      "size": "4",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "1.0"
+    },
+    {
+      "name": "IsCorrect",
+      "description": "Is user response correct. Field can be null.",
+      "dataType": "bit",
+      "size": "1",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "1.0"
+    },
+    {
+      "name": "UserSelection",
+      "description": "Indicates the option a user chose for a block question type (ie. True and False, Multiple Choice, Multi-Select). Field can be null.",
+      "dataType": "bigint",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "1.0"
+    },
+    {
+      "name": "UserAnswer",
+      "description": "Indicates the user answer for written question types (ie. Short Answer, Written Response). Field can be null.",
+      "dataType": "nvarchar",
+      "size": "1000",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "1.0"
+    },
+    {
+      "name": "FileSetId",
+      "description": "Indicates the auto generated file set ID of uploaded file(s). Field can be null.",
+      "dataType": "bigint",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "5.8 / 6.1"
+    },
+    {
+      "name": "LastModified",
+      "description": "Date and time when the question answer response was last modified (UTC). Note that grading and feedback actions can cause LastModified to be updated.",
+      "dataType": "datetime2",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "9.10"
+    },
+    {
+      "name": "IsDeleted",
+      "description": "Indicates if the question answer response is deleted. Field can be null.",
+      "dataType": "bit",
+      "size": "1",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "9.10"
+    }
+  ],
+  "kind": "BDS"
+}

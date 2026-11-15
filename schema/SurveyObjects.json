@@ -1,0 +1,247 @@
+{
+  "name": "Survey Objects",
+  "sourceUrl": "https://community.d2l.com/brightspace/kb/articles/4538-surveys-data-sets#survey-objects",
+  "columns": [
+    {
+      "name": "SurveyId",
+      "description": "Unique survey identifier.",
+      "dataType": "bigint",
+      "size": "8",
+      "isPrimaryKey": true,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "5.6"
+    },
+    {
+      "name": "SurveyName",
+      "description": "Name of the survey.",
+      "dataType": "nvarchar",
+      "size": "1000",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "5.6"
+    },
+    {
+      "name": "CategoryId",
+      "description": "Category Id for the survey. Field can be null.",
+      "dataType": "bigint",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "5.6"
+    },
+    {
+      "name": "OrgUnitId",
+      "description": "Unique org unit identifier.",
+      "dataType": "int",
+      "size": "4",
+      "isPrimaryKey": false,
+      "isForeignKey": true,
+      "canBeNull": false,
+      "versionHistory": "5.6"
+    },
+    {
+      "name": "Description",
+      "description": "Description of the survey. Field can be null.",
+      "dataType": "nvarchar",
+      "size": "1000",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "5.6"
+    },
+    {
+      "name": "DescriptionEnabled",
+      "description": "Indicates if the survey description is enabled.",
+      "dataType": "bit",
+      "size": "1",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "5.6"
+    },
+    {
+      "name": "HasInstantFeedback",
+      "description": "Indicates if the survey provides instant feedback.",
+      "dataType": "bit",
+      "size": "1",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "5.6"
+    },
+    {
+      "name": "IsAnonymous",
+      "description": "Indicates if the survey results are anonymous.",
+      "dataType": "bit",
+      "size": "1",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "5.6"
+    },
+    {
+      "name": "IsVisible",
+      "description": "Indicates if the survey is visible or hidden from users.",
+      "dataType": "bit",
+      "size": "1",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "5.6"
+    },
+    {
+      "name": "SubmissionMessage",
+      "description": "Message provided when user submits survey. Field can be null.",
+      "dataType": "nvarchar",
+      "size": "1000",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "5.6"
+    },
+    {
+      "name": "Footer",
+      "description": "Footer of the survey. Field can be null.",
+      "dataType": "nvarchar",
+      "size": "1000",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "5.6"
+    },
+    {
+      "name": "FooterIsDisplayed",
+      "description": "Indicates if the footer is displayed.",
+      "dataType": "bit",
+      "size": "1",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "5.6"
+    },
+    {
+      "name": "StartDate",
+      "description": "Start date and time of the survey (UTC). Field can be null.",
+      "dataType": "datetime2",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "5.6"
+    },
+    {
+      "name": "EndDate",
+      "description": "End date and time of the survey (UTC). Field can be null.",
+      "dataType": "datetime2",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "5.6"
+    },
+    {
+      "name": "DisplayInCalendar",
+      "description": "Indicates if the survey is displayed in the calendar.",
+      "dataType": "bit",
+      "size": "1",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "5.6"
+    },
+    {
+      "name": "ResultId",
+      "description": "Unique release condition result identifier. Field can be null.",
+      "dataType": "bigint",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "5.6"
+    },
+    {
+      "name": "AttemptsAllowed",
+      "description": "Indicates the number of attempts of the survey that a user is allowed to take. Field can be null.",
+      "dataType": "int",
+      "size": "4",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "6.16 / 7.4 - Updated description"
+    },
+    {
+      "name": "SortOrder",
+      "description": "Order in which surveys appear in the interface.",
+      "dataType": "int",
+      "size": "4",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "5.6"
+    },
+    {
+      "name": "CreatedBy",
+      "description": "Id of the user who created the survey.",
+      "dataType": "int",
+      "size": "4",
+      "isPrimaryKey": false,
+      "isForeignKey": true,
+      "canBeNull": false,
+      "versionHistory": "5.6"
+    },
+    {
+      "name": "IsDeleted",
+      "description": "Indicates if the survey is deleted (1) or not (0).",
+      "dataType": "bit",
+      "size": "1",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "5.6"
+    },
+    {
+      "name": "LastModified",
+      "description": "Date when the survey was last modified (UTC).",
+      "dataType": "datetime2",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "5.6"
+    },
+    {
+      "name": "LastModifiedBy",
+      "description": "Id of the user who last modified the survey.",
+      "dataType": "int",
+      "size": "4",
+      "isPrimaryKey": false,
+      "isForeignKey": true,
+      "canBeNull": false,
+      "versionHistory": "5.6"
+    },
+    {
+      "name": "Version",
+      "description": "Indicates the version of the row. This information is used to determine which table row occurred first, similar to the way time stamps function in other data sets.",
+      "dataType": "bigint",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "5.6"
+    },
+    {
+      "name": "CategoryName",
+      "description": "Name of the category in which the survey belongs. Field can be null.",
+      "dataType": "nvarchar",
+      "size": "256",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "5.10 / 6.3"
+    }
+  ],
+  "kind": "BDS"
+}

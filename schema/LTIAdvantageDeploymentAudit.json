@@ -1,0 +1,327 @@
+{
+  "name": "LTI Advantage Deployment Audit",
+  "sourceUrl": "https://community.d2l.com/brightspace/kb/articles/4727-lti-data-sets#lti-advantage-deployment-audit",
+  "columns": [
+    {
+      "name": "Action",
+      "description": "The action completed by the event: Deployed, Updated, or Deleted.",
+      "dataType": "nvarchar",
+      "size": "10",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "9.7"
+    },
+    {
+      "name": "DeploymentID",
+      "description": "Unique identifier for the LTI Advantage deployment.",
+      "dataType": "nvarchar",
+      "size": "36",
+      "isPrimaryKey": true,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "9.7"
+    },
+    {
+      "name": "ClientID",
+      "description": "Unique identifier used in OAuth2 authentication, assigned by the platform when the LTI tool is registered.",
+      "dataType": "nvarchar",
+      "size": "36",
+      "isPrimaryKey": false,
+      "isForeignKey": true,
+      "canBeNull": false,
+      "versionHistory": "9.7"
+    },
+    {
+      "name": "DeploymentName",
+      "description": "The name for the deployment.",
+      "dataType": "nvarchar",
+      "size": "200",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "9.7"
+    },
+    {
+      "name": "IsDeploymentEnabled",
+      "description": "If false, it is not possible to do any launches for this tool or make any API calls for the extensions.",
+      "dataType": "bit",
+      "size": "1",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "9.7"
+    },
+    {
+      "name": "HasAssignmentsAndGrades",
+      "description": "If true, the Assignments and grades services (AGS) extension is enabled for this deployment.",
+      "dataType": "bit",
+      "size": "1",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "9.7"
+    },
+    {
+      "name": "HasDeepLinking",
+      "description": "If true, the Deep Linking extension is enabled for this deployment.",
+      "dataType": "bit",
+      "size": "1",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "9.7"
+    },
+    {
+      "name": "HasNamesAndRoles",
+      "description": "If true, the Names and Roles Provisioning Services (NRPS) extension is enabled for this deployment.",
+      "dataType": "bit",
+      "size": "1",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "9.7"
+    },
+    {
+      "name": "HasSubmissionReview",
+      "description": "If true, the Submission Review extension is enabled for this deployment.",
+      "dataType": "bit",
+      "size": "1",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "9.7"
+    },
+    {
+      "name": "HasActivityItemProfile",
+      "description": "If true, the Activity Item Profile extension is enabled for this deployment.",
+      "dataType": "bit",
+      "size": "1",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "9.7"
+    },
+    {
+      "name": "HasPlatformNotificationService",
+      "description": "If true, the Platform Notification Service is enabled for this deployment.",
+      "dataType": "bit",
+      "size": "1",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "9.7"
+    },
+    {
+      "name": "HasContextCopy",
+      "description": "If true, the Context Copy message is enabled for this deployment. The Platform Notification Service must also be enabled.",
+      "dataType": "bit",
+      "size": "1",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "9.7"
+    },
+    {
+      "name": "ModifiedBy",
+      "description": "The ID of the Brightspace user that modified the deployment record.",
+      "dataType": "bigint",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": true,
+      "canBeNull": false,
+      "versionHistory": "9.7"
+    },
+    {
+      "name": "Anonymous",
+      "description": "If true, no user information is sent during launch.",
+      "dataType": "bit",
+      "size": "1",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "9.7"
+    },
+    {
+      "name": "PreProvisioningEnabled",
+      "description": "If true, all users in the course are included whether they have performed a launch or not. If false, only users that have performed a launch are included for NRPS and AGS Services.",
+      "dataType": "bit",
+      "size": "1",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "9.7"
+    },
+    {
+      "name": "SendOrgUnitInfo",
+      "description": "If true, Org Unit Id, Course Name, Course Code, Org Unit Type, LIS Course Offering Sourcedid, and LIS Course Section Sourcedid can be included in the launch.",
+      "dataType": "bit",
+      "size": "1",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "9.7"
+    },
+    {
+      "name": "SendUserFirstName",
+      "description": "If true, user first name can be sent during launch.",
+      "dataType": "bit",
+      "size": "1",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "9.7"
+    },
+    {
+      "name": "SendUserMiddleName",
+      "description": "If true, user middle name is included in the data sent via NRPS.",
+      "dataType": "bit",
+      "size": "1",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "9.7"
+    },
+    {
+      "name": "SendUserLastName",
+      "description": "If true, user last name can be sent during launch.",
+      "dataType": "bit",
+      "size": "1",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "9.7"
+    },
+    {
+      "name": "SendUserEmail",
+      "description": "If true, user email address can be sent during launch.",
+      "dataType": "bit",
+      "size": "1",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "9.7"
+    },
+    {
+      "name": "SendBrightspaceUserID",
+      "description": "If true, D2L user ID can be sent during launch.",
+      "dataType": "bit",
+      "size": "1",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "9.7"
+    },
+    {
+      "name": "SendBrightspaceUsername",
+      "description": "If true, D2L username is sent during launch.",
+      "dataType": "bit",
+      "size": "1",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "9.7"
+    },
+    {
+      "name": "SendBrightspaceOrgDefinedId",
+      "description": "If true, D2L Org Defined ID can be sent for this deployment.",
+      "dataType": "bit",
+      "size": "1",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "9.7"
+    },
+    {
+      "name": "SendLinkTitle",
+      "description": "If true, LTI Link Title is sent during launch.",
+      "dataType": "bit",
+      "size": "1",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "9.7"
+    },
+    {
+      "name": "SendLinkDescription",
+      "description": "If true, LTI Link Description is sent during launch.",
+      "dataType": "bit",
+      "size": "1",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "9.7"
+    },
+    {
+      "name": "OpenAsExternal",
+      "description": "If true, the majority of new links created under the deployment open in an external window. If false, new links open inline.",
+      "dataType": "bit",
+      "size": "1",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "9.7"
+    },
+    {
+      "name": "AutoMigrateLinks",
+      "description": "If true, automatic migration can occur for links that match this deployment.",
+      "dataType": "bit",
+      "size": "1",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "9.7"
+    },
+    {
+      "name": "IsSharedToManyOrgUnits",
+      "description": "If true, the deployment is shared to multiple org units.",
+      "dataType": "bit",
+      "size": "1",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "9.7"
+    },
+    {
+      "name": "AutoCreateGrades",
+      "description": "If true, the Auto Create Grade Items setting is enabled.",
+      "dataType": "bit",
+      "size": "1",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "9.7"
+    },
+    {
+      "name": "IncludeInFinalGrade",
+      "description": "If true, grades created by LTI links for this deployment are included in the final grade calculation.",
+      "dataType": "bit",
+      "size": "1",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "9.7"
+    },
+    {
+      "name": "Timestamp",
+      "description": "Date and time (UTC) when the user created or modified the deployment.",
+      "dataType": "datetime2",
+      "size": "8",
+      "isPrimaryKey": true,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "9.7"
+    },
+    {
+      "name": "HasAssetProcessor",
+      "description": "If true, the Asset Processor Services are enabled for this deployment. The Platform Notification Service and Deeplinking must also be enabled.",
+      "dataType": "bit",
+      "size": "1",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "10.6"
+    }
+  ],
+  "kind": "BDS"
+}

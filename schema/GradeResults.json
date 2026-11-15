@@ -1,0 +1,177 @@
+{
+  "name": "Grade Results",
+  "sourceUrl": "https://community.d2l.com/brightspace/kb/articles/4527-grades-data-sets#grade-results",
+  "columns": [
+    {
+      "name": "GradeObjectId",
+      "description": "Unique grade object identifier",
+      "dataType": "int",
+      "size": "4",
+      "isPrimaryKey": true,
+      "isForeignKey": true,
+      "canBeNull": false,
+      "versionHistory": "1.0"
+    },
+    {
+      "name": "OrgUnitId",
+      "description": "Unique org unit identifier",
+      "dataType": "int",
+      "size": "4",
+      "isPrimaryKey": true,
+      "isForeignKey": true,
+      "canBeNull": false,
+      "versionHistory": "1.0"
+    },
+    {
+      "name": "UserId",
+      "description": "Unique user identifier",
+      "dataType": "int",
+      "size": "4",
+      "isPrimaryKey": true,
+      "isForeignKey": true,
+      "canBeNull": false,
+      "versionHistory": "1.0"
+    },
+    {
+      "name": "PointsNumerator",
+      "description": "Number of points received by user. Field can be null.",
+      "dataType": "decimal",
+      "size": "19, 9",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "4.8 / 5.2 - Updated column size"
+    },
+    {
+      "name": "PointsDenominator",
+      "description": "Total number of points possible. Field can be null.",
+      "dataType": "decimal",
+      "size": "19, 9",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "4.8 / 5.2 - Updated column size"
+    },
+    {
+      "name": "WeightedNumerator",
+      "description": "Number of points received after weight is applied. Field can be null.",
+      "dataType": "decimal",
+      "size": "19, 9",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "4.8 / 5.2 - Updated column size"
+    },
+    {
+      "name": "WeightedDenominator",
+      "description": "Total number of points possible after weight is applied. Field can be null.",
+      "dataType": "decimal",
+      "size": "19, 9",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "4.8 / 5.2 - Updated column size"
+    },
+    {
+      "name": "IsReleased",
+      "description": "Is grade released. Field can be null. For example, it is null when the grade object is not submitted.",
+      "dataType": "bit",
+      "size": "1",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "7.13 - Updated description"
+    },
+    {
+      "name": "IsDropped",
+      "description": "Is score dropped from final grade",
+      "dataType": "bit",
+      "size": "1",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "1.0"
+    },
+    {
+      "name": "LastModified",
+      "description": "Last time score was modified (UTC). Field can be null.",
+      "dataType": "datetime2",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "1.0"
+    },
+    {
+      "name": "LastModifiedBy",
+      "description": "User ID of user who last modified the grade object. Field can be null.",
+      "dataType": "int",
+      "size": "4",
+      "isPrimaryKey": false,
+      "isForeignKey": true,
+      "canBeNull": true,
+      "versionHistory": "5.7 / 6.0 - Changed Type and Column Size"
+    },
+    {
+      "name": "Comments",
+      "description": "Comments. Field can be null.",
+      "dataType": "nvarchar",
+      "size": "1000",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "1.0"
+    },
+    {
+      "name": "PrivateComments",
+      "description": "Private comments. Field can be null.",
+      "dataType": "nvarchar",
+      "size": "1000",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "1.0"
+    },
+    {
+      "name": "GradeText",
+      "description": "Field can be null.",
+      "dataType": "nvarchar",
+      "size": "50",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "1.6"
+    },
+    {
+      "name": "GradeReleasedDate",
+      "description": "Date when the grade was released to the learner (UTC). Field can be null.",
+      "dataType": "datetime2",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "3.2"
+    },
+    {
+      "name": "Version",
+      "description": "Indicates the version of the grade result. Field can be null.",
+      "dataType": "bigint",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "3.2"
+    },
+    {
+      "name": "IsDeleted",
+      "description": "Indicates that the grade result is deleted.",
+      "dataType": "bit",
+      "size": "1",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "10.5"
+    }
+  ],
+  "kind": "BDS"
+}

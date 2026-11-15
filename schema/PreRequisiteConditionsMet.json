@@ -1,0 +1,57 @@
+{
+  "name": "PreRequisite Conditions Met",
+  "sourceUrl": "https://community.d2l.com/brightspace/kb/articles/4533-release-conditions-data-sets#prerequisite-conditions-met",
+  "columns": [
+    {
+      "name": "PreRequisiteId",
+      "description": "Unique prerequisite identifier.",
+      "dataType": "int",
+      "size": "4",
+      "isPrimaryKey": true,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "5.7 / 6.0 - Updated key"
+    },
+    {
+      "name": "UserId",
+      "description": "Unique user identifier.",
+      "dataType": "int",
+      "size": "4",
+      "isPrimaryKey": true,
+      "isForeignKey": true,
+      "canBeNull": false,
+      "versionHistory": "5.7 / 6.0 - Updated key"
+    },
+    {
+      "name": "DateMet",
+      "description": "Date the prerequisite condition was met (UTC). Field can be null",
+      "dataType": "datetime2",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "5.7 / 6.0 - Updated column size"
+    },
+    {
+      "name": "Action",
+      "description": "The action that occurred: Met or Deleted.",
+      "dataType": "nvarchar",
+      "size": "7",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "8.11 / 9.0"
+    },
+    {
+      "name": "LastModified",
+      "description": "The date and time when the condition was Met or Deleted. For Met conditions, this matches the DateMet column.",
+      "dataType": "datetime2",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "8.11 / 9.0"
+    }
+  ],
+  "kind": "BDS"
+}

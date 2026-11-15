@@ -1,0 +1,47 @@
+{
+  "name": "Course Publisher Recipients",
+  "sourceUrl": "https://community.d2l.com/brightspace/kb/articles/4524-course-publisher-data-sets#course-publisher-recipients",
+  "columns": [
+    {
+      "name": "RecipientID",
+      "description": "Unique recipient identifier",
+      "dataType": "uniqueidentifier",
+      "size": "16",
+      "isPrimaryKey": true,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "6.8"
+    },
+    {
+      "name": "Name",
+      "description": "Recipient name",
+      "dataType": "nvarchar",
+      "size": "256",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "6.8"
+    },
+    {
+      "name": "CreatedAt",
+      "description": "Date the recipient was created (UTC)",
+      "dataType": "datetime2",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "6.8"
+    },
+    {
+      "name": "LastModified",
+      "description": "Date the recipient was last modified (UTC)",
+      "dataType": "datetime2",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "6.8"
+    }
+  ],
+  "kind": "BDS"
+}

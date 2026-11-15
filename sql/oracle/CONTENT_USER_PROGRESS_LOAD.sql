@@ -1,0 +1,18 @@
+-- Data set: Content User Progress (staging table)
+-- Source: https://community.d2l.com/brightspace/kb/articles/4713-content-data-sets#content-user-progress
+CREATE TABLE "CONTENT_USER_PROGRESS_LOAD" (
+    "CONTENTOBJECTID" NUMBER(10) NOT NULL,
+    "USERID" NUMBER(10) NOT NULL,
+    "COMPLETEDDATE" TIMESTAMP(7),
+    "LASTVISITED" TIMESTAMP(7),
+    "ISREAD" NUMBER(1),
+    "NUMREALVISITS" NUMBER(10),
+    "NUMFAKEVISITS" NUMBER(10),
+    "TOTALTIME" NUMBER(19),
+    "ISVISITED" NUMBER(1),
+    "ISCURRENTBOOKMARK" NUMBER(1),
+    "ISSELFASSESSCOMPLETE" NUMBER(1),
+    "LASTMODIFIED" TIMESTAMP(7),
+    "VERSION" NUMBER(19),
+    PRIMARY KEY ("CONTENTOBJECTID", "USERID")
+);

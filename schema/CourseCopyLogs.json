@@ -1,0 +1,107 @@
+{
+  "name": "Course Copy Logs",
+  "sourceUrl": "https://community.d2l.com/brightspace/kb/articles/4725-course-copy-data-sets#course-copy-logs",
+  "columns": [
+    {
+      "name": "SourceOrgUnitId",
+      "description": "Unique source org unit identifier",
+      "dataType": "int",
+      "size": "4",
+      "isPrimaryKey": false,
+      "isForeignKey": true,
+      "canBeNull": false,
+      "versionHistory": "1.0"
+    },
+    {
+      "name": "DestinationOrgUnitId",
+      "description": "Unique destination org unit identifier",
+      "dataType": "int",
+      "size": "4",
+      "isPrimaryKey": false,
+      "isForeignKey": true,
+      "canBeNull": false,
+      "versionHistory": "1.0"
+    },
+    {
+      "name": "UserId",
+      "description": "Unique user identifier. Field can be null.",
+      "dataType": "bigint",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": true,
+      "canBeNull": true,
+      "versionHistory": "1.0"
+    },
+    {
+      "name": "Status",
+      "description": "Status of copy",
+      "dataType": "varchar",
+      "size": "128",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "1.0"
+    },
+    {
+      "name": "StartDate",
+      "description": "Start date time (UTC)",
+      "dataType": "datetime2",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "1.0"
+    },
+    {
+      "name": "EndDate",
+      "description": "End date time (UTC). Field can be null.",
+      "dataType": "datetime2",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "1.0"
+    },
+    {
+      "name": "IsDestinationNew",
+      "description": "Is the copy destination new",
+      "dataType": "bit",
+      "size": "1",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "1.0"
+    },
+    {
+      "name": "CopyProtectedResources",
+      "description": "Copy protected resources",
+      "dataType": "bit",
+      "size": "1",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "1.0"
+    },
+    {
+      "name": "CopyCourseJobId",
+      "description": "Unique copy course job identifier",
+      "dataType": "bigint",
+      "size": "8",
+      "isPrimaryKey": true,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "1.0"
+    },
+    {
+      "name": "StatusId",
+      "description": "Status of the course copy job. Possible values:1 - Created5 - Copying10 - Completed12 - CompletedWithErrors13 - Cancelled15 - Failed",
+      "dataType": "int",
+      "size": "4",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "9.12"
+    }
+  ],
+  "kind": "BDS"
+}

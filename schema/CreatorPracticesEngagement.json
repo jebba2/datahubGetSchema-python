@@ -1,0 +1,77 @@
+{
+  "name": "Creator+ Practices Engagement",
+  "sourceUrl": "https://community.d2l.com/brightspace/kb/articles/26161-creator-data-sets#creator-practices-engagement",
+  "columns": [
+    {
+      "name": "PracticeEngagementId",
+      "description": "Identifies each attempt available for a learner to complete a Practice.",
+      "dataType": "int",
+      "size": "4",
+      "isPrimaryKey": true,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "9.8"
+    },
+    {
+      "name": "UserId",
+      "description": "Identifies the user engaging with the Practice attempt.",
+      "dataType": "int",
+      "size": "4",
+      "isPrimaryKey": false,
+      "isForeignKey": true,
+      "canBeNull": false,
+      "versionHistory": "9.8"
+    },
+    {
+      "name": "OrgUnitId",
+      "description": "Identifies the Brightspace course containing the Practice. Field can be null.",
+      "dataType": "int",
+      "size": "4",
+      "isPrimaryKey": false,
+      "isForeignKey": true,
+      "canBeNull": true,
+      "versionHistory": "9.8"
+    },
+    {
+      "name": "CompletionStatus",
+      "description": "The status of the engagement: NotStarted or Completed.",
+      "dataType": "nvarchar",
+      "size": "10",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "9.8"
+    },
+    {
+      "name": "ActivityInstanceId",
+      "description": "Identifies the Practice being attempted.",
+      "dataType": "int",
+      "size": "4",
+      "isPrimaryKey": false,
+      "isForeignKey": true,
+      "canBeNull": false,
+      "versionHistory": "9.8"
+    },
+    {
+      "name": "CompletionDate",
+      "description": "The date and time (UTC) the attempt was completed.",
+      "dataType": "datetime2",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "9.8"
+    },
+    {
+      "name": "Version",
+      "description": "Indicates the version of the row. This information is used to determine which table row occurred first.",
+      "dataType": "bigint",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "9.18 / 10.2 - Change Type and Size"
+    }
+  ],
+  "kind": "BDS"
+}

@@ -1,0 +1,77 @@
+{
+  "name": "Attendance User Sessions",
+  "sourceUrl": "https://community.d2l.com/brightspace/kb/articles/4519-attendance-data-sets#attendance-user-sessions",
+  "columns": [
+    {
+      "name": "UserId",
+      "description": "Unique user identifier.",
+      "dataType": "int",
+      "size": "4",
+      "isPrimaryKey": true,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "4.10 / 5.4"
+    },
+    {
+      "name": "AttendanceSessionId",
+      "description": "Unique identifier for the session.",
+      "dataType": "bigint",
+      "size": "8",
+      "isPrimaryKey": true,
+      "isForeignKey": true,
+      "canBeNull": false,
+      "versionHistory": "4.10 / 5.4"
+    },
+    {
+      "name": "SchemeSymbolId",
+      "description": "Unique scheme symbol identifier given to the user for the session.",
+      "dataType": "bigint",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": true,
+      "canBeNull": false,
+      "versionHistory": "4.10 / 5.4"
+    },
+    {
+      "name": "LastModified",
+      "description": "Date the symbol for the user in the session was last modified (UTC). Field can be null.",
+      "dataType": "datetime2",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "4.10 / 5.4"
+    },
+    {
+      "name": "LastModifiedBy",
+      "description": "Unique identifier for the user who last modified the session. Field can be null.",
+      "dataType": "int",
+      "size": "4",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "6.15 / 7.3"
+    },
+    {
+      "name": "IsDeleted",
+      "description": "Indicates if the user session has been deleted.",
+      "dataType": "bit",
+      "size": "1",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "9.9"
+    },
+    {
+      "name": "Version",
+      "description": "Indicates the version of the row. This information is used to determine which table row occurred first, similar to the way time stamps function in other data sets.",
+      "dataType": "bigint",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "9.9"
+    }
+  ],
+  "kind": "BDS"
+}

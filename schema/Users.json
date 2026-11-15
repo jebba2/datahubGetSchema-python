@@ -1,0 +1,127 @@
+{
+  "name": "Users",
+  "sourceUrl": "https://community.d2l.com/brightspace/kb/articles/4740-users-data-sets#users",
+  "columns": [
+    {
+      "name": "UserId",
+      "description": "Unique user identifier",
+      "dataType": "int",
+      "size": "4",
+      "isPrimaryKey": true,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "1.0"
+    },
+    {
+      "name": "UserName",
+      "description": "User name",
+      "dataType": "nvarchar",
+      "size": "270",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "5.7 / 6.0 - Updated column size"
+    },
+    {
+      "name": "OrgDefinedId",
+      "description": "Org defined ID. Field can be null.",
+      "dataType": "nvarchar",
+      "size": "256",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "4.9 / 5.3 - Corrected column size"
+    },
+    {
+      "name": "FirstName",
+      "description": "User's first name. If a preferred first name is provided, it is used. If not, the legal first name is used.",
+      "dataType": "nvarchar",
+      "size": "64",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "6.13 / 7.1 - Updated description"
+    },
+    {
+      "name": "MiddleName",
+      "description": "Middle name. Field can be null.",
+      "dataType": "nvarchar",
+      "size": "64",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "5.7 / 6.0 - Updated column size"
+    },
+    {
+      "name": "LastName",
+      "description": "User's last name. If a preferred last name is provided, it is used. If not, the legal last name is used.",
+      "dataType": "nvarchar",
+      "size": "64",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "6.13 / 7.1 - Updated description"
+    },
+    {
+      "name": "IsActive",
+      "description": "Is user active? Field can be null.",
+      "dataType": "bit",
+      "size": "1",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "1.0"
+    },
+    {
+      "name": "ExternalEmail",
+      "description": "External email address. Field can be null.",
+      "dataType": "nvarchar",
+      "size": "256",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "5.7 / 6.0 - Updated column size"
+    },
+    {
+      "name": "CreationDate",
+      "description": "Date the user was created in the system (UTC). Field can be null.",
+      "dataType": "datetime2",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "11.0 - Updated name"
+    },
+    {
+      "name": "Version",
+      "description": "Indicates the version of the content in the row.",
+      "dataType": "bigint",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "3.1"
+    },
+    {
+      "name": "OrgRoleId",
+      "description": "The unique role identifier for the role of the user at the org level. Field can be null.",
+      "dataType": "int",
+      "size": "4",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "4.10 / 5.4 - Added"
+    },
+    {
+      "name": "DateDeleted",
+      "description": "Date the user was deleted (UTC). Field can be null.",
+      "dataType": "datetime2",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "11.0"
+    }
+  ],
+  "kind": "BDS"
+}

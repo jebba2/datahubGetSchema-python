@@ -1,0 +1,367 @@
+{
+  "name": "Course Learning Outcome Evaluation",
+  "sourceUrl": "https://community.d2l.com/brightspace/kb/articles/4539-list-of-advanced-data-sets#course-learning-outcome-evaluation",
+  "columns": [
+    {
+      "name": "Program Enrollment",
+      "description": "Ancestor of the course template defined in columns (Org Unit ID, Org Unit Name, and Org Unit Code). Where multiple ancestors exist, all ancestors are displayed in the field, using \u2018|\" as a delimiter. The Org Unit Type to use as the parent is defined as a configuration variable.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "10.7.0"
+    },
+    {
+      "name": "Org Unit Id",
+      "description": "Org unit ID used to collect learning outcomes.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "10.7.0"
+    },
+    {
+      "name": "Org Unit Name",
+      "description": "Name of the course template used to collect results.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "10.7.0"
+    },
+    {
+      "name": "Org Unit Code",
+      "description": "Code of the course template used to collect results.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "10.7.0"
+    },
+    {
+      "name": "Org Unit Type Id",
+      "description": "ID of the course template.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "10.7.0"
+    },
+    {
+      "name": "Org Unit Type Name",
+      "description": "\"Course Template\".",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "10.7.0"
+    },
+    {
+      "name": "Outcome Id",
+      "description": "ID of the learning objective in the course template.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "10.7.0"
+    },
+    {
+      "name": "Outcome Type",
+      "description": "Learning objective.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "10.7.0"
+    },
+    {
+      "name": "Outcome Name",
+      "description": "Name of the learning objective.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "10.7.0"
+    },
+    {
+      "name": "Ready For Evaluation",
+      "description": "Possible status for learning objectives: Ready For Evaluation Not Ready For Evaluation",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "10.7.0"
+    },
+    {
+      "name": "Course Offering Id",
+      "description": "OU ID for the course offering.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "10.7.0"
+    },
+    {
+      "name": "Course Offering Name",
+      "description": "Name of the course offering.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "10.7.0"
+    },
+    {
+      "name": "Course Offering Code",
+      "description": "Code for the course offering.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "10.7.0"
+    },
+    {
+      "name": "Semester Name",
+      "description": "Semester that the course offering belongs to.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "10.7.0"
+    },
+    {
+      "name": "First Name",
+      "description": "First name of the learner.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "10.7.0"
+    },
+    {
+      "name": "Last Name",
+      "description": "Last name of the learner.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "10.7.0"
+    },
+    {
+      "name": "Username",
+      "description": "Learner's username.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "10.7.0"
+    },
+    {
+      "name": "Org Defined Id",
+      "description": "Learner\u2019s org defined ID.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "10.7.0"
+    },
+    {
+      "name": "User Id",
+      "description": "Learner\u2019s unique numeric D2L ID.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "10.7.0"
+    },
+    {
+      "name": "Role Name",
+      "description": "Role name of the learner in the specified org unit.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "10.7.0"
+    },
+    {
+      "name": "Role Id",
+      "description": "D2L ID of the learner's role in the specified org unit.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "10.7.0"
+    },
+    {
+      "name": "Activity Id",
+      "description": "ID of the activity that the outcome is attached to.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "10.7.0"
+    },
+    {
+      "name": "Activity Type",
+      "description": "Type of activity that the outcome is attached to: Quiz Quiz Question Survey Dropbox Discussion Grade Item Content",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "10.7.0"
+    },
+    {
+      "name": "Activity Name",
+      "description": "Name of the activity, for example, content topic name, dropbox name, quiz name, or quiz question name. Note: If the activity is a quiz question, then the quiz name must be included too.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "10.7.0"
+    },
+    {
+      "name": "Assessment Type",
+      "description": "Numeric or Rubric (or blank if it is not assessed)",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "10.7.0"
+    },
+    {
+      "name": "Rubric Id",
+      "description": "If the outcome is assessed by a rubric, this is the rubric ID.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "10.7.0"
+    },
+    {
+      "name": "Rubric Name",
+      "description": "If the outcome is assessed by a rubric, this is the rubric name.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "10.7.0"
+    },
+    {
+      "name": "Rubric Measurement",
+      "description": "If the outcome is assessed by a rubric, this contains Overall Score or the specific rubric criterion used to measure the outcome.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "10.7.0"
+    },
+    {
+      "name": "Assessment Threshold",
+      "description": "If assessed, contains the threshold considered to be successful attainment.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "10.7.0"
+    },
+    {
+      "name": "Assessment Threshold Criteria",
+      "description": "For numeric assessments, this field contains one of the following operators associated with the threshold: > >= = < <=",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "10.7.0"
+    },
+    {
+      "name": "Rubric Level Achieved",
+      "description": "If the activity is assessed by a rubric, this is the level that the learner achieved. If the rubric measurement is Overall Score, this is the learner's overall score on the rubric. If the Rubric Measurement is a specific criterion, this is how the learner performed on that criterion.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "10.7.0"
+    },
+    {
+      "name": "Rubric Points",
+      "description": "If the activity is assessed by a rubric, this is the point score that the learner achieved. If the rubric measurement is Overall Score, this is the learner's overall score on the rubric. If the Rubric Measurement is a specific criterion, this is how the learner performed on that criterion.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "10.7.0"
+    },
+    {
+      "name": "Activity Grade Points",
+      "description": "Achieved points value the learner received when the activity is assessed by Grade.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "10.7.0"
+    },
+    {
+      "name": "Activity Grade Max Points",
+      "description": "Total possible points the learner could receive for the activity when the activity is assessed by Grade.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "10.7.0"
+    },
+    {
+      "name": "Activity Grade Percent",
+      "description": "Activity grade as recorded in the grade book.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "10.7.0"
+    },
+    {
+      "name": "Activity Threshold Achieved",
+      "description": "If this outcome is assessed, it is a comparison of the assessment threshold to the learner results. 1 = Yes 0 = No Null = not assessed",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "10.7.0"
+    }
+  ],
+  "kind": "ADS"
+}

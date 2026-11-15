@@ -1,0 +1,217 @@
+{
+  "name": "Final Grades",
+  "sourceUrl": "https://community.d2l.com/brightspace/kb/articles/4539-list-of-advanced-data-sets#final-grades",
+  "columns": [
+    {
+      "name": "User Id",
+      "description": "User's unique numeric D2L ID.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "10.7.0"
+    },
+    {
+      "name": "Org Defined Id",
+      "description": "User's org defined ID.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "10.7.0"
+    },
+    {
+      "name": "Username",
+      "description": "User's username.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "10.7.0"
+    },
+    {
+      "name": "First Name",
+      "description": "User's first name.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "10.7.0"
+    },
+    {
+      "name": "Last Name",
+      "description": "User's last name.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "10.7.0"
+    },
+    {
+      "name": "Role Id",
+      "description": "D2L ID of the user's role in the specified org unit.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "10.7.0"
+    },
+    {
+      "name": "Role Name",
+      "description": "Role name of the user in the specified org unit.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "10.7.0"
+    },
+    {
+      "name": "Semester Id",
+      "description": "Unique semester numeric identifier in Brightspace. If a course is not associated with a semester, the value is NULL.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "10.7.0"
+    },
+    {
+      "name": "Semester Name",
+      "description": "Semester name associated with the course offering.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "10.7.0"
+    },
+    {
+      "name": "Semester Code",
+      "description": "Semester code associated with the course offering. The semester is the organization unit type as defined by the Standard Semester in Brightspace. If a semester is not associated as a direct parent of the course offering being exported, the value is NULL. If a course offering is associated with multiple semesters, these are exported as a pipe-delimited list of strings.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "10.7.0"
+    },
+    {
+      "name": "Course Offering Id",
+      "description": "D2L\u2019s unique identifier for the course offering.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "10.7.0"
+    },
+    {
+      "name": "Course Offering Code",
+      "description": "Often the course identifier from an SIS system.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "10.7.0"
+    },
+    {
+      "name": "Course Offering Name",
+      "description": "Name of the course offering.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "10.7.0"
+    },
+    {
+      "name": "Course Section Name",
+      "description": "Name of the course section.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "10.7.0"
+    },
+    {
+      "name": "Final Calculated Grade (Percentage)",
+      "description": "Final calculated grade as a percentage.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "10.7.0"
+    },
+    {
+      "name": "Final Calculated Grade Last Modified Date",
+      "description": "Last modified date for the final calculated grade.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "10.7.0"
+    },
+    {
+      "name": "Final Adjusted Grade (Percentage)",
+      "description": "Final adjusted grade as a percentage.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "10.7.0"
+    },
+    {
+      "name": "Final Adjusted Last Modified Date",
+      "description": "Last modified date for the final adjusted grade.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "10.7.0"
+    },
+    {
+      "name": "Final Adjusted Comments",
+      "description": "Comments for the final adjusted grade.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "10.7.0"
+    },
+    {
+      "name": "Final Adjusted Grade Is Released?",
+      "description": "Indicates if the final adjusted grade is released.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "10.7.0"
+    },
+    {
+      "name": "Final Adjusted Last Modified By",
+      "description": "User that last modified the final adjusted grade.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "10.7.0"
+    }
+  ],
+  "kind": "ADS"
+}

@@ -1,0 +1,25 @@
+-- Data set: Discussion Posts (staging table)
+-- Source: https://community.d2l.com/brightspace/kb/articles/4525-discussions-data-sets#discussion-posts
+CREATE TABLE "DISCUSSION_POSTS_LOAD" (
+    "ORGUNITID" NUMBER(10),
+    "TOPICID" NUMBER(19),
+    "USERID" NUMBER(10),
+    "POSTID" NUMBER(19) NOT NULL,
+    "THREADID" NUMBER(19),
+    "ISREPLY" NUMBER(1),
+    "PARENTPOSTID" NUMBER(19),
+    "NUMREPLIES" NUMBER(10),
+    "DATEPOSTED" TIMESTAMP(7),
+    "ISDELETED" NUMBER(1),
+    "RATINGSUM" NUMBER(19),
+    "NUMRATINGS" NUMBER(19),
+    "SCORE" NUMBER(19,9),
+    "LASTEDITDATE" TIMESTAMP(7),
+    "SORTORDER" NUMBER(10),
+    "DEPTH" NUMBER(10),
+    "THREAD" VARCHAR2(400 CHAR),
+    "WORDCOUNT" NUMBER(10),
+    "ATTACHMENTCOUNT" NUMBER(10),
+    "VERSION" NUMBER(19),
+    PRIMARY KEY ("POSTID")
+);

@@ -1,0 +1,14 @@
+-- Data set: Outcomes Rubric Alignments (staging table)
+-- Source: https://community.d2l.com/brightspace/kb/articles/4796-outcomes-data-sets#outcomes-rubric-alignments
+CREATE TABLE "OUTCOMES_RUBRIC_ALIGNMENTS_LOAD" (
+    "RUBRICID" NUMBER(19) NOT NULL,
+    "CRITERIONID" NUMBER(19) NOT NULL,
+    "OUTCOMEID" VARCHAR2(36 CHAR) NOT NULL,
+    "REGISTRYID" VARCHAR2(36 CHAR) NOT NULL,
+    "CREATEDDATE" TIMESTAMP(7),
+    "CREATEDBY" NUMBER(10),
+    "LASTMODIFIEDDATE" TIMESTAMP(7),
+    "LASTMODIFIEDBY" NUMBER(10),
+    "ISDELETED" NUMBER(1),
+    PRIMARY KEY ("RUBRICID", "CRITERIONID", "OUTCOMEID", "REGISTRYID")
+);

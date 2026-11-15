@@ -1,0 +1,20 @@
+-- Data set: LTI Link Migration Audit (staging table)
+-- Source: https://community.d2l.com/brightspace/kb/articles/4727-lti-data-sets#lti-link-migration-audit
+CREATE TABLE "LTI_LINK_MIGRATION_AUDIT_LOAD" (
+    "LTIMIGRATIONID" VARCHAR2(36 CHAR) NOT NULL,
+    "USERID" NUMBER(19),
+    "MIGRATIONDATE" TIMESTAMP(7),
+    "ORGUNITID" NUMBER(19),
+    "LINKID" NUMBER(19),
+    "LINKURL" CLOB,
+    "LINKNAME" VARCHAR2(200 CHAR),
+    "CLIENTID" VARCHAR2(255 CHAR),
+    "REGISTRATIONDOMAIN" CLOB,
+    "DEPLOYMENTID" VARCHAR2(36 CHAR),
+    "JOBID" NUMBER(19),
+    "STATUS" NUMBER(5),
+    "FAILURECODE" NUMBER(5),
+    "MIGRATIONTYPE" NUMBER(5),
+    "LEGACYURL" CLOB,
+    PRIMARY KEY ("LTIMIGRATIONID")
+);

@@ -1,0 +1,77 @@
+{
+  "name": "Impersonated Session History",
+  "sourceUrl": "https://community.d2l.com/brightspace/kb/articles/4539-list-of-advanced-data-sets#impersonated-session-history",
+  "columns": [
+    {
+      "name": "SessionId",
+      "description": "Unique session identifier",
+      "dataType": "integer",
+      "size": "4",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "10.8.5"
+    },
+    {
+      "name": "UserId",
+      "description": "Unique user identifier.",
+      "dataType": "integer",
+      "size": "4",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "10.8.5"
+    },
+    {
+      "name": "Username",
+      "description": "Username of the impersonated user",
+      "dataType": "navchar",
+      "size": "540",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "10.8.5"
+    },
+    {
+      "name": "DateStarted",
+      "description": "Session start date time (UTC)",
+      "dataType": "datetime",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "10.8.5"
+    },
+    {
+      "name": "DateEnded",
+      "description": "Session end date time (UTC)",
+      "dataType": "datetime",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "10.8.5"
+    },
+    {
+      "name": "ImpersonatingUser Id",
+      "description": "Unique user identifier of the impersonator.",
+      "dataType": "integer",
+      "size": "4",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "10.8.5"
+    },
+    {
+      "name": "ImpersonatingUsername",
+      "description": "Impersonator\u2019s username.",
+      "dataType": "navchar",
+      "size": "540",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "10.8.5"
+    }
+  ],
+  "kind": "ADS"
+}

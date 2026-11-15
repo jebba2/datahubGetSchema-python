@@ -1,0 +1,107 @@
+{
+  "name": "Content Files Properties Log",
+  "sourceUrl": "https://community.d2l.com/brightspace/kb/articles/4713-content-data-sets#content-files-properties-log",
+  "columns": [
+    {
+      "name": "OrgUnitId",
+      "description": "Unique org unit identifier.",
+      "dataType": "int",
+      "size": "4",
+      "isPrimaryKey": true,
+      "isForeignKey": true,
+      "canBeNull": false,
+      "versionHistory": "7.8"
+    },
+    {
+      "name": "ContentObjectId",
+      "description": "Unique identifier of the content object.",
+      "dataType": "int",
+      "size": "4",
+      "isPrimaryKey": true,
+      "isForeignKey": true,
+      "canBeNull": false,
+      "versionHistory": "7.8"
+    },
+    {
+      "name": "Action",
+      "description": "Action taken on the file: Created, Updated, or Deleted.",
+      "dataType": "nvarchar",
+      "size": "10",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "7.8"
+    },
+    {
+      "name": "FilePath",
+      "description": "Virtual file path of the file.",
+      "dataType": "nvarchar",
+      "size": "10000",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "7.8"
+    },
+    {
+      "name": "FileName",
+      "description": "Name of the file.",
+      "dataType": "nvarchar",
+      "size": "512",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "7.8"
+    },
+    {
+      "name": "FileExtension",
+      "description": "Extension of the file.",
+      "dataType": "nvarchar",
+      "size": "512",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "7.8"
+    },
+    {
+      "name": "FileSizeBytes",
+      "description": "Size of the file in bytes.",
+      "dataType": "bigint",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "7.8"
+    },
+    {
+      "name": "UploadDate",
+      "description": "Time the file was uploaded (UTC).",
+      "dataType": "datetime2",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "7.8"
+    },
+    {
+      "name": "LastModifiedBy",
+      "description": "Unique user identifier that last modified the file. Field can be null.",
+      "dataType": "int",
+      "size": "4",
+      "isPrimaryKey": false,
+      "isForeignKey": true,
+      "canBeNull": true,
+      "versionHistory": "7.8"
+    },
+    {
+      "name": "LastModified",
+      "description": "The last time the file was modified (UTC).",
+      "dataType": "datetime2",
+      "size": "8",
+      "isPrimaryKey": true,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "7.8"
+    }
+  ],
+  "kind": "BDS"
+}

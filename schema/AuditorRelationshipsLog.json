@@ -1,0 +1,67 @@
+{
+  "name": "Auditor Relationships Log",
+  "sourceUrl": "https://community.d2l.com/brightspace/kb/articles/4740-users-data-sets#auditor-relationships-log",
+  "columns": [
+    {
+      "name": "AuditorId",
+      "description": "UserId (unique identifier) of the auditor.",
+      "dataType": "int",
+      "size": "4",
+      "isPrimaryKey": true,
+      "isForeignKey": true,
+      "canBeNull": false,
+      "versionHistory": "6.13 / 7.1"
+    },
+    {
+      "name": "UserToAuditId",
+      "description": "UserId (unique identifier) of the user to be audited by the auditor.",
+      "dataType": "int",
+      "size": "4",
+      "isPrimaryKey": true,
+      "isForeignKey": true,
+      "canBeNull": false,
+      "versionHistory": "6.13 / 7.1"
+    },
+    {
+      "name": "OrgUnitId",
+      "description": "Org Unit identifier where the auditor relationship exists.",
+      "dataType": "int",
+      "size": "4",
+      "isPrimaryKey": true,
+      "isForeignKey": true,
+      "canBeNull": false,
+      "versionHistory": "6.15 / 7.3 - Updated description"
+    },
+    {
+      "name": "Action",
+      "description": "The action performed on the relationship. Either Created or Deleted.",
+      "dataType": "nvarchar",
+      "size": "16",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "6.13 / 7.1"
+    },
+    {
+      "name": "ModifiedBy",
+      "description": "UserId who modified the auditor relationship.",
+      "dataType": "int",
+      "size": "4",
+      "isPrimaryKey": false,
+      "isForeignKey": true,
+      "canBeNull": false,
+      "versionHistory": "6.13 / 7.1"
+    },
+    {
+      "name": "ModifiedDate",
+      "description": "Date and time when the auditor relationship was modified (UTC).",
+      "dataType": "datetime2",
+      "size": "8",
+      "isPrimaryKey": true,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "6.13 / 7.1"
+    }
+  ],
+  "kind": "BDS"
+}

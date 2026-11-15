@@ -1,0 +1,47 @@
+{
+  "name": "Course Access Log",
+  "sourceUrl": "https://community.d2l.com/brightspace/kb/articles/4740-users-data-sets#course-access-log",
+  "columns": [
+    {
+      "name": "OrgUnitId",
+      "description": "Unique identifier for the org unit.",
+      "dataType": "int",
+      "size": "4",
+      "isPrimaryKey": true,
+      "isForeignKey": true,
+      "canBeNull": false,
+      "versionHistory": "7.5"
+    },
+    {
+      "name": "UserId",
+      "description": "Unique identifier for the user.",
+      "dataType": "int",
+      "size": "4",
+      "isPrimaryKey": true,
+      "isForeignKey": true,
+      "canBeNull": false,
+      "versionHistory": "7.5"
+    },
+    {
+      "name": "Timestamp",
+      "description": "Indicates the time in UTC that a user accessed the course.",
+      "dataType": "datetime2",
+      "size": "8",
+      "isPrimaryKey": true,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "7.5"
+    },
+    {
+      "name": "Source",
+      "description": "The source of the course access. Only Pulse data is available at this time.",
+      "dataType": "nvarchar",
+      "size": "20",
+      "isPrimaryKey": true,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "7.5"
+    }
+  ],
+  "kind": "BDS"
+}

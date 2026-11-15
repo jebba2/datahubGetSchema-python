@@ -1,0 +1,187 @@
+{
+  "name": "Quiz Survey Sections",
+  "sourceUrl": "https://community.d2l.com/brightspace/kb/articles/4532-quizzes-data-sets#quiz-survey-sections",
+  "columns": [
+    {
+      "name": "CollectionId",
+      "description": "Unique question collection identifier",
+      "dataType": "bigint",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": true,
+      "canBeNull": false,
+      "versionHistory": "4.7 / 5.1 - Updated description"
+    },
+    {
+      "name": "SectionId",
+      "description": "Unique section identifier.",
+      "dataType": "bigint",
+      "size": "8",
+      "isPrimaryKey": true,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "3.4"
+    },
+    {
+      "name": "Name",
+      "description": "Name of the section (title). Field can be null.",
+      "dataType": "nvarchar",
+      "size": "256",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "9.4 - Updated description"
+    },
+    {
+      "name": "NameIsDisplayed",
+      "description": "Indicates if the section name (title) is hidden or shown. Values are 0 for hidden, and 1 for shown.",
+      "dataType": "bit",
+      "size": "1",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "9.4 - Updated description"
+    },
+    {
+      "name": "IsQuestionPool",
+      "description": "Indicates if the section is a question pool.",
+      "dataType": "bit",
+      "size": "1",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "9.4 - Updated description"
+    },
+    {
+      "name": "SectionText",
+      "description": "Section text. Field can be null.",
+      "dataType": "nvarchar",
+      "size": "1000",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "9.4 - Updated description"
+    },
+    {
+      "name": "SectionTextIsHTML",
+      "description": "Indicates if the section text is HTML or plain text.",
+      "dataType": "bit",
+      "size": "1",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "3.4"
+    },
+    {
+      "name": "IsSectionTextHidden",
+      "description": "Indicates if the section text is hidden or shown. Values are 0 for hidden, and 1 for shown.",
+      "dataType": "bit",
+      "size": "1",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "9.4 - Updated description"
+    },
+    {
+      "name": "QuestionPoints",
+      "description": "Number of points the section is worth when the section is a question pool. Sections that are not question pools will show as null. Field can be null.",
+      "dataType": "decimal",
+      "size": "19, 9",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "9.4 - Updated description"
+    },
+    {
+      "name": "NumQuestions",
+      "description": "Indicates the number of questions in the section if the section is a question pool. If the section is not a question pool, 0 is displayed.",
+      "dataType": "int",
+      "size": "4",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "9.4 - Updated description"
+    },
+    {
+      "name": "NumChoices",
+      "description": "Indicates the number of choices in the question pool (pool size).",
+      "dataType": "int",
+      "size": "4",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "9.4 - Updated description"
+    },
+    {
+      "name": "Shuffle",
+      "description": "Indicates that the questions in the section are shuffled. Not to be confused with a question pool; a shuffled section displays the questions shuffled randomly.",
+      "dataType": "bit",
+      "size": "1",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "9.4 - Updated description"
+    },
+    {
+      "name": "CreationDate",
+      "description": "Date the section was created (UTC).",
+      "dataType": "datetime2",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "9.4 - Updated description"
+    },
+    {
+      "name": "CreatedBy",
+      "description": "Id of the user who created the section. Field can be null.",
+      "dataType": "bigint",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": true,
+      "canBeNull": true,
+      "versionHistory": "9.4 - Updated description"
+    },
+    {
+      "name": "LastModified",
+      "description": "Date when the section was last modified (UTC).",
+      "dataType": "datetime2",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "9.4 - Updated description"
+    },
+    {
+      "name": "LastModifiedBy",
+      "description": "Id of the user who last modified the section. If questions are imported into the section, this will be null. Field can be null.",
+      "dataType": "bigint",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": true,
+      "canBeNull": true,
+      "versionHistory": "9.4 - Updated description"
+    },
+    {
+      "name": "IsDeleted",
+      "description": "Indicates that the section is deleted. Field can be null.",
+      "dataType": "bit",
+      "size": "1",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "9.4 - Updated description"
+    },
+    {
+      "name": "Version",
+      "description": "Indicates the version of the row. This information is used to determine which table row occurred first, similar to the way time stamps function in other data sets. Field can be null.",
+      "dataType": "bigint",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "9.4 - Updated description"
+    }
+  ],
+  "kind": "BDS"
+}

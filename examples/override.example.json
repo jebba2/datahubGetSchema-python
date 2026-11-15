@@ -1,0 +1,11 @@
+{
+    "dataSet": "ADS All Grades",
+    "reason": "Example only. It shows each kind of correction. The types are not taken from a real extract.",
+    "columns": [
+        {"name": "User Id", "dataType": "int", "size": "4"},
+        {"name": "Org Defined Id", "dataType": "nvarchar", "size": "256"},
+        {"name": "Grade Last Modified", "dataType": "datetime2", "size": "8"},
+        {"name": "Grader Org Defined Id", "remove": true},
+        {"name": "Load Batch", "dataType": "nvarchar", "size": "50"}
+    ]
+}

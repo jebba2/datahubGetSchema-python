@@ -1,0 +1,6 @@
+# Python bytecode and the uv environment
+__pycache__/
+.venv/
+
+# Caches, logs, and upgrade scripts the tool writes
+working/

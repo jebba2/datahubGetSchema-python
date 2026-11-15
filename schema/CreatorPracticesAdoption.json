@@ -1,0 +1,87 @@
+{
+  "name": "Creator+ Practices Adoption",
+  "sourceUrl": "https://community.d2l.com/brightspace/kb/articles/26161-creator-data-sets#creator-practices-adoption",
+  "columns": [
+    {
+      "name": "ActivityInstanceId",
+      "description": "Identifies the unique location of the Practice within a Brightspace course. If a Practice appears multiple times in a course, this value changes but the CourseId and ProviderObjectId remain the same.",
+      "dataType": "int",
+      "size": "4",
+      "isPrimaryKey": true,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "9.7"
+    },
+    {
+      "name": "CreatedById",
+      "description": "Identifies the user who created the Practice.",
+      "dataType": "int",
+      "size": "4",
+      "isPrimaryKey": false,
+      "isForeignKey": true,
+      "canBeNull": false,
+      "versionHistory": "9.7"
+    },
+    {
+      "name": "OrgUnitId",
+      "description": "Identifies the Brightspace organizational unit containing the Practice. Field can be null.",
+      "dataType": "int",
+      "size": "4",
+      "isPrimaryKey": false,
+      "isForeignKey": true,
+      "canBeNull": true,
+      "versionHistory": "9.8 - Change Field name"
+    },
+    {
+      "name": "PracticeType",
+      "description": "The type of Practice.",
+      "dataType": "nvarchar",
+      "size": "32",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "9.7"
+    },
+    {
+      "name": "PracticeTitle",
+      "description": "The title provided by the creator of the Practice.",
+      "dataType": "nvarchar",
+      "size": "255",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "9.7"
+    },
+    {
+      "name": "ProviderObjectId",
+      "description": "ID of the Practice on the provider service. If a Practice is copied to multiple courses, the CourseId and ProviderObjectId should both change. Field can be null.",
+      "dataType": "int",
+      "size": "4",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "9.11 - Fixed nullability"
+    },
+    {
+      "name": "CreatedDate",
+      "description": "The date and time (UTC) the Practice was created. For Practices created before July 2024, this is the date the Practice was transformed into a data-enabled Practice.",
+      "dataType": "datetime2",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "9.7"
+    },
+    {
+      "name": "Version",
+      "description": "Indicates the version of the row. This information is used to determine which table row occurred first.",
+      "dataType": "bigint",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "9.18 / 10.2 - Change Type and Size"
+    }
+  ],
+  "kind": "BDS"
+}

@@ -1,0 +1,14 @@
+-- Data set: SCORM Objective Attempts (staging table)
+-- Source: https://community.d2l.com/brightspace/kb/articles/4536-scorm-data-sets#scorm-objective-attempts
+CREATE TABLE "SCORM_OBJECTIVE_ATTEMPTS_LOAD" (
+    "VISITID" VARCHAR2(36 CHAR) NOT NULL,
+    "OBJECTIVEID" VARCHAR2(36 CHAR) NOT NULL,
+    "ATTEMPTNUMBER" NUMBER(10) NOT NULL,
+    "SCORE" BINARY_DOUBLE,
+    "SCORERAW" BINARY_DOUBLE,
+    "SUCCESS" VARCHAR2(100 CHAR),
+    "COMPLETION" VARCHAR2(100 CHAR),
+    "PROGRESS" BINARY_DOUBLE,
+    "LASTMODIFIED" TIMESTAMP(7),
+    PRIMARY KEY ("VISITID", "OBJECTIVEID", "ATTEMPTNUMBER")
+);

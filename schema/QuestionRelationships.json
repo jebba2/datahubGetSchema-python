@@ -1,0 +1,177 @@
+{
+  "name": "Question Relationships",
+  "sourceUrl": "https://community.d2l.com/brightspace/kb/articles/4531-questions-data-sets#question-relationships",
+  "columns": [
+    {
+      "name": "CollectionId",
+      "description": "Unique question collection identifier. This column can be joined with QuizId in the Quiz Objects BDS and SurveyId in the Survey Objects BDS.",
+      "dataType": "bigint",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": true,
+      "canBeNull": false,
+      "versionHistory": "10.4 - Updated key"
+    },
+    {
+      "name": "QuestionId",
+      "description": "Unique question identifier. Represents the content of a question (normally the question text). Also referred to as Template ID. QuestionId is null for Quiz sections and for Question Pools. Field can be null.",
+      "dataType": "bigint",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": true,
+      "canBeNull": true,
+      "versionHistory": "9.15 - Updated description"
+    },
+    {
+      "name": "QuestionVersionId",
+      "description": "Unique question version identifier. Each time you edit a quiz, survey, or self-assessment question, a new version of that question is created, indicated by the QuestionVersionId field. Field can be null.",
+      "dataType": "bigint",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": true,
+      "canBeNull": true,
+      "versionHistory": "11.0 -Updated key"
+    },
+    {
+      "name": "Order",
+      "description": "Order in which questions appear in the user interface. If the question is within a section, the Order field uses the section's order in the user interface.",
+      "dataType": "bigint",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "3.6 / 4.0"
+    },
+    {
+      "name": "SectionId",
+      "description": "The parent section of the Question Relationship object. Field can be null.",
+      "dataType": "bigint",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "11.7 - Updated description"
+    },
+    {
+      "name": "IsQuestionPool",
+      "description": "Indicates if the question pool is a random section.",
+      "dataType": "bit",
+      "size": "1",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "3.6 / 4.0"
+    },
+    {
+      "name": "CreationDate",
+      "description": "Date the question was created (UTC). Field can be null.",
+      "dataType": "datetime2",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "11.0 - Updated description"
+    },
+    {
+      "name": "CreatedBy",
+      "description": "Id of the user who created the quiz, section, question pool, survey, or self-assessment. Field can be null.",
+      "dataType": "bigint",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "6.11 - Updated description"
+    },
+    {
+      "name": "LastModified",
+      "description": "Date when the quiz, section, question pool, survey, or self-assessment was last modified (UTC).",
+      "dataType": "datetime2",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "6.11 - Updated description"
+    },
+    {
+      "name": "LastModifiedBy",
+      "description": "Id of the user who last modified the quiz, section, question pool, survey, or self-assessment. Field can be null.",
+      "dataType": "bigint",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "6.11 - Updated description"
+    },
+    {
+      "name": "Points",
+      "description": "Possible points for the question. Field can be null.",
+      "dataType": "decimal",
+      "size": "19, 9",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "4.8 / 5.2 - Updated column size"
+    },
+    {
+      "name": "Difficulty",
+      "description": "Difficulty level assigned to the question. Field can be null.",
+      "dataType": "int",
+      "size": "4",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "3.6 / 4.0"
+    },
+    {
+      "name": "IsBonus",
+      "description": "Indicates if the question is a bonus question. Field can be null.",
+      "dataType": "bit",
+      "size": "1",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "6.11 - Updated description"
+    },
+    {
+      "name": "IsMandatory",
+      "description": "Indicates if the question is mandatory. Field can be null.",
+      "dataType": "bit",
+      "size": "1",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "6.11 - Updated description"
+    },
+    {
+      "name": "IsDeleted",
+      "description": "Indicates that a Question Relationship is no longer valid in the specified Collection (this also applies to Question Pools). False if the relationship with the Question Collection is valid, even if the Question Collection itself has been deleted.",
+      "dataType": "bit",
+      "size": "1",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "11.0 - Updated description"
+    },
+    {
+      "name": "Version",
+      "description": "Indicates the version of the row. This information is used to determine which table row occurred first, similar to the way time stamps function in other data sets. Field can be null.",
+      "dataType": "bigint",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "11.0 - Updated description"
+    },
+    {
+      "name": "ObjectId",
+      "description": "Unique identifier of a question in a collection. If a question is created in Question Library and then used in a quiz, it has one QuestionId and two ObjectIds to represent the two different usages.",
+      "dataType": "bigint",
+      "size": "8",
+      "isPrimaryKey": true,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "11.0 -Updated key"
+    }
+  ],
+  "kind": "BDS"
+}

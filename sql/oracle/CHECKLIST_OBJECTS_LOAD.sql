@@ -1,0 +1,17 @@
+-- Data set: Checklist Objects (staging table)
+-- Source: https://community.d2l.com/brightspace/kb/articles/4523-checklist-data-sets#checklist-objects
+CREATE TABLE "CHECKLIST_OBJECTS_LOAD" (
+    "CHECKLISTID" NUMBER(19) NOT NULL,
+    "ORGUNITID" NUMBER(10),
+    "NAME" VARCHAR2(512 CHAR),
+    "DESCRIPTION" VARCHAR2(1000 CHAR),
+    "DESCRIPTIONISHTML" NUMBER(1),
+    "SHAREDUSERID" NUMBER(10),
+    "DISPLAYINNEWWINDOW" NUMBER(1),
+    "SORTORDER" NUMBER(10),
+    "VERSION" NUMBER(19),
+    "RESULTID" NUMBER(10),
+    "DATEDELETED" TIMESTAMP(7),
+    "DELETEDBY" NUMBER(10),
+    PRIMARY KEY ("CHECKLISTID")
+);

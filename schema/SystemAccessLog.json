@@ -1,0 +1,97 @@
+{
+  "name": "System Access Log",
+  "sourceUrl": "https://community.d2l.com/brightspace/kb/articles/4537-sessions-and-system-access-data-sets#system-access-log",
+  "columns": [
+    {
+      "name": "SessionId",
+      "description": "Unique identifier for the session.",
+      "dataType": "nvarchar",
+      "size": "36",
+      "isPrimaryKey": true,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "5.6"
+    },
+    {
+      "name": "UserId",
+      "description": "Unique identifier for the user.",
+      "dataType": "int",
+      "size": "4",
+      "isPrimaryKey": true,
+      "isForeignKey": true,
+      "canBeNull": false,
+      "versionHistory": "5.6"
+    },
+    {
+      "name": "Timestamp",
+      "description": "Date and time in which the system access changed state.",
+      "dataType": "datetime2",
+      "size": "8",
+      "isPrimaryKey": true,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "5.6"
+    },
+    {
+      "name": "State",
+      "description": "Indicates whether a system access started or ended at the reported time.",
+      "dataType": "nvarchar",
+      "size": "20",
+      "isPrimaryKey": true,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "5.6"
+    },
+    {
+      "name": "Source",
+      "description": "Source of the system access. Possible values: Brightspace (Brightspace LE in browser) Pulse (Pulse mobile app) BPG-mobile (Brightspace Parent & Guardian mobile app)",
+      "dataType": "nvarchar",
+      "size": "20",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "7.6 - Updated description"
+    },
+    {
+      "name": "AppVersion",
+      "description": "Version of the app, where applicable. Field will be null for Brightspace sources.",
+      "dataType": "nvarchar",
+      "size": "20",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "5.6"
+    },
+    {
+      "name": "Device",
+      "description": "Device used in the system access. Field will be null for Brightspace sources.",
+      "dataType": "nvarchar",
+      "size": "50",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "5.7 / 6.0 - Updated column size"
+    },
+    {
+      "name": "IsOfflineMode",
+      "description": "Indicates if a portion or all of the system access occurred offline with no internet connection. Field will be null for Brightspace sources.",
+      "dataType": "bit",
+      "size": "1",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "5.6"
+    },
+    {
+      "name": "IPAddress",
+      "description": "IP Address at which the event occurred. Field can be null.",
+      "dataType": "nvarchar",
+      "size": "45",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "5.6"
+    }
+  ],
+  "kind": "BDS"
+}

@@ -1,0 +1,15 @@
+-- Data set: Course Copy Logs (staging table)
+-- Source: https://community.d2l.com/brightspace/kb/articles/4725-course-copy-data-sets#course-copy-logs
+CREATE TABLE "COURSE_COPY_LOGS_LOAD" (
+    "SOURCEORGUNITID" NUMBER(10),
+    "DESTINATIONORGUNITID" NUMBER(10),
+    "USERID" NUMBER(19),
+    "STATUS" VARCHAR2(128 CHAR),
+    "STARTDATE" TIMESTAMP(7),
+    "ENDDATE" TIMESTAMP(7),
+    "ISDESTINATIONNEW" NUMBER(1),
+    "COPYPROTECTEDRESOURCES" NUMBER(1),
+    "COPYCOURSEJOBID" NUMBER(19) NOT NULL,
+    "STATUSID" NUMBER(10),
+    PRIMARY KEY ("COPYCOURSEJOBID")
+);

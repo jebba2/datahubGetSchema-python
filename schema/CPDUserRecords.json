@@ -1,0 +1,147 @@
+{
+  "name": "CPD User Records",
+  "sourceUrl": "https://community.d2l.com/brightspace/kb/articles/26020-continuous-professional-development-cpd-data-sets#cpd-user-records",
+  "columns": [
+    {
+      "name": "RecordId",
+      "description": "Unique identifier for each user record.",
+      "dataType": "int",
+      "size": "4",
+      "isPrimaryKey": true,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "9.13"
+    },
+    {
+      "name": "RecordName",
+      "description": "The name of the user record.",
+      "dataType": "nvarchar",
+      "size": "256",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "9.13"
+    },
+    {
+      "name": "State",
+      "description": "The state of the record: Published or Draft.",
+      "dataType": "nvarchar",
+      "size": "50",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "9.13"
+    },
+    {
+      "name": "UserId",
+      "description": "Unique user identifier for the owner of the record.",
+      "dataType": "int",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": true,
+      "canBeNull": false,
+      "versionHistory": "9.13"
+    },
+    {
+      "name": "Category",
+      "description": "The ID of the record's category.",
+      "dataType": "int",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": true,
+      "canBeNull": false,
+      "versionHistory": "9.13"
+    },
+    {
+      "name": "Method",
+      "description": "The ID of the record's method.",
+      "dataType": "int",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": true,
+      "canBeNull": false,
+      "versionHistory": "9.13"
+    },
+    {
+      "name": "CreditMinutes",
+      "description": "Number of minutes credited by the record.",
+      "dataType": "int",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "9.13"
+    },
+    {
+      "name": "Evidence",
+      "description": "Comma delimited list of evidence file names.",
+      "dataType": "nvarchar",
+      "size": "4000",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "9.13"
+    },
+    {
+      "name": "Type",
+      "description": "The type of the record: Structured or Unstructured.",
+      "dataType": "nvarchar",
+      "size": "50",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "9.13"
+    },
+    {
+      "name": "Grade",
+      "description": "The grade value of the associated award. Field can be null.",
+      "dataType": "decimal",
+      "size": "4, 3",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "9.13"
+    },
+    {
+      "name": "DateCompleted",
+      "description": "The user provided date that the record was completed.",
+      "dataType": "datetime2",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "9.13"
+    },
+    {
+      "name": "LastModified",
+      "description": "The date and time (UTC) the record was added or last updated.",
+      "dataType": "datetime2",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "9.13"
+    },
+    {
+      "name": "DateDeleted",
+      "description": "The date and time (UTC) the method was deleted. Field can be null.",
+      "dataType": "datetime2",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "9.13"
+    },
+    {
+      "name": "Version",
+      "description": "Indicates the version of the row. This information is used to determine which table row occurred first.",
+      "dataType": "bigint",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "9.13"
+    }
+  ],
+  "kind": "BDS"
+}

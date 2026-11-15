@@ -1,0 +1,87 @@
+{
+  "name": "JIT Provisioned Users Log",
+  "sourceUrl": "https://community.d2l.com/brightspace/kb/articles/5782-jit-provisioning-data-sets#jit-provisioned-users-log",
+  "columns": [
+    {
+      "name": "UserId",
+      "description": "Unique identifier for the user.",
+      "dataType": "int",
+      "size": "4",
+      "isPrimaryKey": true,
+      "isForeignKey": true,
+      "canBeNull": false,
+      "versionHistory": "7.12"
+    },
+    {
+      "name": "MappingField",
+      "description": "The Brightspace field used to map the user with the Identity Provider (For example: \"Username\", \"Email Address\", \"Org Defined Id\").",
+      "dataType": "nvarchar",
+      "size": "32",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "7.12"
+    },
+    {
+      "name": "MappingFieldValue",
+      "description": "The value of the Brightspace field used to map the user with the Identity Provider.",
+      "dataType": "nvarchar",
+      "size": "270",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "7.12"
+    },
+    {
+      "name": "ProviderType",
+      "description": "The type of provider that provisioned the user (For example: \u201cSAML\u201d).",
+      "dataType": "nvarchar",
+      "size": "32",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "7.12"
+    },
+    {
+      "name": "ProviderId",
+      "description": "The Id of the provider that provisioned the user.",
+      "dataType": "nvarchar",
+      "size": "1024",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "7.12"
+    },
+    {
+      "name": "RoleId",
+      "description": "The Org level Role that the user was provisioned as.",
+      "dataType": "int",
+      "size": "4",
+      "isPrimaryKey": false,
+      "isForeignKey": true,
+      "canBeNull": false,
+      "versionHistory": "7.12"
+    },
+    {
+      "name": "Timestamp",
+      "description": "Date and time that the user was provisioned (UTC).",
+      "dataType": "datetime2",
+      "size": "8",
+      "isPrimaryKey": true,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "7.12"
+    },
+    {
+      "name": "Action",
+      "description": "Indicates the provisioning action taken on the user (For example:: \"Created\", \"Updated\").",
+      "dataType": "nvarchar",
+      "size": "16",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "7.12"
+    }
+  ],
+  "kind": "BDS"
+}

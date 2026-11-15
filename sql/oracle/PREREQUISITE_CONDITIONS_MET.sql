@@ -1,0 +1,11 @@
+-- Data set: PreRequisite Conditions Met
+-- Source: https://community.d2l.com/brightspace/kb/articles/4533-release-conditions-data-sets#prerequisite-conditions-met
+CREATE TABLE "PREREQUISITE_CONDITIONS_MET" (
+    "PREREQUISITEID" NUMBER(10) NOT NULL,
+    "USERID" NUMBER(10) NOT NULL,
+    "DATEMET" TIMESTAMP(7),
+    "ACTION" VARCHAR2(7 CHAR),
+    "LASTMODIFIED" TIMESTAMP(7),
+    PRIMARY KEY ("PREREQUISITEID", "USERID")
+);
+CREATE INDEX "IX_PREREQUISITE_CONDITIONS_MET_USERID" ON "PREREQUISITE_CONDITIONS_MET" ("USERID");

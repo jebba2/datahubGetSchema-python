@@ -1,0 +1,127 @@
+{
+  "name": "CPD Records",
+  "sourceUrl": "https://community.d2l.com/brightspace/kb/articles/4539-list-of-advanced-data-sets#cpd-records",
+  "columns": [
+    {
+      "name": "UserId",
+      "description": "",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "20.24.6"
+    },
+    {
+      "name": "RecordId",
+      "description": "",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "20.24.6"
+    },
+    {
+      "name": "RecordName",
+      "description": "",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "20.24.6"
+    },
+    {
+      "name": "Credits (in minutes)",
+      "description": "",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "20.24.6"
+    },
+    {
+      "name": "Date Completed",
+      "description": "",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "20.24.6"
+    },
+    {
+      "name": "Subject",
+      "description": "",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "20.24.6"
+    },
+    {
+      "name": "Type",
+      "description": "",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "20.24.6"
+    },
+    {
+      "name": "Method",
+      "description": "",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "20.24.6"
+    },
+    {
+      "name": "Grade",
+      "description": "",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "20.24.6"
+    },
+    {
+      "name": "Evidence",
+      "description": "",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "20.24.6"
+    },
+    {
+      "name": "Answer(1...N)",
+      "description": "",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "20.24.6"
+    },
+    {
+      "name": "State",
+      "description": "",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "20.24.6"
+    }
+  ],
+  "kind": "ADS"
+}

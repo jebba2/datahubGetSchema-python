@@ -1,0 +1,8 @@
+-- Data set: SCORM Interaction Objectives (staging table)
+-- Source: https://community.d2l.com/brightspace/kb/articles/4536-scorm-data-sets#scorm-interaction-objectives
+CREATE TABLE "SCORM_INTERACTION_OBJECTIVES_LOAD" (
+    "INTERACTIONID" VARCHAR2(36 CHAR) NOT NULL,
+    "OBJECTIVEID" VARCHAR2(36 CHAR) NOT NULL,
+    "LASTMODIFIED" TIMESTAMP(7),
+    PRIMARY KEY ("INTERACTIONID", "OBJECTIVEID")
+);

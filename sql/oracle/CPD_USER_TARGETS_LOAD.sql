@@ -1,0 +1,16 @@
+-- Data set: CPD User Targets (staging table)
+-- Source: https://community.d2l.com/brightspace/kb/articles/26020-continuous-professional-development-cpd-data-sets#cpd-user-targets
+CREATE TABLE "CPD_USER_TARGETS_LOAD" (
+    "PRINCIPALID" NUMBER(10) NOT NULL,
+    "CATEGORYID" NUMBER(10) NOT NULL,
+    "USERID" NUMBER(10),
+    "STRUCTUREDMINUTES" NUMBER(10),
+    "UNSTRUCTUREDMINUTES" NUMBER(10),
+    "STRUCTUREDRECORDCOUNT" NUMBER(10),
+    "UNSTRUCTUREDRECORDCOUNT" NUMBER(10),
+    "STARTDATE" TIMESTAMP(7),
+    "DATEDELETED" TIMESTAMP(7),
+    "LASTMODIFIED" TIMESTAMP(7),
+    "VERSION" NUMBER(19),
+    PRIMARY KEY ("PRINCIPALID", "CATEGORYID")
+);

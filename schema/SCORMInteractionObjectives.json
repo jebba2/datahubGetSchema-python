@@ -1,0 +1,37 @@
+{
+  "name": "SCORM Interaction Objectives",
+  "sourceUrl": "https://community.d2l.com/brightspace/kb/articles/4536-scorm-data-sets#scorm-interaction-objectives",
+  "columns": [
+    {
+      "name": "InteractionId",
+      "description": "Unique identifier of the interaction.",
+      "dataType": "uniqueidentifier",
+      "size": "16",
+      "isPrimaryKey": true,
+      "isForeignKey": true,
+      "canBeNull": false,
+      "versionHistory": "5.5"
+    },
+    {
+      "name": "ObjectiveId",
+      "description": "Unique identifier of the objective.",
+      "dataType": "uniqueidentifier",
+      "size": "16",
+      "isPrimaryKey": true,
+      "isForeignKey": true,
+      "canBeNull": false,
+      "versionHistory": "5.5"
+    },
+    {
+      "name": "LastModified",
+      "description": "Date when the activity was last modified (UTC).",
+      "dataType": "datetime2",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "5.5"
+    }
+  ],
+  "kind": "BDS"
+}

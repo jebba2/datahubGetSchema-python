@@ -1,0 +1,87 @@
+{
+  "name": "CPD User Targets",
+  "sourceUrl": "https://community.d2l.com/brightspace/kb/articles/4539-list-of-advanced-data-sets#cpd-user-targets",
+  "columns": [
+    {
+      "name": "UserId",
+      "description": "",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "20.24.6"
+    },
+    {
+      "name": "StartDate",
+      "description": "",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "20.24.6"
+    },
+    {
+      "name": "SubjectId",
+      "description": "",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "20.24.6"
+    },
+    {
+      "name": "SubjectName",
+      "description": "",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "20.24.6"
+    },
+    {
+      "name": "StructuredMinutes",
+      "description": "",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "20.24.6"
+    },
+    {
+      "name": "UnstructuredMinutes",
+      "description": "",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "20.24.6"
+    },
+    {
+      "name": "StructuredRecordCount",
+      "description": "",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "20.24.6"
+    },
+    {
+      "name": "UnstructuredRecordCount",
+      "description": "",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "20.24.6"
+    }
+  ],
+  "kind": "ADS"
+}

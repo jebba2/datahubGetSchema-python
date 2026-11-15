@@ -1,0 +1,217 @@
+{
+  "name": "Awards Issued",
+  "sourceUrl": "https://community.d2l.com/brightspace/kb/articles/4539-list-of-advanced-data-sets#awards-issued",
+  "columns": [
+    {
+      "name": "AwardId",
+      "description": "Identifier of the award",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "20.19.4"
+    },
+    {
+      "name": "Name",
+      "description": "Name of the award in Brightspace.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "20.19.4"
+    },
+    {
+      "name": "Type",
+      "description": "Type of award: certificate or badge.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "20.19.4"
+    },
+    {
+      "name": "Credits",
+      "description": "The number of credits associated with the award.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "20.19.4"
+    },
+    {
+      "name": "UserId",
+      "description": "The identifier of the of the award recipient.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "20.19.4"
+    },
+    {
+      "name": "UserName",
+      "description": "The username of the of the award recipient.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "20.19.4"
+    },
+    {
+      "name": "FirstName",
+      "description": "The first name of the award recipient.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "20.19.4"
+    },
+    {
+      "name": "LastName",
+      "description": "The last name of the of the award recipient.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "20.19.4"
+    },
+    {
+      "name": "OrgDefinedId",
+      "description": "The organization-defined identifier to which this award is associated for the award recipient.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "20.19.4"
+    },
+    {
+      "name": "IssuedBy",
+      "description": "The identifier of the user who issued the award.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "20.19.4"
+    },
+    {
+      "name": "IssuerUserName",
+      "description": "The user name of the user who issued the award.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "20.19.4"
+    },
+    {
+      "name": "IssuerFirstName",
+      "description": "The first name of the user who issued the award.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "20.19.4"
+    },
+    {
+      "name": "IssuerLastName",
+      "description": "The last name of the user who issued the award.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "20.19.4"
+    },
+    {
+      "name": "IssueDate",
+      "description": "The date when the award was issued.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "20.19.4"
+    },
+    {
+      "name": "RevokedId",
+      "description": "Indicates if the award has been revoked.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "20.19.4"
+    },
+    {
+      "name": "Criteria",
+      "description": "Indicates the criteria that must be met to earn the award.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "20.19.4"
+    },
+    {
+      "name": "Evidence",
+      "description": "Displays the evidence that the criteria for the award was met.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "20.19.4"
+    },
+    {
+      "name": "ExpiryDate",
+      "description": "Indicates the date when the award expires",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "20.19.4"
+    },
+    {
+      "name": "OrgUnitId",
+      "description": "The organization unit identifier for the org in which the award was issued.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "20.19.4"
+    },
+    {
+      "name": "OrgUnitName",
+      "description": "The organization unit name for the org in which the award was issued.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "20.19.4"
+    },
+    {
+      "name": "OrgUnitCode",
+      "description": "The organization unit code for the org in which the award was issued.",
+      "dataType": "text",
+      "size": "",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "20.19.4"
+    }
+  ],
+  "kind": "ADS"
+}

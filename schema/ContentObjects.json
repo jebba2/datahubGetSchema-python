@@ -1,0 +1,267 @@
+{
+  "name": "Content Objects",
+  "sourceUrl": "https://community.d2l.com/brightspace/kb/articles/4713-content-data-sets#content-objects",
+  "columns": [
+    {
+      "name": "ContentObjectId",
+      "description": "Unique identifier of the content",
+      "dataType": "int",
+      "size": "4",
+      "isPrimaryKey": true,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "1.0"
+    },
+    {
+      "name": "OrgUnitId",
+      "description": "Unique org unit identifier",
+      "dataType": "int",
+      "size": "4",
+      "isPrimaryKey": false,
+      "isForeignKey": true,
+      "canBeNull": false,
+      "versionHistory": "1.0"
+    },
+    {
+      "name": "Title",
+      "description": "Content title",
+      "dataType": "nvarchar",
+      "size": "150",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "5.7 / 6.0 - Updated column size"
+    },
+    {
+      "name": "ContentObjectType",
+      "description": "Content object type",
+      "dataType": "varchar",
+      "size": "6",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "1.0"
+    },
+    {
+      "name": "CompletionType",
+      "description": "Content completion type",
+      "dataType": "varchar",
+      "size": "7",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "5.7 / 6.0 - Updated column size"
+    },
+    {
+      "name": "ParentContentObjectId",
+      "description": "Parent content object identifier",
+      "dataType": "int",
+      "size": "4",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "1.0"
+    },
+    {
+      "name": "Location",
+      "description": "Location of the content asset. Field can be null.",
+      "dataType": "nvarchar",
+      "size": "1024",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "7.13 - Updated column size"
+    },
+    {
+      "name": "StartDate",
+      "description": "Content availability start date (UTC). Field can be null.",
+      "dataType": "datetime2",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "1.0"
+    },
+    {
+      "name": "EndDate",
+      "description": "Content availability end date (UTC). Field can be null.",
+      "dataType": "datetime2",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "1.0"
+    },
+    {
+      "name": "DueDate",
+      "description": "Content availability due date (UTC). Field can be null.",
+      "dataType": "datetime2",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "1.0"
+    },
+    {
+      "name": "ObjectId1",
+      "description": "Quick link Object ID for the associated tool. Maps to DropboxId, QuizId, ChecklistId, SurveyId, ChatId, Self-AssessmentId. For Discussions, this field is used if a Forum is quicklinked. Field can be null.",
+      "dataType": "int",
+      "size": "4",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "8.10 - Updated description"
+    },
+    {
+      "name": "ObjectId2",
+      "description": "Quick link Object ID, only used for the Discussion tool if a Topic is quicklinked. Field can be null.",
+      "dataType": "int",
+      "size": "4",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "8.10 - Updated description"
+    },
+    {
+      "name": "ObjectId3",
+      "description": "Quick link Object ID, only used for the Discussion tool if a Thread is quicklinked. Field can be null.",
+      "dataType": "int",
+      "size": "4",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "8.10 - Updated description"
+    },
+    {
+      "name": "LastModified",
+      "description": "Date the content was last modified (UTC).",
+      "dataType": "datetime2",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "5.0 \u2013 Updated name"
+    },
+    {
+      "name": "IsDeleted",
+      "description": "Content is deleted",
+      "dataType": "bit",
+      "size": "1",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "1.0"
+    },
+    {
+      "name": "SortOrder",
+      "description": "Display sort order used for the content objects",
+      "dataType": "int",
+      "size": "4",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "2.2"
+    },
+    {
+      "name": "Depth",
+      "description": "Indicates the number of nested hierarchical levels in the discussion post.",
+      "dataType": "int",
+      "size": "4",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "2.5 / 3.0"
+    },
+    {
+      "name": "ToolId",
+      "description": "Unique identifier for the tool. Field can be null.",
+      "dataType": "int",
+      "size": "4",
+      "isPrimaryKey": false,
+      "isForeignKey": true,
+      "canBeNull": true,
+      "versionHistory": "4.6 / 5.0"
+    },
+    {
+      "name": "IsHidden",
+      "description": "Content object has not been published yet",
+      "dataType": "bit",
+      "size": "1",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "4.6 / 5.0"
+    },
+    {
+      "name": "ResultId",
+      "description": "Release Condition unique result identifier. Field can be null.",
+      "dataType": "int",
+      "size": "4",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "4.7 / 5.1 - Updated description"
+    },
+    {
+      "name": "DeletedDate",
+      "description": "Date when the content object was deleted (UTC). Field can be null.",
+      "dataType": "datetime2",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "4.6 / 5.0"
+    },
+    {
+      "name": "CreatedBy",
+      "description": "User who created the content object. Field can be null.",
+      "dataType": "int",
+      "size": "4",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "4.6 / 5.0"
+    },
+    {
+      "name": "LastModifiedBy",
+      "description": "User who last modified the content object. Field can be null.",
+      "dataType": "int",
+      "size": "4",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "4.6 / 5.0"
+    },
+    {
+      "name": "DeletedBy",
+      "description": "User who deleted the content object. Field can be null.",
+      "dataType": "int",
+      "size": "4",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "8.6 - Updated description"
+    },
+    {
+      "name": "AIUtilization",
+      "description": "Indicates whether D2L Lumi (Brightspace AI) capabilities were used and the level of AI involvement. Possible values: 0 - No AI capabilities were involved. 1 - Generated by AI and reviewed by a human. 2 - Generated by AI and edited by a human. 3 - Assisted or uplifted by AI. 4 - Generated by AI but not yet reviewed by a human.",
+      "dataType": "int",
+      "size": "4",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "9.16 / 10.0 - Updated possible values"
+    },
+    {
+      "name": "Version",
+      "description": "Indicates the version of the row. This information is used to determine which table row occurred first, similar to the way timestamps function in other data sets.",
+      "dataType": "bigint",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "10.13 / 11.3"
+    }
+  ],
+  "kind": "BDS"
+}

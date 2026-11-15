@@ -1,0 +1,67 @@
+{
+  "name": "Question Answer Options",
+  "sourceUrl": "https://community.d2l.com/brightspace/kb/articles/4531-questions-data-sets#question-answer-options",
+  "columns": [
+    {
+      "name": "AnswerId",
+      "description": "Identifier for the answer this option belongs to.",
+      "dataType": "bigint",
+      "size": "8",
+      "isPrimaryKey": true,
+      "isForeignKey": true,
+      "canBeNull": false,
+      "versionHistory": "9.16 / 10.0"
+    },
+    {
+      "name": "AnswerText",
+      "description": "Text of this answer option. Field can be null.",
+      "dataType": "nvarchar",
+      "size": "1000",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "9.16 / 10.0"
+    },
+    {
+      "name": "Weight",
+      "description": "Weight associated with this answer option.",
+      "dataType": "decimal",
+      "size": "19, 9",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "9.16 / 10.0"
+    },
+    {
+      "name": "QuestionId",
+      "description": "Identifier for the question with this answer option.",
+      "dataType": "bigint",
+      "size": "8",
+      "isPrimaryKey": true,
+      "isForeignKey": true,
+      "canBeNull": false,
+      "versionHistory": "9.16 / 10.0"
+    },
+    {
+      "name": "QuestionVersionId",
+      "description": "Identifier for the version of the question with this answer option.",
+      "dataType": "bigint",
+      "size": "8",
+      "isPrimaryKey": true,
+      "isForeignKey": true,
+      "canBeNull": false,
+      "versionHistory": "9.16 / 10.0"
+    },
+    {
+      "name": "AnswerOptionId",
+      "description": "Unique answer option identifier.",
+      "dataType": "int",
+      "size": "4",
+      "isPrimaryKey": true,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "9.16 / 10.0"
+    }
+  ],
+  "kind": "BDS"
+}

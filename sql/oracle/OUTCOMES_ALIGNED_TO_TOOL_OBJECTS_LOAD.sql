@@ -1,0 +1,15 @@
+-- Data set: Outcomes Aligned to Tool Objects (staging table)
+-- Source: https://community.d2l.com/brightspace/kb/articles/4796-outcomes-data-sets#outcomes-aligned-to-tool-objects
+CREATE TABLE "OUTCOMES_ALIGNED_TO_TOOL_OBJECTS_LOAD" (
+    "OBJECTTYPE" NUMBER(10) NOT NULL,
+    "OBJECTID" VARCHAR2(255 CHAR) NOT NULL,
+    "OUTCOMEID" VARCHAR2(36 CHAR) NOT NULL,
+    "REGISTRYID" VARCHAR2(36 CHAR) NOT NULL,
+    "CREATEDDATE" TIMESTAMP(7),
+    "CREATEDBY" NUMBER(10),
+    "LASTMODIFIEDDATE" TIMESTAMP(7),
+    "LASTMODIFIEDBY" NUMBER(10),
+    "ISDELETED" NUMBER(1),
+    "AIUTILIZATION" NUMBER(10),
+    PRIMARY KEY ("OBJECTTYPE", "OBJECTID", "OUTCOMEID", "REGISTRYID")
+);

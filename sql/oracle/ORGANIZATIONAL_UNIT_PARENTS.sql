@@ -1,0 +1,10 @@
+-- Data set: Organizational Unit Parents
+-- Source: https://community.d2l.com/brightspace/kb/articles/4529-organizational-units-data-sets#organizational-unit-parents
+CREATE TABLE "ORGANIZATIONAL_UNIT_PARENTS" (
+    "ORGUNITID" NUMBER(10) NOT NULL,
+    "PARENTORGUNITID" NUMBER(10) NOT NULL,
+    "ROWVERSION" NUMBER(19),
+    "DATEDELETED" TIMESTAMP(7),
+    PRIMARY KEY ("ORGUNITID", "PARENTORGUNITID")
+);
+CREATE INDEX "IX_ORGANIZATIONAL_UNIT_PARENTS_PARENTORGUNITID" ON "ORGANIZATIONAL_UNIT_PARENTS" ("PARENTORGUNITID");

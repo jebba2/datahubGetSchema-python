@@ -1,0 +1,207 @@
+{
+  "name": "LTI Advantage Registration Audit",
+  "sourceUrl": "https://community.d2l.com/brightspace/kb/articles/4727-lti-data-sets#lti-advantage-registration-audit",
+  "columns": [
+    {
+      "name": "Action",
+      "description": "The action completed by the event: Registered, Updated, or Deleted.",
+      "dataType": "nvarchar",
+      "size": "10",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "9.7"
+    },
+    {
+      "name": "ClientId",
+      "description": "Unique customer facing identifier assigned by the platform when the LTI tool is registered.",
+      "dataType": "nvarchar",
+      "size": "255",
+      "isPrimaryKey": true,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "9.7"
+    },
+    {
+      "name": "ToolName",
+      "description": "The name of the external learning tool.",
+      "dataType": "nvarchar",
+      "size": "200",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "9.7"
+    },
+    {
+      "name": "Domain",
+      "description": "Domain for the registered tool.",
+      "dataType": "nvarchar",
+      "size": "2083",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "9.7"
+    },
+    {
+      "name": "RedirectURLs",
+      "description": "List of Redirect URLs provided by the tool, formatted as comma-separated values (CSV) list. The list is truncated to the max length allowed in the BDS field.",
+      "dataType": "nvarchar",
+      "size": "2083",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "9.7"
+    },
+    {
+      "name": "KeysetURL",
+      "description": "The Keyset URL needed to complete the launch. The value is truncated to the max length allowed in the BDS field. Field can be null.",
+      "dataType": "nvarchar",
+      "size": "255",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "9.7"
+    },
+    {
+      "name": "LoginURL",
+      "description": "The Initial LTI login request endpoint as by the tool. The value is truncated to the max length allowed in the BDS field.",
+      "dataType": "nvarchar",
+      "size": "255",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "9.7"
+    },
+    {
+      "name": "LTIVersion",
+      "description": "Indicates whether the registration is for LTI 1.1 or LTI 1.3.",
+      "dataType": "varchar",
+      "size": "12",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "9.7"
+    },
+    {
+      "name": "IsRegistrationEnabled",
+      "description": "If true, the tool registration is enabled for the organization.",
+      "dataType": "bit",
+      "size": "1",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "9.7"
+    },
+    {
+      "name": "SendInstitutionRole",
+      "description": "If true, the registration includes both contextual and institutional roles. If false, the registration only includes contextual roles.",
+      "dataType": "bit",
+      "size": "1",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "9.7"
+    },
+    {
+      "name": "TargetLinkURI",
+      "description": "Optional Target Link URI used during the Deep Linking workflow when the tool doesn't provide a launch URL for the returned LTI Resource Link. Field can be null.",
+      "dataType": "nvarchar",
+      "size": "255",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "9.7"
+    },
+    {
+      "name": "ModifiedBy",
+      "description": "The ID of the Brightspace user that updated the tool registration data.",
+      "dataType": "bigint",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": true,
+      "canBeNull": false,
+      "versionHistory": "9.7"
+    },
+    {
+      "name": "HasAssignmentAndGradeServices",
+      "description": "If true, the Assignments and grades services (AGS) extension is enabled for this registration.",
+      "dataType": "bit",
+      "size": "1",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "9.7"
+    },
+    {
+      "name": "HasSubmissionReview",
+      "description": "If true, the Submission Review extension is enabled for this registration.",
+      "dataType": "bit",
+      "size": "1",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "9.7"
+    },
+    {
+      "name": "HasDeepLinking",
+      "description": "If true, the Deep Linking extension is enabled for this registration.",
+      "dataType": "bit",
+      "size": "1",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "9.7"
+    },
+    {
+      "name": "HasNamesAndRoleProvisioningServices",
+      "description": "If true, the Names and Roles Provisioning Services (NRPS) extension is enabled for this registration.",
+      "dataType": "bit",
+      "size": "1",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "9.7"
+    },
+    {
+      "name": "HasActivityItemProfile",
+      "description": "If true, the Activity Item Profile extension is enabled for this registration.",
+      "dataType": "bit",
+      "size": "1",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "9.7"
+    },
+    {
+      "name": "HasPlatformNotificationService",
+      "description": "If true, the Platform Notification Service is enabled for this registration.",
+      "dataType": "bit",
+      "size": "1",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "9.7"
+    },
+    {
+      "name": "Timestamp",
+      "description": "Date and time (UTC) when the user created or modified the registration.",
+      "dataType": "datetime2",
+      "size": "8",
+      "isPrimaryKey": true,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "9.7"
+    },
+    {
+      "name": "HasAssetProcessor",
+      "description": "If true, the Asset Processor Services are enabled for this registration. The Platform Notification Service and Deeplinking must also be enabled.",
+      "dataType": "bit",
+      "size": "1",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "10.6"
+    }
+  ],
+  "kind": "BDS"
+}

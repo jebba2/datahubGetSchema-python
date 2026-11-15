@@ -1,0 +1,16 @@
+-- Data set: Outcomes Set Course (staging table)
+-- Source: https://community.d2l.com/brightspace/kb/articles/4796-outcomes-data-sets#outcomes-set-course
+CREATE TABLE "OUTCOMES_SET_COURSE_LOAD" (
+    "REGISTRYID" VARCHAR2(36 CHAR) NOT NULL,
+    "ORGUNITID" NUMBER(19),
+    "SOURCEOUTCOMESETID" NUMBER(19),
+    "ISPRIMARY" NUMBER(1),
+    "CREATEDDATE" TIMESTAMP(7),
+    "CREATEDBY" NUMBER(10),
+    "LASTMODIFIEDDATE" TIMESTAMP(7),
+    "LASTMODIFIEDBY" NUMBER(10),
+    "ISDELETED" NUMBER(1),
+    "SCALEID" VARCHAR2(36 CHAR),
+    "ACHIEVEMENTTHRESHOLD" VARCHAR2(36 CHAR),
+    PRIMARY KEY ("REGISTRYID")
+);

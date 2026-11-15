@@ -1,0 +1,97 @@
+{
+  "name": "Outcomes Rubric Alignments",
+  "sourceUrl": "https://community.d2l.com/brightspace/kb/articles/4796-outcomes-data-sets#outcomes-rubric-alignments",
+  "columns": [
+    {
+      "name": "RubricId",
+      "description": "Unique rubric identifier.",
+      "dataType": "bigint",
+      "size": "8",
+      "isPrimaryKey": true,
+      "isForeignKey": true,
+      "canBeNull": false,
+      "versionHistory": "7.6"
+    },
+    {
+      "name": "CriterionId",
+      "description": "Identifier for the criterion row of the rubric.",
+      "dataType": "bigint",
+      "size": "8",
+      "isPrimaryKey": true,
+      "isForeignKey": true,
+      "canBeNull": false,
+      "versionHistory": "7.6"
+    },
+    {
+      "name": "OutcomeId",
+      "description": "Unique identifier for the outcome object.",
+      "dataType": "uniqueidentifier",
+      "size": "16",
+      "isPrimaryKey": true,
+      "isForeignKey": true,
+      "canBeNull": false,
+      "versionHistory": "7.6"
+    },
+    {
+      "name": "RegistryId",
+      "description": "ID of the registry for the org unit or program.",
+      "dataType": "uniqueidentifier",
+      "size": "16",
+      "isPrimaryKey": true,
+      "isForeignKey": true,
+      "canBeNull": false,
+      "versionHistory": "7.6"
+    },
+    {
+      "name": "CreatedDate",
+      "description": "The date when the alignment of this outcome was recorded for this rubric criterion row. Field can be null.",
+      "dataType": "datetime2",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "7.6"
+    },
+    {
+      "name": "CreatedBy",
+      "description": "ID of the user who initially created this alignment. Field can be null.",
+      "dataType": "int",
+      "size": "4",
+      "isPrimaryKey": false,
+      "isForeignKey": true,
+      "canBeNull": true,
+      "versionHistory": "7.6"
+    },
+    {
+      "name": "LastModifiedDate",
+      "description": "Date when this item was last modified (UTC). Contains created date upon creation and deleted date for deleted items.",
+      "dataType": "datetime2",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "7.6"
+    },
+    {
+      "name": "LastModifiedBy",
+      "description": "ID of user who last modified, created, or deleted this item.",
+      "dataType": "int",
+      "size": "4",
+      "isPrimaryKey": false,
+      "isForeignKey": true,
+      "canBeNull": false,
+      "versionHistory": "7.6"
+    },
+    {
+      "name": "IsDeleted",
+      "description": "Set to true if the outcome alignment has been removed from the rubric or the rubric has been deleted.",
+      "dataType": "bit",
+      "size": "1",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "7.6"
+    }
+  ],
+  "kind": "BDS"
+}

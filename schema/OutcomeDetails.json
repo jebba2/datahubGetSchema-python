@@ -1,0 +1,117 @@
+{
+  "name": "Outcome Details",
+  "sourceUrl": "https://community.d2l.com/brightspace/kb/articles/4796-outcomes-data-sets#outcome-details",
+  "columns": [
+    {
+      "name": "OutcomeId",
+      "description": "Unique outcome identifier.",
+      "dataType": "uniqueidentifier",
+      "size": "16",
+      "isPrimaryKey": true,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "6.8"
+    },
+    {
+      "name": "OutcomeDefinitionSource",
+      "description": "Provider for this outcome, e.g. ASN.",
+      "dataType": "nvarchar",
+      "size": "1000",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "6.8"
+    },
+    {
+      "name": "OutcomeDefinitionId",
+      "description": "ID of outcome within provider (for example ASN or locally authored). Field can be an empty string.",
+      "dataType": "nvarchar",
+      "size": "128",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "8.11 / 9.0 - Changed Description"
+    },
+    {
+      "name": "ParentOutcomeId",
+      "description": "ID of the parent outcome, if nested under a parent outcome object in the same org unit, or null for top level outcomes with no parent. Field can be null.",
+      "dataType": "uniqueidentifier",
+      "size": "16",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "6.8"
+    },
+    {
+      "name": "Description",
+      "description": "Main body of this outcome. Truncated to 1000 characters.",
+      "dataType": "nvarchar",
+      "size": "1000",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "6.8"
+    },
+    {
+      "name": "Notation",
+      "description": "Outcome notation for ASN outcomes.",
+      "dataType": "nvarchar",
+      "size": "1000",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "6.8"
+    },
+    {
+      "name": "CreatedDate",
+      "description": "For authored outcomes, date when this item was initially created (UTC). For imported outcomes, this field is null. Field can be null.",
+      "dataType": "datetime2",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "6.8"
+    },
+    {
+      "name": "CreatedBy",
+      "description": "For authored outcomes, ID of user who initially created this item. For imported outcomes, this field is null. Field can be null.",
+      "dataType": "int",
+      "size": "4",
+      "isPrimaryKey": false,
+      "isForeignKey": true,
+      "canBeNull": true,
+      "versionHistory": "6.8"
+    },
+    {
+      "name": "LastModifiedDate",
+      "description": "Date when this item was last modified (UTC). Contains created date upon creation and deleted date for deleted items. Field can be null.",
+      "dataType": "datetime2",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "6.8"
+    },
+    {
+      "name": "LastModifiedBy",
+      "description": "ID of user who last modified, created, or deleted this item. Field can be null.",
+      "dataType": "int",
+      "size": "4",
+      "isPrimaryKey": false,
+      "isForeignKey": true,
+      "canBeNull": true,
+      "versionHistory": "6.8"
+    },
+    {
+      "name": "IsDeleted",
+      "description": "Indicates if this item has been deleted for authored outcomes. This flag will be null for outcomes imported from external providers, e.g. ASN. Field can be null.",
+      "dataType": "bit",
+      "size": "1",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "6.8"
+    }
+  ],
+  "kind": "BDS"
+}

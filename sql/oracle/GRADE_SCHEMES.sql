@@ -1,0 +1,11 @@
+-- Data set: Grade Schemes
+-- Source: https://community.d2l.com/brightspace/kb/articles/4527-grades-data-sets#grade-schemes
+CREATE TABLE "GRADE_SCHEMES" (
+    "GRADESCHEMEID" NUMBER(19) NOT NULL,
+    "ORGUNITID" NUMBER(10),
+    "SCHEMENAME" VARCHAR2(128 CHAR),
+    "DELETEDDATE" TIMESTAMP(7),
+    "VERSION" NUMBER(19),
+    PRIMARY KEY ("GRADESCHEMEID")
+);
+CREATE INDEX "IX_GRADE_SCHEMES_ORGUNITID" ON "GRADE_SCHEMES" ("ORGUNITID");

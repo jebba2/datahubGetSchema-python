@@ -1,0 +1,57 @@
+{
+  "name": "Media Objects",
+  "sourceUrl": "https://community.d2l.com/brightspace/kb/articles/22812-content-service-data-sets#media-objects",
+  "columns": [
+    {
+      "name": "ContentId",
+      "description": "Unique content identifier.",
+      "dataType": "uniqueidentifier",
+      "size": "16",
+      "isPrimaryKey": true,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "8.10"
+    },
+    {
+      "name": "Title",
+      "description": "Title of the media object.",
+      "dataType": "nvarchar",
+      "size": "1000",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "8.10"
+    },
+    {
+      "name": "RevisionCount",
+      "description": "Number of revisions of this media object.",
+      "dataType": "int",
+      "size": "4",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "8.10"
+    },
+    {
+      "name": "OwnerId",
+      "description": "Brightspace user identifier for the owner of the media object.",
+      "dataType": "int",
+      "size": "4",
+      "isPrimaryKey": false,
+      "isForeignKey": true,
+      "canBeNull": false,
+      "versionHistory": "8.10"
+    },
+    {
+      "name": "LastModified",
+      "description": "Date the media object was last modified (UTC).",
+      "dataType": "datetime2",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "8.10"
+    }
+  ],
+  "kind": "BDS"
+}

@@ -1,0 +1,12 @@
+-- Data set: ADS CPD User Targets
+-- Source: https://community.d2l.com/brightspace/kb/articles/4539-list-of-advanced-data-sets#cpd-user-targets
+CREATE TABLE `ADSCPDUserTargets` (
+    `UserId` TEXT,
+    `StartDate` TEXT,
+    `SubjectId` TEXT,
+    `SubjectName` TEXT,
+    `StructuredMinutes` TEXT,
+    `UnstructuredMinutes` TEXT,
+    `StructuredRecordCount` TEXT,
+    `UnstructuredRecordCount` TEXT
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;

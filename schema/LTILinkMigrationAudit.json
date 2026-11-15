@@ -1,0 +1,157 @@
+{
+  "name": "LTI Link Migration Audit",
+  "sourceUrl": "https://community.d2l.com/brightspace/kb/articles/4727-lti-data-sets#lti-link-migration-audit",
+  "columns": [
+    {
+      "name": "LTIMigrationId",
+      "description": "Unique identifier for each individual link migration",
+      "dataType": "uniqueidentifier",
+      "size": "16",
+      "isPrimaryKey": true,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "7.14 / 8.0"
+    },
+    {
+      "name": "UserId",
+      "description": "ID of the person who triggered the migration",
+      "dataType": "bigint",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": true,
+      "canBeNull": false,
+      "versionHistory": "7.14 / 8.0"
+    },
+    {
+      "name": "MigrationDate",
+      "description": "The date the migration occurred for this link (UTC)",
+      "dataType": "datetime2",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "7.14 / 8.0"
+    },
+    {
+      "name": "OrgUnitId",
+      "description": "ID of the org unit where the launch migration occurred",
+      "dataType": "bigint",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": true,
+      "canBeNull": false,
+      "versionHistory": "7.14 / 8.0"
+    },
+    {
+      "name": "LinkId",
+      "description": "ID of the link that was migrated",
+      "dataType": "bigint",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": true,
+      "canBeNull": false,
+      "versionHistory": "7.14 / 8.0"
+    },
+    {
+      "name": "LinkURL",
+      "description": "Launch URL for the link",
+      "dataType": "nvarchar",
+      "size": "2000",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "7.14 / 8.0"
+    },
+    {
+      "name": "LinkName",
+      "description": "Name of the link",
+      "dataType": "nvarchar",
+      "size": "200",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "7.14 / 8.0"
+    },
+    {
+      "name": "ClientId",
+      "description": "ID of the registration this link was migrated to. Field can be null.",
+      "dataType": "nvarchar",
+      "size": "255",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "7.14 / 8.0"
+    },
+    {
+      "name": "RegistrationDomain",
+      "description": "Domain of the registration this link was migrated to. Field can be null.",
+      "dataType": "nvarchar",
+      "size": "2083",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "7.14 / 8.0"
+    },
+    {
+      "name": "DeploymentId",
+      "description": "ID of the link's deployment that was used for the LTI migration. Field can be null.",
+      "dataType": "uniqueidentifier",
+      "size": "16",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "7.14 / 8.0"
+    },
+    {
+      "name": "JobId",
+      "description": "ID for the job this link was migrated under.",
+      "dataType": "bigint",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "7.14 / 8.0"
+    },
+    {
+      "name": "Status",
+      "description": "Status result for this link migration. Possible values: 0 = Success 1 = Error 2 = Not Found",
+      "dataType": "smallint",
+      "size": "2",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "7.14 / 8.0"
+    },
+    {
+      "name": "FailureCode",
+      "description": "Error code for failed migrations. Possible values: 0 = Registration Not Found 1 = Deployment Not Enabled 2 = Deployment Not Found 3 = Link Not Found 4 = Link Not Legacy 5 = Link URL Invalid 6 = Unknown 7 = Auto Migrate is not enabled in the deployment Field can be null.",
+      "dataType": "smallint",
+      "size": "2",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "7.14 / 8.0"
+    },
+    {
+      "name": "MigrationType",
+      "description": "How migration was triggered. Possible values: 0 = Link API 1 = Copy Course 2 = Course Migration Button 3 = Course Migration API",
+      "dataType": "smallint",
+      "size": "2",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "7.14 / 8.0"
+    },
+    {
+      "name": "LegacyURL",
+      "description": "The legacy domain the link was migrated from. Only populates if the legacy domain is different than the registration domain. Field can be null.",
+      "dataType": "nvarchar",
+      "size": "2083",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "9.4"
+    }
+  ],
+  "kind": "BDS"
+}

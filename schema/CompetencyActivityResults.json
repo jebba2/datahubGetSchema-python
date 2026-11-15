@@ -1,0 +1,127 @@
+{
+  "name": "Competency Activity Results",
+  "sourceUrl": "https://community.d2l.com/brightspace/kb/articles/4754-competency-data-sets#competency-activity-results",
+  "columns": [
+    {
+      "name": "ActivityId",
+      "description": "Unique identifier for activity associated with a competency",
+      "dataType": "bigint",
+      "size": "8",
+      "isPrimaryKey": true,
+      "isForeignKey": true,
+      "canBeNull": false,
+      "versionHistory": "2.5 / 3.0 - Added FK"
+    },
+    {
+      "name": "OrgUnitId",
+      "description": "Unique org unit identifier",
+      "dataType": "int",
+      "size": "4",
+      "isPrimaryKey": true,
+      "isForeignKey": true,
+      "canBeNull": false,
+      "versionHistory": "1.0"
+    },
+    {
+      "name": "UserId",
+      "description": "Unique user Identifier",
+      "dataType": "int",
+      "size": "4",
+      "isPrimaryKey": true,
+      "isForeignKey": true,
+      "canBeNull": false,
+      "versionHistory": "1.0"
+    },
+    {
+      "name": "LearningObjectId",
+      "description": "Unique learning object identifier",
+      "dataType": "bigint",
+      "size": "8",
+      "isPrimaryKey": true,
+      "isForeignKey": true,
+      "canBeNull": false,
+      "versionHistory": "1.0"
+    },
+    {
+      "name": "IsAchieved",
+      "description": "Is learning objective achieved. Field can be null.",
+      "dataType": "bit",
+      "size": "1",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "1.0"
+    },
+    {
+      "name": "PercentAchieved",
+      "description": "Percentage achieved in the activity. Field can be null.",
+      "dataType": "decimal",
+      "size": "19, 9",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "4.8 / 5.2 - Updated column size"
+    },
+    {
+      "name": "RubricScore",
+      "description": "Rubric score achieved in the activity. Field can be null.",
+      "dataType": "decimal",
+      "size": "19, 9",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "4.8 / 5.2 - Updated column size"
+    },
+    {
+      "name": "RubricLevelAchieved",
+      "description": "Rubric level achieved in the activity. Field can be null.",
+      "dataType": "nvarchar",
+      "size": "256",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "5.7 / 6.0 - Changed Column Size"
+    },
+    {
+      "name": "RubricId",
+      "description": "Rubric id attached to the competency activity (used for evaluation). Field can be null.",
+      "dataType": "bigint",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "1.4"
+    },
+    {
+      "name": "RubricCriterionId",
+      "description": "Criterion attached to the competency activity. Field can be null.",
+      "dataType": "bigint",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "1.6"
+    },
+    {
+      "name": "AchievedDate",
+      "description": "Date the competency was achieved (UTC). Field can be null.",
+      "dataType": "datetime2",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "3.6 / 4.1"
+    },
+    {
+      "name": "Version",
+      "description": "Indicates the version of the row. This information is used to determine which table row occurred first, similar to the way time stamps function in other data sets.",
+      "dataType": "bigint",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "5.7 / 6.0"
+    }
+  ],
+  "kind": "BDS"
+}

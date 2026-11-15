@@ -1,0 +1,10 @@
+-- Data set: Course Access Log
+-- Source: https://community.d2l.com/brightspace/kb/articles/4740-users-data-sets#course-access-log
+CREATE TABLE "COURSE_ACCESS_LOG" (
+    "ORGUNITID" NUMBER(10) NOT NULL,
+    "USERID" NUMBER(10) NOT NULL,
+    "TIMESTAMP" TIMESTAMP(7) NOT NULL,
+    "SOURCE" VARCHAR2(20 CHAR) NOT NULL,
+    PRIMARY KEY ("ORGUNITID", "USERID", "TIMESTAMP", "SOURCE")
+);
+CREATE INDEX "IX_COURSE_ACCESS_LOG_USERID" ON "COURSE_ACCESS_LOG" ("USERID");

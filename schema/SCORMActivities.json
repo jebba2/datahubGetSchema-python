@@ -1,0 +1,127 @@
+{
+  "name": "SCORM Activities",
+  "sourceUrl": "https://community.d2l.com/brightspace/kb/articles/4536-scorm-data-sets#scorm-activities",
+  "columns": [
+    {
+      "name": "ActivityId",
+      "description": "Unique identifier of the SCORM activity.",
+      "dataType": "uniqueidentifier",
+      "size": "16",
+      "isPrimaryKey": true,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "5.5"
+    },
+    {
+      "name": "ScormObjectId",
+      "description": "Unique identifier for each content object.",
+      "dataType": "uniqueidentifier",
+      "size": "16",
+      "isPrimaryKey": false,
+      "isForeignKey": true,
+      "canBeNull": false,
+      "versionHistory": "5.5"
+    },
+    {
+      "name": "ParentActivityId",
+      "description": "Unique identifier of the parent activity. Field can be null.",
+      "dataType": "uniqueidentifier",
+      "size": "16",
+      "isPrimaryKey": false,
+      "isForeignKey": true,
+      "canBeNull": true,
+      "versionHistory": "5.5"
+    },
+    {
+      "name": "NumChildren",
+      "description": "Number of child activities of this activity.",
+      "dataType": "int",
+      "size": "4",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "5.5"
+    },
+    {
+      "name": "InternalId",
+      "description": "Unique label for the activity. Field can be null.",
+      "dataType": "nvarchar",
+      "size": "255",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "5.5"
+    },
+    {
+      "name": "Title",
+      "description": "The title of the activity. Field can be null.",
+      "dataType": "nvarchar",
+      "size": "200",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "5.5"
+    },
+    {
+      "name": "CompletionThreshold",
+      "description": "Used to determine when the activity is considered complete. Field can be null.",
+      "dataType": "float",
+      "size": "24",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "5.5"
+    },
+    {
+      "name": "PassingScore",
+      "description": "Scaled score required to pass the activity, between 0 and 100. Field can be null.",
+      "dataType": "float",
+      "size": "24",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "5.5"
+    },
+    {
+      "name": "PassingScoreUsed",
+      "description": "Whether the passing score was used to determine the learner success status. Field can be null.",
+      "dataType": "bit",
+      "size": "1",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "5.5"
+    },
+    {
+      "name": "ScoreMin",
+      "description": "Minimum value in the range for the raw score in an activity attempt. Field can be null.",
+      "dataType": "float",
+      "size": "24",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "5.5"
+    },
+    {
+      "name": "ScoreMax",
+      "description": "Maximum value in the range for the raw score in an activity attempt. Field can be null.",
+      "dataType": "float",
+      "size": "24",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "5.5"
+    },
+    {
+      "name": "LastModified",
+      "description": "Date when the activity was last modified (UTC).",
+      "dataType": "datetime2",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "5.5"
+    }
+  ],
+  "kind": "BDS"
+}

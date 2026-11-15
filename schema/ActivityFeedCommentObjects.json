@@ -1,0 +1,87 @@
+{
+  "name": "Activity Feed Comment Objects",
+  "sourceUrl": "https://community.d2l.com/brightspace/kb/articles/4712-activity-feed-data-sets#activity-feed-comment-objects",
+  "columns": [
+    {
+      "name": "OrgUnitId",
+      "description": "Unique org unit identifier.",
+      "dataType": "int",
+      "size": "4",
+      "isPrimaryKey": false,
+      "isForeignKey": true,
+      "canBeNull": false,
+      "versionHistory": "5.9/6.2"
+    },
+    {
+      "name": "CommentId",
+      "description": "Unique comment identifier.",
+      "dataType": "uniqueidentifier",
+      "size": "16",
+      "isPrimaryKey": true,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "5.9/6.2"
+    },
+    {
+      "name": "LastModifiedBy",
+      "description": "Unique identifier of the user who last modified the comment.",
+      "dataType": "int",
+      "size": "4",
+      "isPrimaryKey": false,
+      "isForeignKey": true,
+      "canBeNull": false,
+      "versionHistory": "5.9/6.2"
+    },
+    {
+      "name": "LastModified",
+      "description": "Date the comment was created, updated, or deleted (UTC).",
+      "dataType": "datetime2",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "5.9/6.2"
+    },
+    {
+      "name": "Content",
+      "description": "The text of the comment.",
+      "dataType": "nvarchar",
+      "size": "3072",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "5.9/6.2"
+    },
+    {
+      "name": "IsDeleted",
+      "description": "Indicates if the comment has been deleted.",
+      "dataType": "bit",
+      "size": "1",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "5.9/6.2"
+    },
+    {
+      "name": "PostId",
+      "description": "Unique identifier for the parent post.",
+      "dataType": "uniqueidentifier",
+      "size": "16",
+      "isPrimaryKey": false,
+      "isForeignKey": true,
+      "canBeNull": false,
+      "versionHistory": "5.9/6.2"
+    },
+    {
+      "name": "Version",
+      "description": "Version of comment.",
+      "dataType": "bigint",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "5.9/6.2"
+    }
+  ],
+  "kind": "BDS"
+}

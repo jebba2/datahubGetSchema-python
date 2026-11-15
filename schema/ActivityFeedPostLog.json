@@ -1,0 +1,117 @@
+{
+  "name": "Activity Feed Post Log",
+  "sourceUrl": "https://community.d2l.com/brightspace/kb/articles/4712-activity-feed-data-sets#activity-feed-post-log",
+  "columns": [
+    {
+      "name": "LogId",
+      "description": "Unique log entry identifier",
+      "dataType": "uniqueidentifier",
+      "size": "16",
+      "isPrimaryKey": true,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "5.8 / 6.1"
+    },
+    {
+      "name": "UserId",
+      "description": "Unique identifier of the user who last modified the post.",
+      "dataType": "int",
+      "size": "4",
+      "isPrimaryKey": false,
+      "isForeignKey": true,
+      "canBeNull": false,
+      "versionHistory": "5.8 / 6.1"
+    },
+    {
+      "name": "OrgUnitId",
+      "description": "Unique org unit identifier.",
+      "dataType": "int",
+      "size": "4",
+      "isPrimaryKey": false,
+      "isForeignKey": true,
+      "canBeNull": false,
+      "versionHistory": "5.8 / 6.1"
+    },
+    {
+      "name": "PostId",
+      "description": "Unique post identifier.",
+      "dataType": "uniqueidentifier",
+      "size": "16",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "5.8 / 6.1"
+    },
+    {
+      "name": "PostType",
+      "description": "Type of post.",
+      "dataType": "nvarchar",
+      "size": "16",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "5.8 / 6.1"
+    },
+    {
+      "name": "Action",
+      "description": "Indicates whether the post was created, updated, or deleted.",
+      "dataType": "nvarchar",
+      "size": "16",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "5.8 / 6.1"
+    },
+    {
+      "name": "ActionDate",
+      "description": "Date the post was created, updated, or deleted (UTC).",
+      "dataType": "datetime2",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "5.8 / 6.1"
+    },
+    {
+      "name": "DropboxId",
+      "description": "Unique ID of the posted assignment, if the post is of type assignment. Field can be null.",
+      "dataType": "bigint",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": true,
+      "canBeNull": true,
+      "versionHistory": "5.8 / 6.1"
+    },
+    {
+      "name": "Content",
+      "description": "The text of the message post, if the post is of type message. Field can be null.",
+      "dataType": "nvarchar",
+      "size": "3072",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "5.8 / 6.1"
+    },
+    {
+      "name": "CommentCount",
+      "description": "Number of comments associated with the post.",
+      "dataType": "int",
+      "size": "4",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "5.8 / 6.1"
+    },
+    {
+      "name": "AttachmentCount",
+      "description": "Indicates the number of attachments associated with the post, if the post is of type message. Field can be null.",
+      "dataType": "int",
+      "size": "4",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "5.8 / 6.1"
+    }
+  ],
+  "kind": "BDS"
+}

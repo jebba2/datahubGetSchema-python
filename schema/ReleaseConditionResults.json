@@ -1,0 +1,57 @@
+{
+  "name": "Release Condition Results",
+  "sourceUrl": "https://community.d2l.com/brightspace/kb/articles/4533-release-conditions-data-sets#release-condition-results",
+  "columns": [
+    {
+      "name": "ResultId",
+      "description": "Unique result identifier.",
+      "dataType": "int",
+      "size": "4",
+      "isPrimaryKey": true,
+      "isForeignKey": true,
+      "canBeNull": false,
+      "versionHistory": "6.7 - Updated key"
+    },
+    {
+      "name": "UserId",
+      "description": "Unique user identifier.",
+      "dataType": "int",
+      "size": "4",
+      "isPrimaryKey": true,
+      "isForeignKey": true,
+      "canBeNull": false,
+      "versionHistory": "6.7 - Updated key"
+    },
+    {
+      "name": "Met",
+      "description": "Indicates whether the result has been met or not met by the user.",
+      "dataType": "varchar",
+      "size": "7",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "5.7 / 6.0 - Updated column size"
+    },
+    {
+      "name": "Version",
+      "description": "Indicates the version of the row. This information is used to determine which table row occurred first, similar to the way time stamps function in other data sets.",
+      "dataType": "bigint",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "3.7 / 4.2"
+    },
+    {
+      "name": "DeletedDate",
+      "description": "The date and time when the release condition result was deleted (UTC). Field can be null.",
+      "dataType": "datetime2",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "10.8"
+    }
+  ],
+  "kind": "BDS"
+}

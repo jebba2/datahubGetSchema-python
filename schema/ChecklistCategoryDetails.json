@@ -1,0 +1,107 @@
+{
+  "name": "Checklist Category Details",
+  "sourceUrl": "https://community.d2l.com/brightspace/kb/articles/4523-checklist-data-sets#checklist-category-details",
+  "columns": [
+    {
+      "name": "CategoryId",
+      "description": "Unique category identifier.",
+      "dataType": "bigint",
+      "size": "8",
+      "isPrimaryKey": true,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "3.3"
+    },
+    {
+      "name": "ChecklistId",
+      "description": "Unique checklist identifier.",
+      "dataType": "bigint",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": true,
+      "canBeNull": false,
+      "versionHistory": "3.3"
+    },
+    {
+      "name": "Name",
+      "description": "Name of the checklist category.",
+      "dataType": "nvarchar",
+      "size": "512",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "5.7 / 6.0 - Changed Column Size"
+    },
+    {
+      "name": "Description",
+      "description": "Description of the category. Field can be null.",
+      "dataType": "nvarchar",
+      "size": "1000",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "3.3"
+    },
+    {
+      "name": "DescriptionIsHtml",
+      "description": "Indicates if the description is in HTML.",
+      "dataType": "bit",
+      "size": "1",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "3.3"
+    },
+    {
+      "name": "SortOrder",
+      "description": "The order in which the checklist categories are sorted.",
+      "dataType": "int",
+      "size": "4",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "3.3"
+    },
+    {
+      "name": "LastModifiedUtc",
+      "description": "Last modified date/time (UTC). Field can be null.",
+      "dataType": "datetime2",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "3.3"
+    },
+    {
+      "name": "DateDeleted",
+      "description": "Date the category was deleted (UTC). Field can be null.",
+      "dataType": "datetime2",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": true,
+      "versionHistory": "8.9"
+    },
+    {
+      "name": "DeletedBy",
+      "description": "User who deleted the checklist category. Field can be null.",
+      "dataType": "int",
+      "size": "4",
+      "isPrimaryKey": false,
+      "isForeignKey": true,
+      "canBeNull": true,
+      "versionHistory": "8.9"
+    },
+    {
+      "name": "Version",
+      "description": "Indicates the version of the checklist category.",
+      "dataType": "bigint",
+      "size": "8",
+      "isPrimaryKey": false,
+      "isForeignKey": false,
+      "canBeNull": false,
+      "versionHistory": "8.9"
+    }
+  ],
+  "kind": "BDS"
+}

@@ -1,0 +1,15 @@
+-- Data set: Content Files Properties Log (staging table)
+-- Source: https://community.d2l.com/brightspace/kb/articles/4713-content-data-sets#content-files-properties-log
+CREATE TABLE "CONTENT_FILES_PROPERTIES_LOG_LOAD" (
+    "ORGUNITID" NUMBER(10) NOT NULL,
+    "CONTENTOBJECTID" NUMBER(10) NOT NULL,
+    "ACTION" VARCHAR2(10 CHAR),
+    "FILEPATH" CLOB,
+    "FILENAME" VARCHAR2(512 CHAR),
+    "FILEEXTENSION" VARCHAR2(512 CHAR),
+    "FILESIZEBYTES" NUMBER(19),
+    "UPLOADDATE" TIMESTAMP(7),
+    "LASTMODIFIEDBY" NUMBER(10),
+    "LASTMODIFIED" TIMESTAMP(7) NOT NULL,
+    PRIMARY KEY ("ORGUNITID", "CONTENTOBJECTID", "LASTMODIFIED")
+);
