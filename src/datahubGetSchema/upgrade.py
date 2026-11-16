@@ -8,10 +8,10 @@ to handle.
 
 from dataclasses import dataclass, field
 
-from datahubtable.dialects.base import Dialect, ExistingColumn, ExistingTable, sqlComment
-from datahubtable.schema import Column, DataSet
-from datahubtable.sqlTypes import TypeChange, compareTypes
-from datahubtable.tables import TableSpec, createStatements
+from datahubGetSchema.dialects.base import Dialect, ExistingColumn, ExistingTable, sqlComment
+from datahubGetSchema.schema import Column, DataSet
+from datahubGetSchema.sqlTypes import TypeChange, compareTypes
+from datahubGetSchema.tables import TableSpec, createStatements
 
 
 @dataclass

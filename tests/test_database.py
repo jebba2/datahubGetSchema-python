@@ -2,8 +2,8 @@
 
 import pytest
 
-from datahubtable.database import parseDatabaseUrl, redactUrl
-from datahubtable.dialects.base import ConnectionTarget
+from datahubGetSchema.database import parseDatabaseUrl, redactUrl
+from datahubGetSchema.dialects.base import ConnectionTarget
 
 
 def test_urlSchemePicksTheDatabase():

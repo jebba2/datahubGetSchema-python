@@ -1,6 +1,6 @@
 """Describes what changed in the documented data sets between two fetches."""
 
-from datahubtable.schema import Column, DataSet
+from datahubGetSchema.schema import Column, DataSet
 
 # The column settings that decide a table's definition, with the words used to report a change.
 REPORTED_FLAGS = {"isPrimaryKey": "primary key", "isForeignKey": "foreign key", "canBeNull": "can be null"}

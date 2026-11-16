@@ -1,6 +1,6 @@
 """Print the statements that create one data set's main table, indexes and staging table in every database.
 
-Run from the project root, after 'datahubtable fetch' has written the schema directory:
+Run from the project root, after 'datahubGetSchema fetch' has written the schema directory:
 
     uv run python examples/printCreateTable.py "Grade Schemes"
     uv run python examples/printCreateTable.py "ADS All Grades"
@@ -9,11 +9,11 @@ Run from the project root, after 'datahubtable fetch' has written the schema dir
 import sys
 from pathlib import Path
 
-from datahubtable.dialects import DIALECTS
-from datahubtable.naming import TableNamer
-from datahubtable.overrides import OVERRIDES_DIRECTORY_NAME, applyOverrides
-from datahubtable.schema import loadDataSets
-from datahubtable.tables import buildTableSpecs, createStatements
+from datahubGetSchema.dialects import DIALECTS
+from datahubGetSchema.naming import TableNamer
+from datahubGetSchema.overrides import OVERRIDES_DIRECTORY_NAME, applyOverrides
+from datahubGetSchema.schema import loadDataSets
+from datahubGetSchema.tables import buildTableSpecs, createStatements
 
 SCHEMA_DIRECTORY = Path("schema")
 

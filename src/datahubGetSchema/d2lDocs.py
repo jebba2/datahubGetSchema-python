@@ -24,7 +24,7 @@ DOCUMENTATION_CATEGORY_IDS = (BDS_CATEGORY_ID, ADS_CATEGORY_ID)
 PAGE_SIZE = 100
 REQUEST_TIMEOUT_SECONDS = 60
 PAUSE_BETWEEN_REQUESTS_SECONDS = 0.2
-USER_AGENT = "datahubtable"
+USER_AGENT = "datahubGetSchema"
 
 
 def getJson(path: str) -> Any:
@@ -73,5 +73,5 @@ def loadCachedArticles(cacheDirectory: Path) -> list[dict[str, Any]]:
     """Return the documentation pages saved by an earlier download."""
     paths = sorted(cacheDirectory.glob("*.json"))
     if not paths:
-        raise FileNotFoundError(f"No saved documentation pages in {cacheDirectory}. Run 'datahubtable fetch' first.")
+        raise FileNotFoundError(f"No saved documentation pages in {cacheDirectory}. Run 'datahubGetSchema fetch' first.")
     return [json.loads(path.read_text(encoding="utf-8")) for path in paths]

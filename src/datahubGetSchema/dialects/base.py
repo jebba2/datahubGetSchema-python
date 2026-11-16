@@ -6,8 +6,8 @@ from abc import ABC, abstractmethod
 from dataclasses import dataclass, field
 from typing import Any
 
-from datahubtable.schema import Column, DataSet
-from datahubtable.sqlTypes import SqlType
+from datahubGetSchema.schema import Column, DataSet
+from datahubGetSchema.sqlTypes import SqlType
 
 # Decimal digits each D2L integer type can hold.
 INTEGER_DIGITS = {"smallint": 5, "int": 10, "bigint": 19}

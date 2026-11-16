@@ -12,8 +12,8 @@ from dataclasses import dataclass, field
 from html.parser import HTMLParser
 from typing import Any
 
-from datahubtable.d2lDocs import ADS_CATEGORY_ID
-from datahubtable.schema import Column, DataSet
+from datahubGetSchema.d2lDocs import ADS_CATEGORY_ID
+from datahubGetSchema.schema import Column, DataSet
 
 COLUMN_TABLE_HEADERS = {"Version History", "Field", "Description"}
 TYPE_HEADERS = {"Type", "Size", "Key"}

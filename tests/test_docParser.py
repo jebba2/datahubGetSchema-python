@@ -2,7 +2,7 @@
 
 import pytest
 
-from datahubtable.docParser import DocFormatError, parseArticle
+from datahubGetSchema.docParser import DocFormatError, parseArticle
 
 from .conftest import (
     ADS_ARTICLE_ID,

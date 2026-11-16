@@ -7,11 +7,11 @@ from pathlib import Path
 
 import pytest
 
-from datahubtable.cli import countOf, main
+from datahubGetSchema.cli import countOf, main
 
 from .conftest import FIXTURE_ARTICLES
 
-LOG_FILE = Path("working/logs/datahubtable.log")
+LOG_FILE = Path("working/logs/datahubGetSchema.log")
 # The corrections the project ships for mistakes in D2L's pages. The saved pages need them too.
 SHIPPED_OVERRIDES = Path(__file__).parent.parent / "schema" / "overrides"
 # The fixture pages hold 26 Brightspace Data Sets and 19 Advanced Data Sets.
@@ -170,7 +170,7 @@ def test_generateWarnsAboutMapEntriesThatMatchNoDataSet(fetched, capsys):
 
 def test_generateWithoutSchemaFilesExplainsWhatToRun(project, capsys):
     assert main(["generate"]) == 2
-    assert capsys.readouterr().err == "Error: No data set files found in schema. Run 'datahubtable fetch' first.\n"
+    assert capsys.readouterr().err == "Error: No data set files found in schema. Run 'datahubGetSchema fetch' first.\n"
 
 
 # verify
@@ -264,7 +264,7 @@ def test_laterRunsAddToTheSameLogFile(fetched):
 
 def test_failureGoesToTheLogWithItsTracebackAndToTheConsoleAsOneLine(project, capsys):
     assert main(["generate"]) == 2
-    assert capsys.readouterr().err == "Error: No data set files found in schema. Run 'datahubtable fetch' first.\n"
+    assert capsys.readouterr().err == "Error: No data set files found in schema. Run 'datahubGetSchema fetch' first.\n"
     log = (project / LOG_FILE).read_text(encoding="utf-8")
     assert "ERROR generate failed\nTraceback (most recent call last):\n" in log
     assert "SchemaError: No data set files found in schema." in log

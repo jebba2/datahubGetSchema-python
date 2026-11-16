@@ -1,6 +1,6 @@
-# datahubGetSchema-python
+# datahubGetSchema
 
-`datahubtable` writes the SQL that creates a table for every D2L Brightspace Data Hub data set, for MySQL, Oracle and PostgreSQL. It can also compare the tables in an existing database with the current D2L documentation and write a script that brings them up to date without touching the rows already loaded.
+`datahubGetSchema` writes the SQL that creates a table for every D2L Brightspace Data Hub data set, for MySQL, Oracle and PostgreSQL. It can also compare the tables in an existing database with the current D2L documentation and write a script that brings them up to date without touching the rows already loaded.
 
 The column definitions come from D2L's own documentation pages: the [Brightspace Data Sets](https://community.d2l.com/brightspace/kb/categories/1229-brightspace-data-sets) category and the [list of Advanced Data Sets](https://community.d2l.com/brightspace/kb/articles/4539-list-of-advanced-data-sets). As of the last fetch that is 146 Brightspace Data Sets and 19 Advanced Data Sets across 44 pages.
 
@@ -8,13 +8,71 @@ Each data set gets a main table, a `_LOAD` staging table, and an index on each f
 
 ## Setup
 
-The project uses [uv](https://docs.astral.sh/uv/) for packages and scripts. Install uv, then from the project root run:
+The project uses [uv](https://docs.astral.sh/uv/) for packages and scripts. You need uv and git. uv downloads the right Python (3.13) by itself, so you do not have to install Python first.
+
+### 1. Install uv
+
+Linux:
 
 ```sh
+curl -LsSf https://astral.sh/uv/install.sh | sh
+```
+
+If the machine has no `curl`, use `wget -qO- https://astral.sh/uv/install.sh | sh`.
+
+macOS:
+
+```sh
+curl -LsSf https://astral.sh/uv/install.sh | sh
+```
+
+Or, with Homebrew, `brew install uv`.
+
+Windows, in PowerShell:
+
+```powershell
+powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
+```
+
+Or, with WinGet, `winget install --id=astral-sh.uv -e`.
+
+Open a new terminal afterward so `uv` is on your `PATH`, and check it with `uv --version`. The [uv installation page](https://docs.astral.sh/uv/getting-started/installation/) lists other ways to install it.
+
+### 2. Get the project and install it
+
+These commands are the same on Linux, macOS and Windows:
+
+```sh
+git clone https://github.com/jebba2/datahubGetSchema-python.git datahubGetSchema
+cd datahubGetSchema
 uv sync
 ```
 
-That creates the virtual environment and installs the database drivers (PyMySQL, psycopg and python-oracledb). All three are pure Python or ship their own binaries, so no database client software is needed.
+`uv sync` creates the virtual environment in `.venv` and installs the database drivers (PyMySQL, psycopg and python-oracledb). All three are pure Python or ship their own binaries, so no database client software is needed.
+
+Check the install:
+
+```sh
+uv run datahubGetSchema --help
+```
+
+### Differences on Windows
+
+Every `uv run datahubGetSchema ...` command in this file works as written in PowerShell and in Command Prompt. Two things differ from Linux and macOS.
+
+Setting the database password for `check`:
+
+| Shell | Command |
+| --- | --- |
+| Linux and macOS (bash, zsh) | `export DATAHUB_DB_PASSWORD='yourPassword'` |
+| Windows PowerShell | `$env:DATAHUB_DB_PASSWORD = 'yourPassword'` |
+| Windows Command Prompt | `set DATAHUB_DB_PASSWORD=yourPassword` |
+
+Wildcards such as `extracts/*.csv`: bash and zsh expand them before the tool starts, and the tool does not expand them itself. PowerShell and Command Prompt pass the `*` through unchanged, so list the files yourself. In PowerShell:
+
+```powershell
+uv run datahubGetSchema verify (Get-ChildItem extracts\*.csv)
+```
 
 ## How it works
 
@@ -34,8 +92,8 @@ Run `fetch` and `generate` again when D2L announces a new Brightspace Data Sets 
 ### fetch
 
 ```sh
-uv run datahubtable fetch
-uv run datahubtable fetch --cached
+uv run datahubGetSchema fetch
+uv run datahubGetSchema fetch --cached
 ```
 
 `fetch` downloads every page, saves the raw pages in `working/docs/`, and writes `schema/<DataSetName>.json`. `--cached` rebuilds the JSON from the saved pages without using the network.
@@ -63,10 +121,10 @@ If D2L removes a data set, its JSON file stays in `schema/` and `fetch` lists it
 ### generate
 
 ```sh
-uv run datahubtable generate
-uv run datahubtable generate --db oracle
-uv run datahubtable generate --db oracle --prefix D2L_ --name-map examples/tableMap.example.json --out working/sql
-uv run datahubtable generate --no-staging --no-indexes
+uv run datahubGetSchema generate
+uv run datahubGetSchema generate --db oracle
+uv run datahubGetSchema generate --db oracle --prefix D2L_ --name-map examples/tableMap.example.json --out working/sql
+uv run datahubGetSchema generate --no-staging --no-indexes
 ```
 
 Each database gets its own directory holding one file per table plus `create_all.sql`, which contains every table and index and can be run by itself. A main table's file holds its `CREATE TABLE` followed by its `CREATE INDEX` statements. Its staging table has a file of its own.
@@ -84,9 +142,9 @@ Each database gets its own directory holding one file per table plus `create_all
 ### check
 
 ```sh
-uv run datahubtable check --url mysql://loader@dbhost:3306/datahub
-uv run datahubtable check --url postgresql://loader@dbhost:5432/datahub
-uv run datahubtable check --url oracle://loader@dbhost:1521/FREEPDB1 --prefix D2L_ --name-map tableMap.json
+uv run datahubGetSchema check --url mysql://loader@dbhost:3306/datahub
+uv run datahubGetSchema check --url postgresql://loader@dbhost:5432/datahub
+uv run datahubGetSchema check --url oracle://loader@dbhost:1521/FREEPDB1 --prefix D2L_ --name-map tableMap.json
 ```
 
 `check` only reads the database. It writes the upgrade script to `working/upgrade/<database>_upgrade.sql` for you to review and run yourself. For Oracle the last part of the URL is the service name. The tables checked are those in the schema the user logs in to.
@@ -113,9 +171,9 @@ Upgrade script: working/upgrade/postgres_upgrade.sql
 ### verify
 
 ```sh
-uv run datahubtable verify extracts/Users_2026-11-01.zip
-uv run datahubtable verify extracts/*.csv
-uv run datahubtable verify report.csv --data-set "ADS All Grades"
+uv run datahubGetSchema verify extracts/Users_2026-11-01.zip
+uv run datahubGetSchema verify extracts/*.csv        # Linux and macOS; on Windows see Setup
+uv run datahubGetSchema verify report.csv --data-set "ADS All Grades"
 ```
 
 `verify` reads the first row of each file and compares the column names with the data set's documented columns. A file is a CSV, or a zip with a CSV inside. Names are compared without regard to case, spaces or punctuation.
@@ -178,7 +236,7 @@ Changing a column's type in an override does not convert an existing table. `che
 
 ## Logging
 
-Every run adds to `working/logs/datahubtable.log`. Each command records the options it started with, the same lines it prints to the console, and its exit code. `fetch` also records each request it sends to D2L, and `check` records which database it connected to, how many tables it read, and every difference it found, including the ones the console cuts off after the first 20.
+Every run adds to `working/logs/datahubGetSchema.log`. Each command records the options it started with, the same lines it prints to the console, and its exit code. `fetch` also records each request it sends to D2L, and `check` records which database it connected to, how many tables it read, and every difference it found, including the ones the console cuts off after the first 20.
 
 When a command fails, the console shows one `Error:` line and the log holds the full Python traceback.
 
@@ -191,12 +249,12 @@ When a command fails, the console shows one `Error:` line and the log holds the 
 2026-11-14 17:36:39,148 INFO check finished with exit code 1
 ```
 
-A password in the database URL is written as `***`. The log starts a new file at 1 MB and keeps the three before it (`datahubtable.log.1` to `.3`).
+A password in the database URL is written as `***`. The log starts a new file at 1 MB and keeps the three before it (`datahubGetSchema.log.1` to `.3`).
 
 To log somewhere else, put `--log-file` before the command name:
 
 ```sh
-uv run datahubtable --log-file working/logs/nightly.log check --url mysql://loader@dbhost:3306/datahub
+uv run datahubGetSchema --log-file working/logs/nightly.log check --url mysql://loader@dbhost:3306/datahub
 ```
 
 ## What the upgrade script does and does not do
@@ -324,7 +382,7 @@ Run these from the project root.
 uv run python examples/printCreateTable.py "Grade Schemes"
 uv run python examples/printCreateTable.py "ADS All Grades"
 uv run python examples/planUpgradeOffline.py
-uv run datahubtable generate --db oracle --prefix D2L_ --name-map examples/tableMap.example.json --out working/examples/sql
+uv run datahubGetSchema generate --db oracle --prefix D2L_ --name-map examples/tableMap.example.json --out working/examples/sql
 ```
 
 The first two print one data set's main table, indexes and staging table for all three databases. The third builds an upgrade plan for a made-up older table without needing a database.
@@ -337,7 +395,7 @@ schema/overrides/    your corrections, never written by fetch
 sql/mysql/           SQL scripts, written by generate
 sql/oracle/
 sql/postgres/
-src/datahubtable/    the tool
+src/datahubGetSchema/    the tool
   d2lDocs.py         downloads the documentation pages
   docParser.py       turns a page into data set definitions
   schema.py          data set model and JSON files

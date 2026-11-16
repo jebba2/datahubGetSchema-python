@@ -1,4 +1,4 @@
-"""Command line for datahubtable: fetch the documentation, generate SQL, check a database, and verify extracts."""
+"""Command line for datahubGetSchema: fetch the documentation, generate SQL, check a database, and verify extracts."""
 
 import argparse
 import dataclasses
@@ -8,20 +8,20 @@ import os
 import sys
 from pathlib import Path
 
-from datahubtable.d2lDocs import downloadArticles, loadCachedArticles
-from datahubtable.database import parseDatabaseUrl, readExistingTables, redactUrl
-from datahubtable.dialects import DIALECTS
-from datahubtable.dialects.base import Dialect
-from datahubtable.docParser import parseArticle
-from datahubtable.extractCheck import compareHeader, findDataSet, readHeader
-from datahubtable.generator import writeSql
-from datahubtable.naming import TableNamer, loadNameMap
-from datahubtable.overrides import OVERRIDES_DIRECTORY_NAME, applyOverrides
-from datahubtable.runLog import DEFAULT_LOG_FILE, closeRunLog, openRunLog
-from datahubtable.schema import DataSet, dataSetFileName, loadDataSets, mergeDataSets, saveDataSets
-from datahubtable.schemaChanges import describeChanges
-from datahubtable.tables import TableSpec, buildTableSpecs
-from datahubtable.upgrade import planUpgrade, renderUpgradeScript
+from datahubGetSchema.d2lDocs import downloadArticles, loadCachedArticles
+from datahubGetSchema.database import parseDatabaseUrl, readExistingTables, redactUrl
+from datahubGetSchema.dialects import DIALECTS
+from datahubGetSchema.dialects.base import Dialect
+from datahubGetSchema.docParser import parseArticle
+from datahubGetSchema.extractCheck import compareHeader, findDataSet, readHeader
+from datahubGetSchema.generator import writeSql
+from datahubGetSchema.naming import TableNamer, loadNameMap
+from datahubGetSchema.overrides import OVERRIDES_DIRECTORY_NAME, applyOverrides
+from datahubGetSchema.runLog import DEFAULT_LOG_FILE, closeRunLog, openRunLog
+from datahubGetSchema.schema import DataSet, dataSetFileName, loadDataSets, mergeDataSets, saveDataSets
+from datahubGetSchema.schemaChanges import describeChanges
+from datahubGetSchema.tables import TableSpec, buildTableSpecs
+from datahubGetSchema.upgrade import planUpgrade, renderUpgradeScript
 
 log = logging.getLogger(__name__)
 
@@ -36,11 +36,11 @@ EXIT_ERROR = 2
 DESCRIPTION = "Generate and upgrade database tables for D2L Brightspace Data Hub data sets."
 EPILOG = """\
 examples:
-  datahubtable fetch
-  datahubtable generate
-  datahubtable generate --db oracle --prefix D2L_ --name-map tableMap.json
-  datahubtable check --url postgresql://loader@localhost:5432/datahub
-  datahubtable verify extracts/Users_2026-11-01.zip
+  datahubGetSchema fetch
+  datahubGetSchema generate
+  datahubGetSchema generate --db oracle --prefix D2L_ --name-map tableMap.json
+  datahubGetSchema check --url postgresql://loader@localhost:5432/datahub
+  datahubGetSchema verify extracts/Users_2026-11-01.zip
 
 exit codes:
   0  success, or nothing differs (check, verify)
@@ -52,7 +52,7 @@ exit codes:
 def buildParser() -> argparse.ArgumentParser:
     """Build the argument parser with the fetch, generate, check and verify commands."""
     parser = argparse.ArgumentParser(
-        prog="datahubtable",
+        prog="datahubGetSchema",
         description=DESCRIPTION,
         epilog=EPILOG,
         formatter_class=argparse.RawDescriptionHelpFormatter,

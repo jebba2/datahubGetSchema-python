@@ -1,7 +1,7 @@
 """The run log: a file that records what each command did, including the traceback of any failure.
 
 Modules write to it through the standard logging module, using a logger named
-after themselves. Those loggers all sit under the "datahubtable" logger, which is
+after themselves. Those loggers all sit under the "datahubGetSchema" logger, which is
 where the file is attached for the length of one command.
 """
 
@@ -9,8 +9,8 @@ import logging
 from logging.handlers import RotatingFileHandler
 from pathlib import Path
 
-LOGGER_NAME = "datahubtable"
-DEFAULT_LOG_FILE = Path("working/logs/datahubtable.log")
+LOGGER_NAME = "datahubGetSchema"
+DEFAULT_LOG_FILE = Path("working/logs/datahubGetSchema.log")
 LOG_FORMAT = "%(asctime)s %(levelname)s %(message)s"
 # The log starts a new file at this size and keeps a few old ones, so it cannot grow without limit.
 MAX_LOG_BYTES = 1_000_000

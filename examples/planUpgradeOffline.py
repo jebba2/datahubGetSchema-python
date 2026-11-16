@@ -2,9 +2,9 @@
 
 The script describes a Users table as an older load might have left it: one column
 missing and one column too short. It then plans the upgrade against the current
-schema and prints the script 'datahubtable check' would write.
+schema and prints the script 'datahubGetSchema check' would write.
 
-Run from the project root, after 'datahubtable fetch' has written the schema directory:
+Run from the project root, after 'datahubGetSchema fetch' has written the schema directory:
 
     uv run python examples/planUpgradeOffline.py
 """
@@ -12,13 +12,13 @@ Run from the project root, after 'datahubtable fetch' has written the schema dir
 import dataclasses
 from pathlib import Path
 
-from datahubtable.dialects import dialectNamed
-from datahubtable.dialects.base import ExistingColumn, ExistingTable
-from datahubtable.naming import TableNamer
-from datahubtable.schema import loadDataSets
-from datahubtable.sqlTypes import SqlType
-from datahubtable.tables import buildTableSpecs
-from datahubtable.upgrade import planUpgrade, renderUpgradeScript
+from datahubGetSchema.dialects import dialectNamed
+from datahubGetSchema.dialects.base import ExistingColumn, ExistingTable
+from datahubGetSchema.naming import TableNamer
+from datahubGetSchema.schema import loadDataSets
+from datahubGetSchema.sqlTypes import SqlType
+from datahubGetSchema.tables import buildTableSpecs
+from datahubGetSchema.upgrade import planUpgrade, renderUpgradeScript
 
 SCHEMA_DIRECTORY = Path("schema")
 

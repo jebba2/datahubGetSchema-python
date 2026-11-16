@@ -2,10 +2,10 @@
 
 import dataclasses
 
-from datahubtable.dialects import dialectNamed
-from datahubtable.naming import TableNamer
-from datahubtable.schema import DataSet
-from datahubtable.tables import buildTableSpecs, createStatements
+from datahubGetSchema.dialects import dialectNamed
+from datahubGetSchema.naming import TableNamer
+from datahubGetSchema.schema import DataSet
+from datahubGetSchema.tables import buildTableSpecs, createStatements
 
 from .conftest import makeColumn
 

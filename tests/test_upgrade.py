@@ -4,13 +4,13 @@ import dataclasses
 
 import pytest
 
-from datahubtable.dialects import DIALECTS, dialectNamed
-from datahubtable.dialects.base import Dialect, ExistingColumn, ExistingTable
-from datahubtable.naming import TableNamer
-from datahubtable.schema import DataSet
-from datahubtable.sqlTypes import SqlType
-from datahubtable.tables import TableSpec, buildTableSpecs, createStatements
-from datahubtable.upgrade import planUpgrade, renderUpgradeScript
+from datahubGetSchema.dialects import DIALECTS, dialectNamed
+from datahubGetSchema.dialects.base import Dialect, ExistingColumn, ExistingTable
+from datahubGetSchema.naming import TableNamer
+from datahubGetSchema.schema import DataSet
+from datahubGetSchema.sqlTypes import SqlType
+from datahubGetSchema.tables import TableSpec, buildTableSpecs, createStatements
+from datahubGetSchema.upgrade import planUpgrade, renderUpgradeScript
 
 from .conftest import makeColumn
 

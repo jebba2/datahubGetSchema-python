@@ -2,8 +2,8 @@
 
 from typing import Any
 
-from datahubtable.dialects.base import ConnectionTarget, Dialect, ExistingColumn
-from datahubtable.sqlTypes import UNBOUNDED, SqlType
+from datahubGetSchema.dialects.base import ConnectionTarget, Dialect, ExistingColumn
+from datahubGetSchema.sqlTypes import UNBOUNDED, SqlType
 
 INTEGER_NAMES = {5: "SMALLINT", 10: "INTEGER", 19: "BIGINT"}
 EXISTING_INTEGER_DIGITS = {"smallint": 5, "integer": 10, "bigint": 19}

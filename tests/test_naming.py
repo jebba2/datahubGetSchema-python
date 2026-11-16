@@ -5,8 +5,8 @@ from pathlib import Path
 
 import pytest
 
-from datahubtable.dialects import dialectNamed
-from datahubtable.naming import TableNamer, loadNameMap
+from datahubGetSchema.dialects import dialectNamed
+from datahubGetSchema.naming import TableNamer, loadNameMap
 
 
 def writeNameMap(tmp_path: Path, content: dict[str, dict[str, str]]) -> Path:

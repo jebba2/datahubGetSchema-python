@@ -2,7 +2,7 @@
 
 from typing import Any
 
-from datahubtable.dialects.base import (
+from datahubGetSchema.dialects.base import (
     INTEGER_DIGITS,
     MAX_VARCHAR_LENGTH,
     UUID_TEXT_LENGTH,
@@ -10,7 +10,7 @@ from datahubtable.dialects.base import (
     Dialect,
     ExistingColumn,
 )
-from datahubtable.sqlTypes import UNBOUNDED, SqlType
+from datahubGetSchema.sqlTypes import UNBOUNDED, SqlType
 
 INTEGER_NAMES = {5: "SMALLINT", 10: "INT", 19: "BIGINT"}
 # A TEXT column holds 65,535 bytes, which is 16,383 characters at 4 bytes each.

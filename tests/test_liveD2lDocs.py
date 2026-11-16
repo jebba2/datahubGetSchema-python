@@ -2,8 +2,8 @@
 
 import logging
 
-from datahubtable.d2lDocs import ADS_CATEGORY_ID, BDS_CATEGORY_ID, fetchArticle, listArticles
-from datahubtable.docParser import parseArticle
+from datahubGetSchema.d2lDocs import ADS_CATEGORY_ID, BDS_CATEGORY_ID, fetchArticle, listArticles
+from datahubGetSchema.docParser import parseArticle
 
 from .conftest import ADS_ARTICLE_ID, USERS_ARTICLE_ID
 
@@ -36,6 +36,6 @@ def test_downloadedPageParsesIntoAdvancedDataSets():
 
 
 def test_eachRequestIsLoggedInDebugDetail(caplog):
-    caplog.set_level(logging.DEBUG, logger="datahubtable")
+    caplog.set_level(logging.DEBUG, logger="datahubGetSchema")
     listArticles(BDS_CATEGORY_ID)
     assert "GET /articles?knowledgeCategoryID=1229&limit=100&page=1" in caplog.text

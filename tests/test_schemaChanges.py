@@ -2,8 +2,8 @@
 
 import dataclasses
 
-from datahubtable.schema import DataSet
-from datahubtable.schemaChanges import describeChanges
+from datahubGetSchema.schema import DataSet
+from datahubGetSchema.schemaChanges import describeChanges
 
 from .conftest import makeColumn
 

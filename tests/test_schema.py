@@ -4,8 +4,8 @@ import dataclasses
 
 import pytest
 
-from datahubtable.docParser import parseArticle
-from datahubtable.schema import (
+from datahubGetSchema.docParser import parseArticle
+from datahubGetSchema.schema import (
     DataSet,
     SchemaError,
     dataSetFileName,

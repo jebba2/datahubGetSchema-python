@@ -4,12 +4,12 @@ import dataclasses
 
 import pytest
 
-from datahubtable.dialects import dialectNamed
-from datahubtable.dialects.base import Dialect
-from datahubtable.generator import writeSql
-from datahubtable.naming import TableNamer
-from datahubtable.schema import DataSet, SchemaError
-from datahubtable.tables import TableSpec, buildTableSpecs
+from datahubGetSchema.dialects import dialectNamed
+from datahubGetSchema.dialects.base import Dialect
+from datahubGetSchema.generator import writeSql
+from datahubGetSchema.naming import TableNamer
+from datahubGetSchema.schema import DataSet, SchemaError
+from datahubGetSchema.tables import TableSpec, buildTableSpecs
 
 from .conftest import makeColumn
 

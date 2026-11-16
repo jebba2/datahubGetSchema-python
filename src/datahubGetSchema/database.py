@@ -3,8 +3,8 @@
 import logging
 from urllib.parse import unquote, urlsplit, urlunsplit
 
-from datahubtable.dialects import dialectNamed
-from datahubtable.dialects.base import ConnectionTarget, Dialect, ExistingTable
+from datahubGetSchema.dialects import dialectNamed
+from datahubGetSchema.dialects.base import ConnectionTarget, Dialect, ExistingTable
 
 log = logging.getLogger(__name__)
 

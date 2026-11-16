@@ -6,7 +6,7 @@ from typing import Any
 
 import pytest
 
-from datahubtable.schema import Column, DataSet
+from datahubGetSchema.schema import Column, DataSet
 
 FIXTURE_ARTICLES = Path(__file__).parent / "fixtures" / "articles"
 

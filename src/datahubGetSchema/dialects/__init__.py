@@ -1,9 +1,9 @@
 """The supported databases."""
 
-from datahubtable.dialects.base import Dialect
-from datahubtable.dialects.mysql import MySqlDialect
-from datahubtable.dialects.oracle import OracleDialect
-from datahubtable.dialects.postgres import PostgresDialect
+from datahubGetSchema.dialects.base import Dialect
+from datahubGetSchema.dialects.mysql import MySqlDialect
+from datahubGetSchema.dialects.oracle import OracleDialect
+from datahubGetSchema.dialects.postgres import PostgresDialect
 
 DIALECTS: dict[str, Dialect] = {
     dialect.name: dialect for dialect in (MySqlDialect(), OracleDialect(), PostgresDialect())

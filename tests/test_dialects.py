@@ -2,10 +2,10 @@
 
 import pytest
 
-from datahubtable.dialects import DIALECTS, dialectNamed
-from datahubtable.dialects.base import ExistingColumn, UnsupportedTypeError
-from datahubtable.schema import DataSet
-from datahubtable.sqlTypes import SqlType
+from datahubGetSchema.dialects import DIALECTS, dialectNamed
+from datahubGetSchema.dialects.base import ExistingColumn, UnsupportedTypeError
+from datahubGetSchema.schema import DataSet
+from datahubGetSchema.sqlTypes import SqlType
 
 from .conftest import makeColumn
 

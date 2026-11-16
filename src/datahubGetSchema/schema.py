@@ -82,7 +82,7 @@ def loadDataSets(directory: Path) -> list[DataSet]:
         columns = tuple(Column(**column) for column in raw["columns"])
         dataSets.append(DataSet(name=raw["name"], sourceUrl=raw["sourceUrl"], columns=columns, kind=raw["kind"]))
     if not dataSets:
-        raise SchemaError(f"No data set files found in {directory}. Run 'datahubtable fetch' first.")
+        raise SchemaError(f"No data set files found in {directory}. Run 'datahubGetSchema fetch' first.")
     return sorted(dataSets, key=lambda dataSet: dataSet.qualifiedName)
 
 

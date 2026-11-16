@@ -2,14 +2,14 @@
 
 from typing import Any
 
-from datahubtable.dialects.base import (
+from datahubGetSchema.dialects.base import (
     MAX_VARCHAR_LENGTH,
     UUID_TEXT_LENGTH,
     ConnectionTarget,
     Dialect,
     ExistingColumn,
 )
-from datahubtable.sqlTypes import UNBOUNDED, SqlType
+from datahubGetSchema.sqlTypes import UNBOUNDED, SqlType
 
 # A NUMBER declared without precision holds 38 digits with a floating decimal point.
 # Treating it as 38 digits on each side of the point makes it wide enough for any expected type.

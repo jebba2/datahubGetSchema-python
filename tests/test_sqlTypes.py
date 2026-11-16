@@ -2,7 +2,7 @@
 
 import pytest
 
-from datahubtable.sqlTypes import UNBOUNDED, SqlType, TypeChange, compareTypes
+from datahubGetSchema.sqlTypes import UNBOUNDED, SqlType, TypeChange, compareTypes
 
 
 def string(length: int) -> SqlType:

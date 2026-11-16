@@ -23,7 +23,7 @@ import logging
 from pathlib import Path
 from typing import Any
 
-from datahubtable.schema import Column, DataSet, SchemaError
+from datahubGetSchema.schema import Column, DataSet, SchemaError
 
 log = logging.getLogger(__name__)
 

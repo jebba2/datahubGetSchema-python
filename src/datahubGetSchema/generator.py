@@ -2,8 +2,8 @@
 
 from pathlib import Path
 
-from datahubtable.dialects.base import Dialect, sqlComment
-from datahubtable.tables import TableSpec, createStatements
+from datahubGetSchema.dialects.base import Dialect, sqlComment
+from datahubGetSchema.tables import TableSpec, createStatements
 
 CREATE_ALL_FILE_NAME = "create_all.sql"
 

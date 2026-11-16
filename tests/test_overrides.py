@@ -7,8 +7,8 @@ from pathlib import Path
 
 import pytest
 
-from datahubtable.overrides import applyOverrides
-from datahubtable.schema import DataSet, SchemaError
+from datahubGetSchema.overrides import applyOverrides
+from datahubGetSchema.schema import DataSet, SchemaError
 
 
 def writeOverride(directory: Path, content: dict, fileName: str = "GradeSchemes.json") -> None:
@@ -91,7 +91,7 @@ def test_mistakesInAnOverrideFileAreErrorsThatNameTheFile(tmp_path, gradeSchemes
 
 
 def test_appliedOverridesAreLogged(tmp_path, gradeSchemes, caplog):
-    caplog.set_level(logging.INFO, logger="datahubtable")
+    caplog.set_level(logging.INFO, logger="datahubGetSchema")
     writeOverride(tmp_path, {"dataSet": "Grade Schemes", "columns": [{"name": "DeletedDate", "remove": True}]})
     applyOverrides([gradeSchemes], tmp_path)
     assert "Applied override GradeSchemes.json to 'Grade Schemes' (1 column)" in caplog.text

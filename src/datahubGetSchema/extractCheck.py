@@ -10,7 +10,7 @@ import re
 import zipfile
 from pathlib import Path
 
-from datahubtable.schema import DataSet
+from datahubGetSchema.schema import DataSet
 
 
 class ExtractError(ValueError):

@@ -10,8 +10,8 @@ from pathlib import Path
 
 import pytest
 
-from datahubtable.extractCheck import ExtractError, compareHeader, findDataSet, readHeader
-from datahubtable.schema import DataSet
+from datahubGetSchema.extractCheck import ExtractError, compareHeader, findDataSet, readHeader
+from datahubGetSchema.schema import DataSet
 
 from .conftest import makeColumn
 

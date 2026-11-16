@@ -3,9 +3,9 @@
 import json
 from pathlib import Path
 
-from datahubtable.dialects import DIALECTS
-from datahubtable.dialects.base import Dialect
-from datahubtable.schema import DataSet, SchemaError
+from datahubGetSchema.dialects import DIALECTS
+from datahubGetSchema.dialects.base import Dialect
+from datahubGetSchema.schema import DataSet, SchemaError
 
 
 def loadNameMap(path: Path, dialectName: str) -> dict[str, str]:

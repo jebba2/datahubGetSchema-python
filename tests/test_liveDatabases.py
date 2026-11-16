@@ -10,13 +10,13 @@ from pathlib import Path
 
 import pytest
 
-from datahubtable.cli import main
-from datahubtable.database import parseDatabaseUrl
-from datahubtable.naming import TableNamer
-from datahubtable.overrides import OVERRIDES_DIRECTORY_NAME, applyOverrides
-from datahubtable.schema import DataSet, loadDataSets
-from datahubtable.tables import buildTableSpecs, createStatements
-from datahubtable.upgrade import planUpgrade
+from datahubGetSchema.cli import main
+from datahubGetSchema.database import parseDatabaseUrl
+from datahubGetSchema.naming import TableNamer
+from datahubGetSchema.overrides import OVERRIDES_DIRECTORY_NAME, applyOverrides
+from datahubGetSchema.schema import DataSet, loadDataSets
+from datahubGetSchema.tables import buildTableSpecs, createStatements
+from datahubGetSchema.upgrade import planUpgrade
 
 SCHEMA_DIRECTORY = Path(__file__).parent.parent / "schema"
 TEST_DATABASE_URLS = {

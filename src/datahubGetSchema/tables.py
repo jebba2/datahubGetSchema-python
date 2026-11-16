@@ -8,9 +8,9 @@ foreign key column, because those are the columns the tables are joined on.
 
 from dataclasses import dataclass
 
-from datahubtable.dialects.base import Dialect
-from datahubtable.naming import TableNamer
-from datahubtable.schema import Column, DataSet
+from datahubGetSchema.dialects.base import Dialect
+from datahubGetSchema.naming import TableNamer
+from datahubGetSchema.schema import Column, DataSet
 
 STAGING_SUFFIX = "_LOAD"
 
