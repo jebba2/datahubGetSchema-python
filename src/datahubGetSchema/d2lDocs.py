@@ -7,9 +7,10 @@ public JSON API returns each page's HTML without a login.
 
 import json
 import logging
-import time
+import os
 import urllib.request
 from collections.abc import Callable
+from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 from typing import Any
 
@@ -23,7 +24,6 @@ ADS_CATEGORY_ID = 1230
 DOCUMENTATION_CATEGORY_IDS = (BDS_CATEGORY_ID, ADS_CATEGORY_ID)
 PAGE_SIZE = 100
 REQUEST_TIMEOUT_SECONDS = 60
-PAUSE_BETWEEN_REQUESTS_SECONDS = 0.2
 USER_AGENT = "datahubGetSchema"
 
 
@@ -52,20 +52,28 @@ def fetchArticle(articleId: int) -> dict[str, Any]:
     return getJson(f"/articles/{articleId}")
 
 
+def workerCount() -> int:
+    """Return how many pages to download at once: one per processor core, less one, and at least one."""
+    return max(1, (os.cpu_count() or 1) - 1)
+
+
 def downloadArticles(cacheDirectory: Path, report: Callable[[str], None]) -> list[dict[str, Any]]:
     """Download every documentation page, save each one in the cache directory, and return them.
 
+    Pages are downloaded several at a time and returned in the order the site lists them.
     The saved copies let the data set definitions be rebuilt later without the network.
     """
     cacheDirectory.mkdir(parents=True, exist_ok=True)
     summaries = [summary for categoryId in DOCUMENTATION_CATEGORY_IDS for summary in listArticles(categoryId)]
+    articleIds = [summary["articleID"] for summary in summaries]
+    workers = workerCount()
+    log.debug("Downloading %d pages with %d workers", len(summaries), workers)
     articles = []
-    for position, summary in enumerate(summaries, start=1):
-        report(f"[{position}/{len(summaries)}] {summary['name']}")
-        article = fetchArticle(summary["articleID"])
-        (cacheDirectory / f"{summary['articleID']}.json").write_text(json.dumps(article), encoding="utf-8")
-        articles.append(article)
-        time.sleep(PAUSE_BETWEEN_REQUESTS_SECONDS)
+    with ThreadPoolExecutor(max_workers=workers) as executor:
+        for position, (summary, article) in enumerate(zip(summaries, executor.map(fetchArticle, articleIds)), start=1):
+            report(f"[{position}/{len(summaries)}] {summary['name']}")
+            (cacheDirectory / f"{summary['articleID']}.json").write_text(json.dumps(article), encoding="utf-8")
+            articles.append(article)
     return articles
 
 

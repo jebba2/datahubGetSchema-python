@@ -88,7 +88,9 @@ uv run datahubGetSchema fetch
 uv run datahubGetSchema fetch --cached
 ```
 
-`fetch` downloads every page, saves the raw pages in `working/docs/`, and writes `schema/<DataSetName>.json`. `--cached` rebuilds the JSON from the saved pages without using the network.
+`fetch` downloads every page, several at a time, saves the raw pages in `working/docs/`, and writes `schema/<DataSetName>.json`. `--cached` rebuilds the JSON from the saved pages without using the network.
+
+The number of pages downloaded at once is the number of processor cores in the computer minus one, and at least one. An 8-core machine uses 7 workers. The log records how many were used.
 
 After the first fetch, each later one ends with what changed in the documentation. The data set and column in this sample are made up:
 

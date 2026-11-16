@@ -125,7 +125,7 @@ Use real Data Hub extract files where you have them. This command has not been r
 
 - [ ] After any command, `working/logs/datahubGetSchema.log` has a `started` line with the command's options, the lines the command printed, and a `finished with exit code` line. Each line starts with the date and time.
 - [ ] A second command adds to the same file instead of replacing it.
-- [ ] `uv run datahubGetSchema fetch` (not `--cached`) logs one `DEBUG GET /articles...` line per request.
+- [ ] `uv run datahubGetSchema fetch` (not `--cached`) logs one `DEBUG GET /articles...` line per request, and a `DEBUG Downloading N pages with W workers` line where W is the computer's core count minus one.
 - [ ] `uv run datahubGetSchema generate --schema-dir working/empty` prints one `Error:` line, and the log has `ERROR generate failed` followed by the Python traceback.
 - [ ] `check` logs `Connecting to <database> at user@host:port/database` and `Read N tables from the database`.
 - [ ] `check` with a password in the URL logs the URL with `***` in place of the password. Search the log for the password to confirm it is absent.
