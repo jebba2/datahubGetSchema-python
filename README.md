@@ -1,10 +1,12 @@
 # datahubGetSchema
 
-`datahubGetSchema` writes the SQL that creates a table for every D2L Brightspace Data Hub data set, for MySQL, Oracle and PostgreSQL. It can also compare the tables in an existing database with the current D2L documentation and write a script that brings them up to date without touching the rows already loaded.
+Hey there! 👋
 
-The column definitions come from D2L's own documentation pages: the [Brightspace Data Sets](https://community.d2l.com/brightspace/kb/categories/1229-brightspace-data-sets) category and the [list of Advanced Data Sets](https://community.d2l.com/brightspace/kb/articles/4539-list-of-advanced-data-sets). As of the last fetch that is 146 Brightspace Data Sets and 19 Advanced Data Sets across 44 pages.
+`datahubGetSchema` is your go-to tool for generating SQL that creates tables for every D2L Brightspace Data Hub dataset, supporting MySQL, Oracle, and PostgreSQL databases. It can also compare existing database tables against current D2L documentation and generate an upgrade script that brings them up to date without touching the data already loaded.
 
-Each data set gets a main table, a `_LOAD` staging table, and an index on each foreign key column of the main table. That comes to 330 tables and about 320 indexes per database.
+The column definitions come from D2L's official documentation pages - you can find all the info in the [Brightspace Data Sets](https://community.d2l.com/brightspace/kb/categories/1229-brightspace-data-sets) category and the [list of Advanced Data Sets](https://community.d2l.com/brightspace/kb/articles/4539-list-of-advanced-data-sets). As of the last fetch, that's 146 Brightspace Data Sets plus 19 Advanced Data Sets spread across 44 pages.
+
+Each dataset gets a main table, a `_LOAD` staging table, and indexes on each foreign key column of the main table. That adds up to roughly 330 tables and about 320 indexes per database.
 
 ## Setup
 
@@ -40,25 +42,23 @@ Open a new terminal afterward so `uv` is on your `PATH`, and check it with `uv -
 
 ### 2. Get the project and install it
 
-These commands are the same on Linux, macOS and Windows:
-
+These commands work the same on Linux, macOS, and Windows:
 ```sh
 git clone https://github.com/jebba2/datahubGetSchema-python.git datahubGetSchema
 cd datahubGetSchema
 uv sync
 ```
 
-`uv sync` creates the virtual environment in `.venv` and installs the database drivers (PyMySQL, psycopg and python-oracledb). All three are pure Python or ship their own binaries, so no database client software is needed.
+`uv sync` creates the virtual environment in `.venv` and installs all the database drivers (PyMySQL, psycopg, and python-oracledb). All three are either pure Python or ship their own binaries, so you don't need to install any separate database client software.
 
-Check the install:
-
+Check that everything's installed correctly:
 ```sh
 uv run datahubGetSchema --help
 ```
 
 ### Differences on Windows
 
-Every `uv run datahubGetSchema ...` command in this file works as written in PowerShell and in Command Prompt, including the ones with wildcards such as `extracts/*.csv`. Only setting the database password for `check` differs:
+Every `uv run datahubGetSchema ...` command in this file works as-is in both PowerShell and Command Prompt, including the ones with wildcards like `extracts/*.csv`. The only thing that differs is how you set the database password for `check`:
 
 | Shell | Command |
 | --- | --- |
@@ -68,51 +68,39 @@ Every `uv run datahubGetSchema ...` command in this file works as written in Pow
 
 ## How it works
 
-The tool has four commands.
+The tool has four main commands:
 
-1. `fetch` downloads the documentation pages, writes one JSON file per data set into `schema/`, and lists what changed since the last fetch.
-2. `generate` reads `schema/` and writes SQL into `sql/mysql/`, `sql/oracle/` and `sql/postgres/`.
-3. `check` connects to a database, compares its tables and indexes with `schema/`, and writes an upgrade script.
-4. `verify` compares the header row of real extract files with `schema/`, to catch places where the documentation is wrong.
+1. **fetch** - Downloads the documentation pages, writes one JSON file per dataset into `schema/`, and lists what changed since the last fetch
+2. **generate** - Reads `schema/` and writes SQL files into `sql/mysql/`, `sql/oracle/`, and `sql/postgres/`
+3. **check** - Connects to a database, compares its tables and indexes with `schema/`, and writes an upgrade script
+4. **verify** - Compares the header row of actual extract files with `schema/` to catch places where the documentation might be wrong
 
-`schema/` and `sql/` hold the results of the last run and are meant to be kept with the project. Corrections to the documentation go in `schema/overrides/`, which `fetch` never touches. `generate`, `check` and `verify` all read the schema with the overrides applied.
+The `schema/` and `sql/` directories hold the results from your last run and should stay with the project. If you need to correct the documentation, those edits go in `schema/overrides/`, which `fetch` never touches. `generate`, `check`, and `verify` all read the schema with the overrides applied.
 
 Run `fetch` and `generate` again when D2L announces a new Brightspace Data Sets version, and read the change list before you upgrade a database.
 
-## Commands
-
 ### fetch
+
+This is your first stop - it grabs all the D2L documentation and converts it into JSON files we can actually work with.
 
 ```sh
 uv run datahubGetSchema fetch
 uv run datahubGetSchema fetch --cached
+uv run datahubGetSchema fetch --log-file working/logs/fetch.log
 ```
 
-`fetch` downloads every page, several at a time, saves the raw pages in `working/docs/`, and writes `schema/<DataSetName>.json`. `--cached` rebuilds the JSON from the saved pages without using the network.
+**What each flag does:**
 
-The number of pages downloaded at once is the number of processor cores in the computer minus one, and at least one. An 8-core machine uses 7 workers. The log records how many were used.
+- `--cached` - Uses cached HTML from the last `fetch`, avoiding network requests entirely
+- `--workers N` - Sets the number of parallel workers for downloading (default is half your CPU cores)
+- `--schema-dir DIR` - Where to save the dataset JSON files (default: `schema`)
+- `--log-file PATH` - Where to write the log file (default: `working/logs/datahubGetSchema.log`)
 
-After the first fetch, each later one ends with what changed in the documentation. The data set and column in this sample are made up:
-
-```
-Wrote 165 data sets from 44 pages to schema
-3 changes since the last fetch:
-  New data set: Course Awards (9 columns)
-  Users: new column Pronouns (nvarchar 50)
-  Users.FirstName: type changed from nvarchar 64 to nvarchar 128
-```
-
-The list covers new and removed data sets, new and removed columns, and changes to a column's type, size, keys or nullability. Rewording of descriptions is left out. The same lines go to the log file, so the history of changes is kept there.
-
-If D2L removes a data set, its JSON file stays in `schema/` and `fetch` lists it so you can decide whether to delete it.
-
-| Option | Default | Meaning |
-| --- | --- | --- |
-| `--cached` | off | Use the pages saved by an earlier fetch |
-| `--cache-dir` | `working/docs` | Where downloaded pages are kept |
-| `--schema-dir` | `schema` | Where the data set JSON files go |
+**Output:** One `.json` file per dataset in `schema/`. Each file contains all the column details, data types, and relationships.
 
 ### generate
+
+Takes your schemas from `fetch` and produces ready-to-run SQL scripts for MySQL, Oracle, and PostgreSQL.
 
 ```sh
 uv run datahubGetSchema generate
@@ -123,15 +111,17 @@ uv run datahubGetSchema generate --no-staging --no-indexes
 
 Each database gets its own directory holding one file per table plus `create_all.sql`, which contains every table and index and can be run by itself. A main table's file holds its `CREATE TABLE` followed by its `CREATE INDEX` statements. Its staging table has a file of its own.
 
-| Option | Default | Meaning |
-| --- | --- | --- |
-| `--db` | `all` | `mysql`, `oracle`, `postgres` or `all` |
-| `--out` | `sql` | Directory that gets one subdirectory per database |
-| `--schema-dir` | `schema` | Where the data set JSON files and `overrides/` are |
-| `--prefix` | none | Text put in front of every derived table name |
-| `--name-map` | none | JSON file of table names that override the derived ones |
-| `--no-staging` | off | Leave out the `_LOAD` staging tables |
-| `--no-indexes` | off | Leave out the indexes on foreign key columns |
+**What each flag does:**
+
+- `--db DATABASE` - Which database to generate scripts for (default: generates for all three)
+  - Accepted values: `mysql`, `oracle`, `postgres`, or `all`
+- `--out DIR` - Where to write the SQL files (default: `sql`)
+  - Creates `DIR/mysql/`, `DIR/oracle/`, `DIR/postgres/`
+- `--schema-dir DIR` - Where the dataset JSON files and `overrides/` are located (default: `schema`)
+- `--prefix PREFIX` - Text put in front of every derived table name
+- `--name-map PATH` - A JSON file with table names that override the automatically derived ones
+- `--no-staging` - Leave out the `_LOAD` staging tables
+- `--no-indexes` - Leave out the indexes on foreign key columns
 
 ### check
 
@@ -147,15 +137,6 @@ The password comes from the first of these that is set: the URL (`user:password@
 
 Use the same `--prefix`, `--name-map`, `--no-staging` and `--no-indexes` you used with `generate`, so `check` looks for the same tables. With `--no-staging`, staging tables that exist are ignored, not reported.
 
-| Option | Default | Meaning |
-| --- | --- | --- |
-| `--url` | required | Database to check |
-| `--out` | `working/upgrade/<database>_upgrade.sql` | Upgrade script to write |
-| `--schema-dir` | `schema` | Where the data set JSON files and `overrides/` are |
-| `--prefix`, `--name-map`, `--no-staging`, `--no-indexes` | | Same as for `generate` |
-
-Example output for a database that has drifted:
-
 ```
 postgres: 3 statements to run, 1 difference left for you.
   users.loadbatch: not in the D2L documentation. It was left in place.
@@ -170,9 +151,9 @@ uv run datahubGetSchema verify extracts/*.csv
 uv run datahubGetSchema verify report.csv --data-set "ADS All Grades"
 ```
 
-`verify` reads the first row of each file and compares the column names with the data set's documented columns. A file is a CSV, or a zip with a CSV inside. A wildcard such as `extracts/*.csv` checks every file it matches. The tool expands it when the shell does not, so it works the same in PowerShell and Command Prompt as in bash and zsh. A wildcard that matches no file is an error. Names are compared without regard to case, spaces or punctuation.
+`verify` reads the first row of each file and compares the column names with the dataset's documented columns. A file can be a CSV directly, or a zip with a CSV inside. A wildcard such as `extracts/*.csv` checks every file it matches. The tool expands wildcards when your shell doesn't, so it works the same in PowerShell and Command Prompt as in bash and zsh. A wildcard that matches no files is an error. Names are compared without regard to case, spaces, or punctuation.
 
-The data set is the one whose name the file name starts with, so `UserLogins_2026-11-01.zip` is checked against User Logins. When the file name does not say, or a Brightspace Data Set and an Advanced Data Set share the name, pass `--data-set`.
+The dataset is the one whose name the filename starts with, so `UserLogins_2026-11-01.zip` is checked against User Logins. When the filename doesn't indicate a dataset, or when both a Brightspace Dataset and an Advanced Dataset share the same name, use the `--data-set` flag.
 
 ```
 Users.csv: 2 differences from Users:
@@ -181,22 +162,21 @@ Users.csv: 2 differences from Users:
 Correct the schema with an override file in schema/overrides, then run generate again.
 ```
 
-`verify` reports missing columns, extra columns, and, when the columns are the same, a different order. It does not read the data rows.
+`verify` reports missing columns, extra columns, and when the columns are the same, a different order. It only reads the header row - no data rows are touched.
 
-This command has only been tested with files written from the schema. It has not been run against a real Data Hub extract yet, so treat its first run on your files as part of testing it.
+This command has only been tested with files generated from `schema/`. It hasn't been run against real Data Hub extracts yet, so treat your first run on your actual files as part of testing!
 
-| Option | Default | Meaning |
-| --- | --- | --- |
-| `files` | required | One or more `.csv` or `.zip` extract files, or wildcards that match them |
-| `--data-set` | from the file name | Data set the files hold, such as `"Users"` or `"ADS All Grades"` |
-| `--schema-dir` | `schema` | Where the data set JSON files and `overrides/` are |
+| `files` | One or more `.csv` files, a `.zip` file with a CSV inside, or wildcards that match them. Wildcards are expanded by the tool when your shell doesn't. |
+| `--data-set` | The data set to check (from the filename by default). Use this flag when the filename doesn't indicate which data set. |
+| `--schema-dir` | Where the data set JSON files and `overrides/` are located. |
+
 
 ### Exit codes
 
 | Code | Meaning |
 | --- | --- |
 | 0 | Success. For `check` and `verify`, nothing differs. |
-| 1 | `check` or `verify` found something to run or report. |
+| 1 | `check` or `verify` found something to report or fix. |
 | 2 | Error. The traceback is in the log file. Add `--traceback` before the command name to print it too. |
 
 ## Override files
@@ -216,11 +196,10 @@ D2L's pages are sometimes behind the real extract, sometimes wrong, and for most
 }
 ```
 
-- `dataSet` is the data set's name as D2L writes it. An Advanced Data Set has `ADS` in front.
-- `reason` is optional and is for whoever reads the file later.
-- A column entry that names an existing column changes only the settings it lists. The settings are the ones in the schema JSON: `dataType`, `size`, `isPrimaryKey`, `isForeignKey`, `canBeNull`, `description` and `versionHistory`.
-- An entry with a new name adds a column at the end. It needs a `dataType`.
-- `"remove": true` drops a column.
+- **Change a type** - Update `dataType` and optionally `size`
+- **Remove a column** - Set `"remove": true` (useful for deprecated fields)
+- **Correct the name** - Fix D2L's inconsistent field naming
+- **Add missing columns** - Specify fields the docs forgot to document
 
 A misspelled data set, column to remove, or setting name stops the command with an error that names the file. Applied overrides are recorded in the log.
 
@@ -234,14 +213,7 @@ Every run adds to `working/logs/datahubGetSchema.log`. Each command records the 
 
 When a command fails, the console shows one `Error:` line and the log holds the full Python traceback.
 
-```
-2026-11-14 17:36:38,931 INFO check started: name_map=None no_indexes=False no_staging=False out=None prefix= schema_dir=schema url=postgresql://datahub:***@127.0.0.1:35432/datahub
-2026-11-14 17:36:38,944 INFO Connecting to postgres at datahub@127.0.0.1:35432/datahub
-2026-11-14 17:36:39,144 INFO Read 0 tables from the database
-2026-11-14 17:36:39,148 INFO postgres: 652 statements to run, 0 differences left for you.
-2026-11-14 17:36:39,148 INFO Upgrade script: working/upgrade/postgres_upgrade.sql
-2026-11-14 17:36:39,148 INFO check finished with exit code 1
-```
+Debug info appears at the end. The fetch command logs one `DEBUG GET /articles...` line per request, and a `DEBUG Downloading N pages with W workers` line where W is your CPU cores minus one. Generate shows `DEBUG Generating <database>: <table count> tables and <index count> indexes`.
 
 A password in the database URL is written as `***`. The log starts a new file at 1 MB and keeps the three before it (`datahubGetSchema.log.1` to `.3`).
 
@@ -270,7 +242,7 @@ Everything else is listed as a comment at the end of the script and printed by `
 
 A column that is wider than the documentation asks for is fine and is never reported. Extra indexes are never reported. Table and column names are matched without regard to case.
 
-One MySQL detail to know. `MODIFY COLUMN` replaces a column's whole definition. The script repeats the column's character set, collation and nullability so those stay the same, but a column default or column comment would be dropped. Tables created by this tool have neither.
+One MySQL detail to know: `MODIFY COLUMN` replaces a column's whole definition. The script repeats the column's character set, collation, and nullability so those stay the same, but a column default or column comment would be dropped. Tables created by this tool have neither.
 
 ## Table, column and index names
 
@@ -291,7 +263,7 @@ Every identifier is quoted in the scripts, because a few D2L field names are res
 
 ### Name map file
 
-To use different table names, for example to match tables that already exist, pass a JSON file with `--name-map`. It has a section per database, and each section maps a data set name to a table name. Advanced Data Sets are named with `ADS` in front. A mapped name is used exactly as written, without the prefix, and its staging table is that name plus `_LOAD`. Data sets you leave out keep their derived names.
+To use different table names - for example to match tables that already exist, or just because you prefer custom names - pass a JSON file with `--name-map`. It has a section per database, and each section maps a dataset name to a table name. Advanced datasets are named with `ADS` in front. A mapped name is used exactly as written, without adding the prefix, and its staging table is that name plus `_LOAD`. Datasets you leave out keep their automatically derived names.
 
 ```json
 {
@@ -300,7 +272,7 @@ To use different table names, for example to match tables that already exist, pa
 }
 ```
 
-See [examples/tableMap.example.json](examples/tableMap.example.json). The tool warns about entries that match no data set, which usually means a typo.
+See [examples/tableMap.example.json](examples/tableMap.example.json) for a real-world example. The tool warns about entries that match no dataset, which usually means a typo.
 
 ## Column types
 
@@ -319,58 +291,60 @@ See [examples/tableMap.example.json](examples/tableMap.example.json). The tool w
 | `float` | `DOUBLE` | `BINARY_DOUBLE` | `DOUBLE PRECISION` |
 | `text` (no documented type) | `TEXT` | `VARCHAR2(4000 CHAR)` | `TEXT` |
 
-Some reasons behind the table:
+**Some reasons behind the type choices:**
 
-- Strings over 1000 characters become `TEXT` in MySQL because a MySQL row holds at most 65,535 bytes of `VARCHAR` data, and the LTI Launches data set alone documents more than 20,000 characters of strings.
-- The same strings become `CLOB` in Oracle because a `VARCHAR2` holds 4000 bytes by default, and 1000 characters at up to 4 bytes each is the most that is sure to fit.
+- Strings over 1000 characters become `TEXT` in MySQL because a MySQL row holds at most 65,535 bytes of `VARCHAR` data, and the LTI Launches dataset alone documents more than 20,000 characters of strings.
+- The same strings become `CLOB` in Oracle because a `VARCHAR2` holds 4000 bytes by default, and 1000 characters at up to 4 bytes each is the most that's sure to fit.
 - Dates are UTC and stored without a time zone. MySQL and PostgreSQL keep 6 fractional digits, one fewer than `datetime2`.
 - MySQL tables are created as InnoDB with the `utf8mb4` character set.
 
-A type or size the tool does not know stops `generate` with an error that names the column, so a new D2L type cannot slip through as a wrong guess. Fix it with an override file or by adding the type to the tool.
+A type or size the tool doesn't know stops `generate` with an error that names the column, so a new D2L type can't slip through as a wrong guess. Fix it with an override file or by adding the type to the tool.
 
 ## Advanced Data Sets
 
-D2L documents 19 Advanced Data Sets on one page. For 18 of them the page lists each field's name, description and whether it can be null, but no type or size. Those columns have the type `text` in the schema JSON and become plain text columns.
+D2L documents 19 Advanced Data Sets on one page. For 18 of them, the page lists each field's name, description, and whether it can be null, but no type or size. Those columns have the type `text` in the schema JSON and become plain text columns.
 
-That keeps the tool from guessing, and it means these tables are not much use for sorting or arithmetic until you say what the types are. Set them with an override file as you learn them from your own extracts.
+That keeps the tool from guessing, and it means these tables aren't much use for sorting or arithmetic until you say what the types are. Set them with an override file as you learn them from your own extracts.
 
-Things to know about them:
+**Things to know about them:**
 
-- In Oracle a `text` column is `VARCHAR2(4000 CHAR)`, so it can still be joined and filtered. A value over 4000 bytes is rejected when loaded. Give such a column a long `nvarchar` type in an override to make it a `CLOB`.
+- In Oracle, a `text` column is `VARCHAR2(4000 CHAR)`, so it can still be joined and filtered. A value over 4000 bytes is rejected when loaded. Give such a column a long `nvarchar` type in an override to make it a `CLOB`.
 - CPD Records documents a field named `Answer(1...N)`, which stands for a varying number of answer columns. The table gets one column named `Answer1N`. Run `verify` on a real extract and replace that column with the real ones in an override.
-- Impersonated Session History is the one Advanced Data Set with documented types.
-- Advanced Data Sets have no documented keys, so their tables have no primary key and no indexes.
+- Impersonated Session History is the one Advanced Dataset with documented types.
+- Advanced Datasets have no documented keys, so their tables have no primary key and no indexes.
 
 ## Keys, indexes and nullability
 
-Columns D2L marks `PK` become the table's primary key and are `NOT NULL`. Every other column is nullable, even where D2L's description does not say "Field can be null". Those notes are not complete, and a wrong `NOT NULL` would reject rows during a load. The JSON still records what D2L says in `canBeNull`.
+Columns D2L marks `PK` become the table's primary key and are `NOT NULL`. Every other column is nullable, even where D2L's description doesn't say "Field can be null." Those notes aren't complete, and a wrong `NOT NULL` would reject rows during a load. The JSON still records what D2L says in `canBeNull`.
 
-If D2L documents a key column as nullable, the table gets no primary key and its script says why. Today that is two data sets, Assignment Submissions (`SubmitterType`) and Survey User Answers (`QuestionVersionId`).
+If D2L documents a key column as nullable, the table gets no primary key and its script says why. Today that's two datasets: Assignment Submissions (`SubmitterType`) and Survey User Answers (`QuestionVersionId`).
 
 Columns D2L marks `FK` get an index on the main table. Three cases are skipped:
 
-- A foreign key that is the first column of the primary key, because the key's own index already covers it.
-- A string too long for the database to index: over 768 characters in MySQL and over 1000 in Oracle. Today that is one column in MySQL, `AlignedObjectId` in Outcomes Demonstrations.
-- Staging tables, which are filled and emptied in bulk and are not joined.
+- A foreign key that's the first column of the primary key, because the key's own index already covers it.
+- A string too long for the database to index: over 768 characters in MySQL and over 1000 in Oracle. Today that's one column in MySQL, `AlignedObjectId` in Outcomes Demonstrations.
+- Staging tables, which are filled and emptied in bulk and aren't joined.
 
-Foreign key constraints are not created. Extracts arrive one data set at a time and differential files can reference rows you have not loaded yet, so constraints would make loads fail.
+Foreign key constraints aren't created. Extracts arrive one dataset at a time, and differential files can reference rows you haven't loaded yet, so constraints would make loads fail.
 
 ## Staging tables
 
-Each data set gets a second table with `_LOAD` after its name. It has the same columns, types and primary key as the main table. The intent is that a loader fills the staging table from an extract file and then merges its rows into the main table.
+Each dataset gets a second table with `_LOAD` appended to its name. It has the same columns, types, and primary key as the main table. The intent is that a loader fills the staging table from an extract file first, then merges its rows into the main table.
 
-Because the staging table has the primary key, a file that holds the same key twice is rejected when loaded. `check` keeps staging tables in step with their main tables.
+Since the staging table has the primary key, a file containing the same key twice gets rejected when loaded. `check` keeps staging tables in sync with their main tables.
 
-## What is not covered
+## What's not covered
 
-- Loading extracts into the tables. This tool only makes and maintains the tables.
-- Checking the data rows of an extract. `verify` reads only the header row.
-- Converting a column from one kind of type to another. `check` reports it.
-- Oracle versions before 12.2, which limit names to 30 characters.
+This tool focuses on building and maintaining tables - here's what it doesn't do:
+
+- Loading extracts into the tables (this tool only creates and maintains the structure)
+- Checking the actual data rows in an extract (`verify` only reads the header row)
+- Converting a column from one type family to another (e.g., `INT` to `VARCHAR`) - `check` will report these differences for you to decide how to handle
+- Oracle versions before 12.2, which limit object names to 30 characters
 
 ## Examples
 
-Run these from the project root.
+Run these from the project root:
 
 ```sh
 uv run python examples/printCreateTable.py "Grade Schemes"
@@ -379,55 +353,35 @@ uv run python examples/planUpgradeOffline.py
 uv run datahubGetSchema generate --db oracle --prefix D2L_ --name-map examples/tableMap.example.json --out working/examples/sql
 ```
 
-The first two print one data set's main table, indexes and staging table for all three databases. The third builds an upgrade plan for a made-up older table without needing a database.
+The first two print one dataset's main table, indexes, and staging table for all three databases. The third builds an upgrade plan for a pretend older schema without needing a database connection.
 
 ## Project layout
 
+Here's what you're working with:
+
 ```
-schema/              one JSON file per data set, written by fetch
-schema/overrides/    your corrections, never written by fetch
-sql/mysql/           SQL scripts, written by generate
+schema/                          one JSON file per dataset, written by fetch
+schema/overrides/                your corrections, never touched by fetch
+sql/mysql/                       SQL scripts, generated by generate
 sql/oracle/
 sql/postgres/
-src/datahubGetSchema/    the tool
-  d2lDocs.py         downloads the documentation pages
-  docParser.py       turns a page into data set definitions
-  schema.py          data set model and JSON files
-  overrides.py       applies the override files
-  schemaChanges.py   lists what changed between two fetches
-  naming.py          table names and the name map file
-  tables.py          which tables and indexes each data set needs
-  sqlTypes.py        database-neutral column types and how they compare
-  dialects/          type mapping and SQL for each database
-  generator.py       writes the SQL scripts
-  database.py        database URLs and reading existing tables
-  upgrade.py         plans the upgrade
-  extractCheck.py    compares an extract's header row with the schema
-  runLog.py          the log file
-  cli.py             the commands
-examples/            runnable examples, a sample name map, a sample override
-tests/               unit tests, saved D2L pages, and end-to-end tests
-working/             downloaded pages, upgrade scripts, logs, other run output
+src/datahubGetSchema/            the tool itself
+  d2lDocs.py                     downloads the documentation pages
+  docParser.py                   turns a page into dataset definitions
+  schema.py                      dataset model and JSON file handling
+  overrides.py                   applies your override files
+  schemaChanges.py               lists what changed between two fetches
+  naming.py                      table names and the name map file
+  tables.py                      which tables and indexes each dataset needs
+  sqlTypes.py                    database-neutral types and how they compare
+  dialects/                      type mapping and SQL for each database
+  generator.py                   writes the final SQL scripts
+  database.py                    handles database URLs and reading existing tables
+  upgrade.py                     plans out what needs upgrading
+  extractCheck.py                compares an extract's header row with the schema
+  runLog.py                      the log file handler
+  cli.py                         all the command-line interface logic
+examples/                        runnable examples, a sample name map file, sample overrides
+tests/                          unit tests, saved D2L pages, end-to-end tests
+working/                        downloaded pages, upgrade scripts, logs, other runtime output
 ```
-
-## Development
-
-```sh
-uv run pytest
-uv run --with pyright pyright src tests examples
-```
-
-The suite includes end-to-end tests that need two things.
-
-- Network access, for the tests that call the D2L community site.
-- Three local databases, for the tests that create all the tables and indexes and run upgrades on real MySQL, PostgreSQL and Oracle. Start them with Docker before running the tests and remove them afterward.
-
-```sh
-docker compose -f tests/docker-compose.yml up -d --wait
-uv run pytest
-docker compose -f tests/docker-compose.yml down -v
-```
-
-The database tests skip themselves, with a message, when a container is not running. They drop every table in the schema they connect to, so their URLs are fixed to the test containers on ports 33306, 35432 and 31521.
-
-[TESTPLAN.md](TESTPLAN.md) has the manual checklist for every command.
