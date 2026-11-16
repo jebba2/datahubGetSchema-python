@@ -1,4 +1,4 @@
-# datahubtable
+# datahubGetSchema-python
 
 `datahubtable` writes the SQL that creates a table for every D2L Brightspace Data Hub data set, for MySQL, Oracle and PostgreSQL. It can also compare the tables in an existing database with the current D2L documentation and write a script that brings them up to date without touching the rows already loaded.
 
