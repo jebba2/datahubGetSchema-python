@@ -5,12 +5,17 @@ An extract file is the truth about which columns D2L really sends.
 """
 
 import csv
+import glob
 import io
 import re
 import zipfile
 from pathlib import Path
 
 from datahubGetSchema.schema import DataSet
+
+
+# Characters that make a path a wildcard pattern.
+WILDCARD_CHARACTERS = "*?["
 
 
 class ExtractError(ValueError):
@@ -20,6 +25,25 @@ class ExtractError(ValueError):
 def simplify(name: str) -> str:
     """Return a name in lowercase without spaces or punctuation, the form used to compare names."""
     return re.sub(r"[^a-z0-9]", "", name.lower())
+
+
+def expandWildcards(paths: list[Path]) -> list[Path]:
+    """Return the files to check, with each wildcard pattern replaced by the files it matches, in name order.
+
+    bash and zsh expand a pattern such as extracts/*.csv before the tool starts, but PowerShell and
+    Command Prompt pass it through unchanged. A path that names an existing file is never treated as a
+    pattern, so a file with [ or ? in its name can still be checked.
+    """
+    files: list[Path] = []
+    for path in paths:
+        if path.exists() or not any(character in str(path) for character in WILDCARD_CHARACTERS):
+            files.append(path)
+            continue
+        matches = sorted(Path(match) for match in glob.glob(str(path)))
+        if not matches:
+            raise ExtractError(f"No files match {path.as_posix()}.")
+        files.extend(matches)
+    return files
 
 
 def readHeader(path: Path) -> list[str]:

@@ -110,6 +110,8 @@ Use real Data Hub extract files where you have them. This command has not been r
 - [ ] `uv run datahubGetSchema verify <a Brightspace Data Set extract .zip>` finds the data set from the file name and reports either a match or a list of differences.
 - [ ] The same file unzipped to `.csv` gives the same result.
 - [ ] `verify` with several files reports each one on its own line.
+- [ ] `uv run datahubGetSchema verify "extracts/*.csv"`, quoted so the shell leaves the wildcard alone, reports every matching file in name order. On Windows, run it unquoted in PowerShell and in Command Prompt too.
+- [ ] `uv run datahubGetSchema verify "working/empty/*.csv"` exits with code 2 and says `No files match working/empty/*.csv.`
 - [ ] `verify <an Advanced Data Set extract> --data-set "ADS All Grades"` checks the file against that data set.
 - [ ] A CSV whose header has one column removed and one added reports both, prints the hint about `schema/overrides`, and exits with code 1.
 - [ ] A CSV with the documented columns in a different order reports the order difference and exits with code 1.

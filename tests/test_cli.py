@@ -219,6 +219,20 @@ def test_verifyChecksSeveralFilesAndNamesTheDataSetWhenTold(fetched, capsys):
     assert capsys.readouterr().out.count("matches Users") == 2
 
 
+def test_verifyExpandsWildcardsItself(fetched, capsys):
+    (fetched / "extracts").mkdir()
+    for name in ("Users_2026-11-01.csv", "Users_2026-11-02.csv"):
+        (fetched / "extracts" / name).write_text(",".join(usersHeader(fetched)) + "\n", encoding="utf-8")
+    assert main(["verify", "extracts/*.csv"]) == 0
+    lines = capsys.readouterr().out.splitlines()
+    assert [line.split(":")[0] for line in lines] == ["Users_2026-11-01.csv", "Users_2026-11-02.csv"]
+
+
+def test_verifyWildcardThatMatchesNothingIsAnError(fetched, capsys):
+    assert main(["verify", "extracts/*.csv"]) == 2
+    assert capsys.readouterr().err == "Error: No files match extracts/*.csv.\n"
+
+
 def test_verifyCannotGuessTheDataSetOfAnOddFileName(fetched, capsys):
     (fetched / "export.csv").write_text("UserId\n", encoding="utf-8")
     assert main(["verify", "export.csv"]) == 2

@@ -58,21 +58,13 @@ uv run datahubGetSchema --help
 
 ### Differences on Windows
 
-Every `uv run datahubGetSchema ...` command in this file works as written in PowerShell and in Command Prompt. Two things differ from Linux and macOS.
-
-Setting the database password for `check`:
+Every `uv run datahubGetSchema ...` command in this file works as written in PowerShell and in Command Prompt, including the ones with wildcards such as `extracts/*.csv`. Only setting the database password for `check` differs:
 
 | Shell | Command |
 | --- | --- |
 | Linux and macOS (bash, zsh) | `export DATAHUB_DB_PASSWORD='yourPassword'` |
 | Windows PowerShell | `$env:DATAHUB_DB_PASSWORD = 'yourPassword'` |
 | Windows Command Prompt | `set DATAHUB_DB_PASSWORD=yourPassword` |
-
-Wildcards such as `extracts/*.csv`: bash and zsh expand them before the tool starts, and the tool does not expand them itself. PowerShell and Command Prompt pass the `*` through unchanged, so list the files yourself. In PowerShell:
-
-```powershell
-uv run datahubGetSchema verify (Get-ChildItem extracts\*.csv)
-```
 
 ## How it works
 
@@ -172,11 +164,11 @@ Upgrade script: working/upgrade/postgres_upgrade.sql
 
 ```sh
 uv run datahubGetSchema verify extracts/Users_2026-11-01.zip
-uv run datahubGetSchema verify extracts/*.csv        # Linux and macOS; on Windows see Setup
+uv run datahubGetSchema verify extracts/*.csv
 uv run datahubGetSchema verify report.csv --data-set "ADS All Grades"
 ```
 
-`verify` reads the first row of each file and compares the column names with the data set's documented columns. A file is a CSV, or a zip with a CSV inside. Names are compared without regard to case, spaces or punctuation.
+`verify` reads the first row of each file and compares the column names with the data set's documented columns. A file is a CSV, or a zip with a CSV inside. A wildcard such as `extracts/*.csv` checks every file it matches. The tool expands it when the shell does not, so it works the same in PowerShell and Command Prompt as in bash and zsh. A wildcard that matches no file is an error. Names are compared without regard to case, spaces or punctuation.
 
 The data set is the one whose name the file name starts with, so `UserLogins_2026-11-01.zip` is checked against User Logins. When the file name does not say, or a Brightspace Data Set and an Advanced Data Set share the name, pass `--data-set`.
 
@@ -193,7 +185,7 @@ This command has only been tested with files written from the schema. It has not
 
 | Option | Default | Meaning |
 | --- | --- | --- |
-| `files` | required | One or more `.csv` or `.zip` extract files |
+| `files` | required | One or more `.csv` or `.zip` extract files, or wildcards that match them |
 | `--data-set` | from the file name | Data set the files hold, such as `"Users"` or `"ADS All Grades"` |
 | `--schema-dir` | `schema` | Where the data set JSON files and `overrides/` are |
 

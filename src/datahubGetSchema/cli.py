@@ -13,7 +13,7 @@ from datahubGetSchema.database import parseDatabaseUrl, readExistingTables, reda
 from datahubGetSchema.dialects import DIALECTS
 from datahubGetSchema.dialects.base import Dialect
 from datahubGetSchema.docParser import parseArticle
-from datahubGetSchema.extractCheck import compareHeader, findDataSet, readHeader
+from datahubGetSchema.extractCheck import compareHeader, expandWildcards, findDataSet, readHeader
 from datahubGetSchema.generator import writeSql
 from datahubGetSchema.naming import TableNamer, loadNameMap
 from datahubGetSchema.overrides import OVERRIDES_DIRECTORY_NAME, applyOverrides
@@ -41,6 +41,7 @@ examples:
   datahubGetSchema generate --db oracle --prefix D2L_ --name-map tableMap.json
   datahubGetSchema check --url postgresql://loader@localhost:5432/datahub
   datahubGetSchema verify extracts/Users_2026-11-01.zip
+  datahubGetSchema verify extracts/*.csv
 
 exit codes:
   0  success, or nothing differs (check, verify)
@@ -111,7 +112,7 @@ def buildParser() -> argparse.ArgumentParser:
             "or a zip holding one. The data set is taken from the start of the file name unless --data-set names it."
         ),
     )
-    verify.add_argument("files", nargs="+", type=Path, help="extract files to check (.csv or .zip)")
+    verify.add_argument("files", nargs="+", type=Path, help="extract files to check (.csv or .zip); wildcards such as extracts/*.csv work in every shell")
     verify.add_argument("--data-set", help="data set the files hold, such as \"Users\" or \"ADS All Grades\"")
     addSchemaArgument(verify)
     verify.set_defaults(run=runVerify)
@@ -248,7 +249,7 @@ def runVerify(arguments: argparse.Namespace) -> int:
     """Compare the header row of each extract file with its data set's columns."""
     dataSets = loadSchema(arguments)
     foundDifferences = False
-    for path in arguments.files:
+    for path in expandWildcards(arguments.files):
         dataSet = findDataSet(path, dataSets, arguments.data_set)
         differences = compareHeader(dataSet, readHeader(path))
         if not differences:

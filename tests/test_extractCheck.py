@@ -10,7 +10,7 @@ from pathlib import Path
 
 import pytest
 
-from datahubGetSchema.extractCheck import ExtractError, compareHeader, findDataSet, readHeader
+from datahubGetSchema.extractCheck import ExtractError, compareHeader, expandWildcards, findDataSet, readHeader
 from datahubGetSchema.schema import DataSet
 
 from .conftest import makeColumn
@@ -112,3 +112,26 @@ def test_sameColumnsInADifferentOrderAreReported(gradeSchemes):
         "File: OrgUnitId, GradeSchemeId, SchemeName, DeletedDate. "
         "Documentation: GradeSchemeId, OrgUnitId, SchemeName, DeletedDate."
     ]
+
+
+def test_wildcardBecomesTheFilesItMatchesInNameOrder(tmp_path):
+    for name in ("Users.csv", "Grades.csv", "Users.zip"):
+        (tmp_path / name).write_text("", encoding="utf-8")
+    assert expandWildcards([tmp_path / "*.csv"]) == [tmp_path / "Grades.csv", tmp_path / "Users.csv"]
+
+
+def test_plainPathsAreKeptAsGivenEvenWhenTheFileIsMissing(tmp_path):
+    paths = [tmp_path / "Users.csv", tmp_path / "missing.csv"]
+    assert expandWildcards(paths) == paths
+
+
+def test_existingFileWithWildcardCharactersInItsNameIsNotExpanded(tmp_path):
+    bracketed = tmp_path / "Users[1].csv"
+    bracketed.write_text("", encoding="utf-8")
+    (tmp_path / "Users1.csv").write_text("", encoding="utf-8")
+    assert expandWildcards([bracketed]) == [bracketed]
+
+
+def test_wildcardThatMatchesNoFileIsAnError(tmp_path):
+    with pytest.raises(ExtractError, match="No files match .*\\*\\.csv"):
+        expandWildcards([tmp_path / "*.csv"])
